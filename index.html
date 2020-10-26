@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Wishes Come True</title>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#body').load('about.html');
+        $('#about').click(function () {
+          $('#body').load('about.html');
+        });
+        $('#donate').click(function () {
+          $('#body').load('wishes.html');
+        });
+        $('.nav-item a').on('click', function () {
+          $('.nav-item a').removeClass('active');
+          $(this).addClass('active');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      Icon
+      <h1>WishesComeTrue.com</h1>
+    </header>
+    <section class="body">
+      <div class="filters">
+        <p>filters</p>
+        <div class="minority-groups">
+          Minority Groups
+          <form action="">
+            <input type="checkbox" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br />
+            <input type="checkbox" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br />
+            <input type="checkbox" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br />
+          </form>
+        </div>
+        <div class="donating-types">
+          Donating Types
+          <form action="">
+            <input type="checkbox" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br />
+            <input type="checkbox" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br />
+            <input type="checkbox" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br />
+          </form>
+        </div>
+        <div class="project-types">
+          Project Types
+          <form action="">
+            <input type="checkbox" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br />
+            <input type="checkbox" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br />
+            <input type="checkbox" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br /><input
+              type="checkbox"
+              id="male"
+              name="gender"
+              value="male"
+            />
+            <label for="male">Male</label><br /><input
+              type="checkbox"
+              id="male"
+              name="gender"
+              value="male"
+            />
+            <label for="male">Male</label><br /><input
+              type="checkbox"
+              id="male"
+              name="gender"
+              value="male"
+            />
+            <label for="male">Male</label><br /><input
+              type="checkbox"
+              id="male"
+              name="gender"
+              value="male"
+            />
+            <label for="male">Male</label><br /><input
+              type="checkbox"
+              id="male"
+              name="gender"
+              value="male"
+            />
+            <label for="male">Male</label><br />
+          </form>
+        </div>
+      </div>
+      <section class="content">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="active" id="about">ABOUT US</a>
+          </li>
+          <li class="nav-item"><a href="#" id="donate">DONATE</a></li>
+          <li class="nav-item"><a href="#" id="volunteer">VOLUNTEER</a></li>
+        </ul>
+        <section id="body"></section>
+      </section>
+    </section>
+  </body>
+</html>

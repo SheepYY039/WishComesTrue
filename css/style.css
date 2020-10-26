@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: -moz-available,
+    -webkit-fill-available;
+}
+
+div {
+  border: black 3px solid;
+  padding: 2px;
+}
+
+header {
+  width: 100%;
+  background-color: aqua;
+  min-height: 50px;
+  height: 10vh;
+  display: flex;
+}
+
+.body {
+  display: flex;
+  height: 90vh;
+}
+
+.filters {
+  width: 20vw;
+  display: block;
+  height: 90vh;
+}
+
+
+.filters .minority-groups {
+  height: 25%;
+}
+
+.filters .donating-types {
+  height: 25%;
+}
+
+.filters .project-types {
+  height: 30%;
+}
+
+.content {
+  width: 80vw;
+  height: 100%;
+}
+
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  height: 50px;
+}
+
+ul.nav ul{
+  height: 100%;
+}
+
+ul.nav li {
+  float: left;
+  width: 33.3%;
+  height: 100%;
+}
+
+ul.nav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 14px 0;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.nav li a:hover {
+  background-color: #111;
+}
+
+ul.nav li a.active {
+  background-color: rgb(94, 94, 94);
+
+}
+
+
+.wishes {
+  height: 90%;
+  padding: 10px;
+}
+
+.wish {
+  display: flex;
+}
+
+.wish .wish__contents {
+  width: 80%;
+}
+
+.wish .wish__more-info {
+  margin: auto;
+}
