@@ -2,24 +2,28 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  height: -moz-available,
-    -webkit-fill-available;
+  height: -moz-available, -webkit-fill-available;
 }
 
 div {
-  border: black 3px solid;
   padding: 2px;
 }
 
 header {
   width: 100%;
-  background-color: aqua;
+  background-color: #d0d9e2;
   min-height: 50px;
   height: 10vh;
   display: flex;
+}
+
+p {
+    font-style: normal;
+    font-weight: 400;
 }
 
 .body {
@@ -27,12 +31,47 @@ header {
   height: 90vh;
 }
 
+#body {
+  overflow-y: scroll;
+  height: calc(100% - 50px);
+  padding: 3%;
+}
+
 .filters {
   width: 20vw;
   display: block;
   height: 90vh;
+  padding: 1%;
+  min-width: 225px;
 }
 
+.filters .filter__title {
+  height: 10%;
+  display: table;
+  text-transform: capitalize;
+  width: -webkit-fill-available;
+  font-style: italic;
+}
+
+.filter__title span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.filters h3 {
+  padding: 8% 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 16px;
+  /* or 84% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.25px;
+  text-transform: capitalize;
+}
 
 .filters .minority-groups {
   height: 25%;
@@ -46,6 +85,74 @@ header {
   height: 30%;
 }
 
+.filters .checkbox__label {
+  display: block;
+  position: relative;
+  padding: 4%;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px; /* or 114% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.25px;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+.checkbox__label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.filters .checkbox__label .checkbox__custom {
+  position: absolute;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: transparent;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.checkbox__label:hover input ~ .checkbox__custom {
+  background-color: #ccc;
+}
+
+.checkbox__label input:checked ~ .checkbox__custom {
+  background-color: #2196f3;
+}
+
+.checkbox__custom:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.checkbox__label input:checked ~ .checkbox__custom:after {
+  display: block;
+}
+
+.checkbox__label .checkbox__custom:after {
+  left: 4.5px;
+  top: 1px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 .content {
   width: 80vw;
   height: 100%;
@@ -56,11 +163,12 @@ ul.nav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
   height: 50px;
+  background: #d8d8d8;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
-ul.nav ul{
+ul.nav ul {
   height: 100%;
 }
 
@@ -72,7 +180,14 @@ ul.nav li {
 
 ul.nav li a {
   display: inline-block;
-  color: #f2f2f2;
+  color: #333;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 1.25px;
+
   text-align: center;
   width: 100%;
   height: 100%;
@@ -83,14 +198,13 @@ ul.nav li a {
 }
 
 ul.nav li a:hover {
-  background-color: #111;
+  background-color: rgb(189, 189, 189);
 }
 
 ul.nav li a.active {
-  background-color: rgb(94, 94, 94);
-
+  background-color: #9d9d9d;
+  color: #f3f5f7;
 }
-
 
 .wishes {
   height: 90%;
@@ -99,6 +213,41 @@ ul.nav li a.active {
 
 .wish {
   display: flex;
+  min-height: 124px;
+  padding: 2%;
+  background: #f3f5f7;
+  border-radius: 15px;
+  box-shadow: 3px 5px 11px rgba(0, 0, 0, 0.25);
+}
+
+.wish .wish__name {
+  height: 55%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 16px;
+  /* or 67% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  margin: 1%;
+}
+
+.wish .wish__filters {
+  height: 40%;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  /* or 100% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
 }
 
 .wish .wish__contents {
@@ -107,4 +256,33 @@ ul.nav li a.active {
 
 .wish .wish__more-info {
   margin: auto;
+  width: 25%;
+  height: 45%;
+  background: #f3f5f7;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.08);
+  border-radius: 48px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  /* or 100% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+
+  border: none;
+  padding: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wish__more-info:hover {
+  cursor: pointer;
+  background-color: #d6d6d6;
 }

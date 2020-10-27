@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Wishes Come True</title>
     <script type="text/javascript">
@@ -15,103 +19,205 @@
         $('#donate').click(function () {
           $('#body').load('wishes.html');
         });
+        $('#volunteer').click(function () {
+          $('#body').load('volunteer.html');
+        });
         $('.nav-item a').on('click', function () {
           $('.nav-item a').removeClass('active');
           $(this).addClass('active');
         });
       });
     </script>
-    <style>
-      img{
-        height: 50%;
-        padding: 10%
-      }
-      .leaders{
-        text-align: left;
-        vertical-align: text-top;
-      }
-      tr{
-        width: 100%;
-      }
-      table{
-        width: 100%; 
-        margin: auto;
-      }
-      .team{
-        text-align: left;
-        vertical-align: text-top;
-      }
-    </style>
   </head>
   <body>
     <header>
-      Icon
+      <img src="./images/icon.png" alt="Logo" />
       <h1>WishesComeTrue.com</h1>
     </header>
     <section class="body">
       <div class="filters">
-        <p>filters</p>
+        <div class="filter__title">
+          <span><h2>Filters</h2></span>
+        </div>
         <div class="minority-groups">
-          Minority Groups
+          <h3>Minority Groups</h3>
           <form action="">
-            <input type="checkbox" id="male" name="gender" value="male" />
-            <label for="male">Male</label><br />
-            <input type="checkbox" id="male" name="gender" value="male" />
-            <label for="male">Male</label><br />
-            <input type="checkbox" id="male" name="gender" value="male" />
-            <label for="male">Male</label><br />
+            <label class="checkbox__label">
+              Homeless
+              <input
+                type="checkbox"
+                id="homeless"
+                name="minority-groups"
+                value="homeless"
+              />
+              <span class="checkbox__custom"></span>
+            </label>
+            <label class="checkbox__label">
+              Elderly
+              <input
+                type="checkbox"
+                id="elderly"
+                name="minority-groups"
+                value="elderly"
+              />
+              <span class="checkbox__custom"></span>
+            </label>
+            <label class="checkbox__label">
+              Low Income
+              <input
+                type="checkbox"
+                id="low-income"
+                name="minority-groups"
+                value="low-income"
+              />
+              <span class="checkbox__custom"></span>
+            </label>
           </form>
         </div>
         <div class="donating-types">
-          Donating Types
+          <h3>Donating Types</h3>
           <form action="">
-            <input type="checkbox" id="male" name="gender" value="male" />
-            <label for="male">Male</label><br />
-            <input type="checkbox" id="male" name="gender" value="male" />
-            <label for="male">Male</label><br />
-            <input type="checkbox" id="male" name="gender" value="male" />
-            <label for="male">Male</label><br />
+            <label class="checkbox__label">
+              Funding
+              <input
+                type="checkbox"
+                id="funding"
+                name="donating-types"
+                value="funding"
+              />
+              <span class="checkbox__custom"></span>
+            </label>
+            <label class="checkbox__label">
+              Second Hand
+              <input
+                type="checkbox"
+                id="second-hand"
+                name="donating-types"
+                value="second-hand"
+              />
+              <span class="checkbox__custom"></span>
+            </label>
+            <label class="checkbox__label">
+              Food
+              <input
+                type="checkbox"
+                id="food"
+                name="donating-types"
+                value="food"
+              />
+              <span class="checkbox__custom"></span>
+            </label>
           </form>
         </div>
         <div class="project-types">
-          Project Types
+          <h3>Project Types</h3>
           <form action="">
-            <input type="checkbox" id="male" name="gender" value="male" />
-            <label for="male">Male</label><br />
-            <input type="checkbox" id="male" name="gender" value="male" />
-            <label for="male">Male</label><br />
-            <input type="checkbox" id="male" name="gender" value="male" />
-            <label for="male">Male</label><br /><input
-              type="checkbox"
-              id="male"
-              name="gender"
-              value="male"
-            />
-            <label for="male">Male</label><br /><input
-              type="checkbox"
-              id="male"
-              name="gender"
-              value="male"
-            />
-            <label for="male">Male</label><br /><input
-              type="checkbox"
-              id="male"
-              name="gender"
-              value="male"
-            />
-            <label for="male">Male</label><br /><input
-              type="checkbox"
-              id="male"
-              name="gender"
-              value="male"
-            />
-            <label for="male">Male</label><br /><input
-              type="checkbox"
-              id="male"
-              name="gender"
-              value="male"
-            />
-            <label for="male">Male</label><br />
+            <table>
+              <tr>
+                <td>
+                  <label class="checkbox__label">
+                    Individual
+                    <input
+                      type="checkbox"
+                      id="individual"
+                      name="project-types"
+                      value="individual"
+                    />
+                    <span class="checkbox__custom"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="checkbox__label">
+                    Group
+                    <input
+                      type="checkbox"
+                      id="group"
+                      name="project-types"
+                      value="group"
+                    />
+                    <span class="checkbox__custom"></span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox__label">
+                    Reachable
+                    <input
+                      type="checkbox"
+                      id="reachable"
+                      name="project-types"
+                      value="reachable"
+                    />
+                    <span class="checkbox__custom"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="checkbox__label">
+                    Reach
+                    <input
+                      type="checkbox"
+                      id="reach"
+                      name="project-types"
+                      value="reach"
+                    />
+                    <span class="checkbox__custom"></span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox__label">
+                    Short
+                    <input
+                      type="checkbox"
+                      id="short"
+                      name="project-types"
+                      value="short"
+                    />
+                    <span class="checkbox__custom"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="checkbox__label">
+                    Long
+                    <input
+                      type="checkbox"
+                      id="long"
+                      name="project-types"
+                      value="long"
+                    />
+                    <span class="checkbox__custom"></span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox__label">
+                    New
+                    <input
+                      type="checkbox"
+                      id="new"
+                      name="project-types"
+                      value="new"
+                    />
+                    <span class="checkbox__custom"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="checkbox__label">
+                    Old
+                    <input
+                      type="checkbox"
+                      id="old"
+                      name="project-types"
+                      value="old"
+                    />
+                    <span class="checkbox__custom"></span>
+                  </label>
+                </td>
+              </tr>
+            </table>
           </form>
         </div>
       </div>
@@ -123,95 +229,7 @@
           <li class="nav-item"><a href="#" id="donate">DONATE</a></li>
           <li class="nav-item"><a href="#" id="volunteer">VOLUNTEER</a></li>
         </ul>
-        <h2>Our Vision</h2> 
-        <br>Our vision for this project is to create a website, where the wishes of minority groups are published to the public allowing volunteers to choose which ones they want to contribute to. Examples of these wishes include volunteers helping children who wish for better grades by tutoring.
-        <br><br><h2>Meet the team!</h2>
-        <br><br><h2>Heads of Wish Comes True:</h2>
-        <br><table class='leaders'>
-            <tr>
-                <td>
-                    <img src="aditijain.png">
-                </td>
-                <td>
-                    <h3>Aditi Jain</h3>
-                    <br>Hi I am Aditi and I didn't write this. 
-                </td>
-            </tr>
-        </table>
-          <table class='leaders'>
-            <td>
-              <img src="arnavkithania.png">
-          </td>
-          <td>
-              <h3>Arnav Kithania</h3>
-              <br>Hi I am Arnav and I didn't write this.
-          </td>
-          </table>
-          <br><h2>Group Leaders</h2>
-          <br><table>
-            <tr>
-              <td>
-                <img src="noshin.png">
-                <br>Noshin
-                <br>Head of Communications & Logistics
-              </td>
-              <td>
-                <img src="ritshika.png">
-                <br>Ritshika
-                <br>Head of Communications & Logistics
-              </td>
-              <td>
-                <img src="jasmine.png">
-                <br>Jasmine Yeung
-                <br>Head of Coding
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="harshita.png">
-                <br>Harshita
-                <br>Head of Maketing
-              </td>
-              <td>
-                <img src="noshin.png">
-                <br>Noshin
-                <br>Head of Maketing
-              </td>
-            </tr>
-          </table>
-          <br><br><h2>Wish Come True</h2>
-          <table class="team">
-              <tr>
-                <th>Communications and Logistics</th>
-                <th>Coding</th>
-                <th>Marketing</th>
-              </tr>
-              <tr>
-                <td>Akshay
-                    <br>Jenny
-                    <br>Kash
-                    <br>Vyapti
-                    <br>Winnie Pau
-                    <br>Kiros
-                    <br>Kiki
-                    </td>
-                <td>
-                    Arthur
-                    <br>Dennis
-                    <br>Kanav
-                    <br>Kay
-                    </td>
-                <td>
-                    Charis
-                    <br>Diya
-                    <br>Hiren
-                    <br>Jami
-                    <br>Kiros
-                    <br>Roshita
-                    <br>Sofia
-                </td>
-              </tr>
-          </table>
+
         <section id="body"></section>
       </section>
     </section>
