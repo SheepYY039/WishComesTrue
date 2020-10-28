@@ -56,7 +56,7 @@ Our vision for this project is to create a website, where the wishes of minority
 		<td></td>
 		<td>Roshita</td>
 	</tr><tr>
-		<td>Kiros</td>
+		<td>Mir</td>
 		<td></td>
 		<td>Sofia</td>
 	</tr><tr>
