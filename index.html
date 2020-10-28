@@ -33,6 +33,10 @@
     <header>
       <img src="./images/icon.png" alt="Logo" />
       <h1>Wish Comes True HK</h1>
+      
+      <div class="btn-container">
+        <button class="btn" id="button">Modal</button>
+      </div>
     </header>
     <section class="body">
       <div class="filters">
@@ -227,11 +231,74 @@
             <a href="#" class="active" id="about">ABOUT US</a>
           </li>
           <li class="nav-item"><a href="#" id="donate">DONATE</a></li>
-          <li class="nav-item"><a href="#" id="volunteer">VOLUNTEER</a></li>
+          <li class="nav-item"><a href="#" id="voluntee">VOLUNTEER</a></li>
         </ul>
 
         <section id="body"></section>
       </section>
     </section>
+    
+    <div class="modal-background">
+      <div class="modal">
+        <div class="modal-cancel" id="close">x</div>
+        <div class="modal-content">
+          <h2>&nbsp Request A Wish<br></h2>
+      		<form id="formal" name="formal" method="get" action="processwishes.php">
+      		<table style="width:40%">
+      		  <tr><td><h3>&nbsp Organization</h3></td></tr>
+      			<tr><td><label for="name">&nbsp Organization Name:</label></td>
+      				<td><input type="text" id="name" name="name" value=""><br></td></tr>
+      			<tr><td><label for="phone">&nbsp Phone Number:</label> </td>
+      			<td><input type="tel" id="phone" name="phone" value=""><br></td></tr>
+      			<tr><td><label for="email">&nbsp Email Address:</label></td>
+      			<td><input type="email" id="email" name="email" value=""><br></td></tr>
+
+      			<tr><td><h3><br>&nbsp The Wish</h3></td></tr>
+
+      			<tr><td><p2>&nbsp Minority Groups</p2></td></tr>
+      			<tr><td><label for="group1">&nbsp Homeless</label></td>
+      			<td><input type="checkbox" id="group1" name="group1" value="Homeless"></td></tr>
+      			<tr><td><label for="group2">&nbsp Elderly</label></td>
+      			<td><input type="checkbox" id="group2" name="group2" value="Elderly"></td></tr>
+      			<tr><td><label for="group3">&nbsp Low Income</label></td>
+      			<td><input type="checkbox" id="group3" name="group3" value="Low income"></td></tr>
+
+      			<tr><td><br><p2>&nbsp Donating Type</p2></td></tr>
+      			<tr><td><label for="donate1">&nbsp Funding</label></td>
+      			<td><input type="checkbox" id="donate1" name="donate1" value="Funding"></td></tr>
+      			<tr><td><label for="donate2">&nbsp Helping Hand</label></td>
+      			<td><input type="checkbox" id="donate2" name="donate2" value="Second hand"></td></tr>
+      			<tr><td><label for="donate3">&nbsp Food</label></td>
+      			<td><input type="checkbox" id="donate3" name="donate3" value="Food"></td></tr>
+
+      			<tr><td><p2><br>&nbsp Project Type</p2></td></tr>
+      			<tr><td><label for="project1">&nbsp Individual</label></td>
+      			<td><input type="checkbox" id="project1" name="project1" value="Individual"></td></tr>
+      			<tr><td><label for="project2">&nbsp Group</label></td>
+      			<td><input type="checkbox" id="project2" name="project2" value="Group"></td></tr>
+      			<tr><td><label for="project3">&nbsp Short</label></td>
+      			<td><input type="checkbox" id="project3" name="project3" value="Short"></td></tr>
+      			<tr><td><label for="project4">&nbsp Long</label></td>
+      			<td><input type="checkbox" id="project4" name="project4" value="Long"></td></tr>
+      			<tr><td><label for="start">&nbsp Start Date:<br>&nbsp(if applicable)</label></td>
+      			<td><input type="date" id="start" name="start"><br><br></td></tr>
+      			<tr><td><label for="end">&nbsp End Date:<br>&nbsp (if applicable)</label></td>
+      			<td><input type="date" id="end" name="end"><br><br></td></tr>
+      			<tr><td><br>&nbsp Additional Information:</textarea></td>
+      			<td><textarea name="comment" rows="5" cols="40" value=""></textarea></td></tr>
+      			<tr><td>&nbsp&nbsp<input type="submit" value="Enter Wish"></td></tr>
+      		  </table>
+      		  </form>
+            </section>
+
+    <script type="text/javascript">
+      document.getElementById('button').addEventListener("click", function() {
+      document.querySelector('.modal-background').style.display = "flex";
+      });
+
+      document.getElementById('close').addEventListener("click", function() {
+      document.querySelector('.modal-background').style.display = "none";
+      });
+    </script>
   </body>
 </html>
