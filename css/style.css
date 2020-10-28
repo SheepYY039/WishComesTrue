@@ -37,6 +37,15 @@ p {
   padding: 3%;
 }
 
+tr {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  /* margin: auto; */
+}
+
 .filters {
   width: 20vw;
   display: block;
