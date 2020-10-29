@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Wishes Come True</title>
+    <title>Wish Comes True</title>
     <script type="text/javascript">
       $(document).ready(function () {
         $('#body').load('about.html');
@@ -42,6 +43,14 @@
       <div class="filters">
         <div class="filter__title">
           <span><h2>Filters</h2></span>
+        </div>
+        <div class="search">
+          <form action="">
+            <label for="search">
+              <span class="fa fa-search"></span>
+            </label>
+            <input type="search" placeholder="Search..." name="search" id="search"/>
+          </form>
         </div>
         <div class="minority-groups">
           <h3>Minority Groups</h3>
@@ -231,7 +240,7 @@
             <a href="#" class="active" id="about">ABOUT US</a>
           </li>
           <li class="nav-item"><a href="#" id="donate">DONATE</a></li>
-          <li class="nav-item"><a href="#" id="voluntee">VOLUNTEER</a></li>
+          <li class="nav-item"><a href="#" id="volunteer">VOLUNTEER</a></li>
         </ul>
 
         <section id="body"></section>
@@ -243,7 +252,7 @@
         <div class="modal-cancel" id="close">x</div>
         <div class="modal-content">
           <h2>&nbsp Request A Wish<br></h2>
-      		<form id="formal" name="formal" method="get" action="processwishes.php" target="modal-content">
+      		<form id="formal" name="formal" method="get" action="./processwishes.php" target="modal-content">
       		<table style="width:100%">
       		  <tr><td><h3>&nbsp Organization</h3></td></tr>
       			<tr><td><label for="name">&nbsp Organization Name:</label></td>
@@ -289,7 +298,9 @@
       			<tr><td>&nbsp&nbsp<input type="submit" value="Enter Wish"></td></tr>
       		  </table>
       		  </form>
-            </section>
+</div>
+</div></div>
+
 
     <script type="text/javascript">
       document.getElementById('button').addEventListener("click", function() {
