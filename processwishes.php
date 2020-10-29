@@ -26,7 +26,12 @@
 	<td><tr><br><h3>The Wish</h3></tr></td>
 		
 	<td><tr><p2>&nbsp Minority Groups:</p2></tr>
-	<tr><?php 
+	<tr><ul>
+		<li><?php echo $_GET["group1"];?></li>
+		<li><?php echo $_GET["group2"];?></li>
+		<li><?php echo $_GET["group3"];?></li>
+		</ul>
+		<?php 
 		$group1 = $_GET["group1"];
 		$group2 = $_GET["group2"];
 		$group3 = $_GET["group3"];
@@ -42,7 +47,20 @@
 		}
 		echo $groups
 		?></tr></td>
-	
+		
+		<td><tr><p2>&nbsp Project Types:</p2></tr>
+		<tr><ul>
+		<li><?php echo $_GET["project1"];?></li>
+		<li><?php echo $_GET["project2"];?></li>
+		<li><?php echo $_GET["project3"];?></li>
+		</ul></tr></td>
+		
+		<td><tr>&nbsp Start Date:</tr>
+		<tr><?php echo $_GET["start"];?></tr></td>
+		<td><tr>&nbsp End Date:</tr>
+		<tr><?php echo $_GET["end"];?></tr></td>
+		<td><tr>&nbsp Additional Information:</tr>
+		<tr><?php echo $_GET["info"];?></tr></td>
 	</tabel>
 	
 	</body>
