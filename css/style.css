@@ -21,6 +21,26 @@ header {
   display: flex;
 }
 
+.leader{
+  display: flex;
+  margin: 2%;
+}
+
+.bio{
+  padding: 0 3%;
+}
+
+.heads {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.head{
+  flex-basis: 33%;
+  margin: 2% auto;
+  text-align: center;
+}
+
 .modal-background {
   display: flex;
   align-items: flex-start;

@@ -4,31 +4,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wishes Come True | About Us</title>
-    <style>
-      td img {
-        height: 50%;
-        padding: 10%;
+    <style type="text/css">
+      img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
       }
-      .leaders {
+      .tg {
+        border: none;
+        border-collapse: collapse;
+        border-color: #ccc;
+        border-spacing: 0;
+        margin: 0px auto;
+      }
+      .tg td {
+        background-color: #fff;
+        border-color: #ccc;
+        border-style: solid;
+        border-width: 0px;
+        color: #333;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+      }
+      .tg th {
+        background-color: #f0f0f0;
+        border-color: #ccc;
+        border-style: solid;
+        border-width: 0px;
+        color: #333;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+      }
+      .tg .tg-lboi {
+        border-color: inherit;
         text-align: left;
-        vertical-align: text-top;
+        vertical-align: middle;
       }
-      tr {
-        width: 100%;
-      }
-      table {
-        width: 100%;
-        margin: auto;
-      }
-      .team {
+      .tg .tg-g7sd {
+        border-color: inherit;
+        font-weight: bold;
         text-align: left;
-        vertical-align: text-top;
+        vertical-align: middle;
+      }
+      .tg .tg-d459 {
+        background-color: #f9f9f9;
+        border-color: inherit;
+        text-align: left;
+        vertical-align: middle;
+      }
+      .tg .tg-0pky {
+        border-color: inherit;
+        text-align: left;
+        vertical-align: top;
+      }
+      .tg .tg-btxf {
+        background-color: #f9f9f9;
+        border-color: inherit;
+        text-align: left;
+        vertical-align: top;
+      }
+      @media screen and (max-width: 767px) {
+        .tg {
+          width: auto !important;
+        }
+        .tg col {
+          width: auto !important;
+        }
+        .tg-wrap {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin: auto 0px;
+        }
       }
     </style>
   </head>
   <body>
     <h2>Our Vision</h2>
-    <br />
     <p>
       Our vision for this project is to create a website, where the wishes of
       minority groups are published to the public allowing volunteers to choose
@@ -38,26 +95,22 @@
     <br /><br />
     <h2>Meet the team!</h2>
     <br /><br />
-    <h2>Heads of Wish Comes True:</h2>
+    <h3>Heads of Wish Comes True:</h3>
     <br />
-    <table class="leaders">
-      <tr>
-        <td>
-          <img src="./images/aditi.png" alt="Aditi Jain" />
-        </td>
-        <td>
-          <h3>Aditi Jain</h3>
-          <br />
-          <p>Hi I am Aditi and I didn't write this.</p>
-        </td>
-      </tr>
-    </table>
-    <table class="leaders">
-      <td>
-        <img src="./images/arnav.jpg" alt="Arnav Kithania" />
-      </td>
-      <td>
-        <h3>Arnav Kithania</h3>
+
+    <div class="leader">
+      <img src="./images/aditi.png" alt="Aditi Jain" />
+      <div class="bio">
+        <h4>Aditi Jain</h4>
+        <br />
+        <p>Hi I am Aditi and I didn't write this.</p>
+      </div>
+    </div>
+
+    <div class="leader">
+      <img src="./images/arnav.jpg" alt="Arnav Kithania" />
+      <div class="bio">
+        <h4>Arnav Kithania</h4>
         <br />
         <p>
           I was committed to creating WCT after meeting with Vishal, a minority
@@ -70,60 +123,97 @@
           NGOs we can truly make a difference in the community that we call
           home.
         </p>
-      </td>
-    </table>
+      </div>
+    </div>
     <br />
-    <h2>Group Leaders</h2>
-    <br />
-    <table>
-      <tr>
-        <td>
-          <img src="./images/noshin.png" />
-          <br />Noshin <br />Head of Communications & Logistics
-        </td>
-        <td>
-          <img src="./images/ritshika.png" />
-          <br />Ritshika <br />Head of Communications & Logistics
-        </td>
-        <td>
-          <img src="./images/jasmine.png" />
-          <br />Jasmine Yeung <br />Head of Coding
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <img src="./images/harshita.png" />
-          <br />Harshita <br />Head of Maketing
-        </td>
-        <td>
-          <img src="./images/noshin.png" />
-          <br />Noshin <br />Head of Maketing
-        </td>
-      </tr>
-    </table>
+    <h3>Heads of Departments</h3>
+
+    <div class="heads">
+      <div class="head">
+        <img src="./images/arnav.jpg" />
+        <br />
+        <h4>Noshin</h4>
+        <h5>Head of Communications & Logistics</h5>
+      </div>
+
+      <div class="head">
+        <img src="./images/arnav.jpg" />
+        <br />
+        <h4>Ritshika</h4>
+        <h5>Head of Communications & Logistics</h5>
+      </div>
+
+      <div class="head">
+        <img src="./images/arnav.jpg" />
+        <br />
+        <h4>Jasmine Yeung</h4>
+        <h5>Head of Coding</h5>
+      </div>
+
+      <div class="head">
+        <img src="./images/arnav.jpg" />
+        <br />
+        <h4>Harshita</h4>
+        <h5>Head of Maketing</h5>
+      </div>
+
+      <div class="head">
+        <img src="./images/arnav.jpg" />
+        <br />
+        <h4>Sunwoo</h4>
+        <h5>Head of Maketing</h5>
+      </div>
+    </div>
+
     <br /><br />
-    <h2>Wish Come True</h2>
-    <table class="team">
-      <tr>
-        <th>Communications and Logistics</th>
-        <th>Coding</th>
-        <th>Marketing</th>
-      </tr>
-      <tr>
-        <td>
-          Akshay <br />Jenny <br />Kash <br />Vyapti <br />Winnie Pau
-          <br />Kiros <br />Kiki
-        </td>
-        <td>
-          Arthur
-          <br />Dennis <br />Kanav <br />Kay
-        </td>
-        <td>
-          Charis
-          <br />Diya <br />Hiren <br />Jami <br />Kiros <br />Roshita
-          <br />Sofia
-        </td>
-      </tr>
-    </table>
+    <h3>Our Team</h3>
+    <div class="tg-wrap">
+      <table class="tg">
+        <thead>
+          <tr>
+            <th class="tg-g7sd">Communications and Logistics</th>
+            <th class="tg-g7sd">Coding</th>
+            <th class="tg-g7sd">Marketing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-d459">Akshay</td>
+            <td class="tg-d459">Arthur</td>
+            <td class="tg-d459">Charis</td>
+          </tr>
+          <tr>
+            <td class="tg-lboi">Jenny</td>
+            <td class="tg-lboi">Dennis</td>
+            <td class="tg-lboi">Diya</td>
+          </tr>
+          <tr>
+            <td class="tg-d459">Kash</td>
+            <td class="tg-d459">Kanav</td>
+            <td class="tg-d459">Hiren</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">Vyapti</td>
+            <td class="tg-0pky">Kay</td>
+            <td class="tg-0pky">Jami</td>
+          </tr>
+          <tr>
+            <td class="tg-btxf">Winnie Pau</td>
+            <td class="tg-btxf"></td>
+            <td class="tg-btxf">Kiros</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">Kiros</td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky">Roshita</td>
+          </tr>
+          <tr>
+            <td class="tg-btxf">Kiki</td>
+            <td class="tg-btxf"></td>
+            <td class="tg-btxf">Sofia</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
