@@ -4,6 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wishes Come True | Volunteer</title>
+    <script type="text/javascript">
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "flex";  
+        dots[slideIndex-1].className += " active";
+      }
+    </script>
   </head>
   <body>
       <div id="slideshow">
@@ -36,5 +64,6 @@
           <span class="dot" onclick="currentSlide(3)"></span> 
         </div>
       </div><!-- slideshow -->
+    <div><button>Donate Now</button></div>
   </body>
 </html>
