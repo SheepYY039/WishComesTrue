@@ -11,6 +11,7 @@ body {
 
 div {
   padding: 2px;
+  display: flex;
 }
 
 header {
