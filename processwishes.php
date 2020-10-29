@@ -26,7 +26,12 @@
 	<td><tr><br><h3>The Wish</h3></tr></td>
 		
 	<td><tr><p2>&nbsp Minority Groups:</p2></tr>
-	<tr><?php 
+	<tr><ul>
+		<li><?php echo $_GET["group1"];?></li>
+		<li><?php echo $_GET["group2"];?></li>
+		<li><?php echo $_GET["group3"];?></li>
+		</ul>
+		<?php 
 		$group1 = $_GET["group1"];
 		$group2 = $_GET["group2"];
 		$group3 = $_GET["group3"];
