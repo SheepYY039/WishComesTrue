@@ -21,6 +21,26 @@ header {
   display: flex;
 }
 
+.leader{
+  display: flex;
+  margin: 2%;
+}
+
+.bio{
+  padding: 0 3%;
+}
+
+.heads {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.head{
+  flex-basis: 33%;
+  margin: 2% auto;
+  text-align: center;
+}
+
 .modal-background {
   display: flex;
   align-items: flex-start;
@@ -130,6 +150,41 @@ table {
   align-items: center;
   letter-spacing: 1.25px;
   text-transform: capitalize;
+}
+
+.filters .search {
+  margin: 5% 0;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.search label,
+input {
+  vertical-align: baseline;
+  color: #737373;
+}
+
+.search label {
+  margin: 0.125em 0.125em 0 0;
+  float: left;
+  font-size: medium;
+}
+
+input[type="search"] {
+  border: 2px solid #737373;
+  border-width: 0 0 3px;
+  background-color: transparent;
+  font-size: medium;
+  padding: 0.125em 0.225em;
+  width: 85%;
+  float: right;
+}
+
+input[type="search"]:focus {
+  color: #E18728;
+  border-color: #E18728;
+  outline: none;
 }
 
 .filters .minority-groups {
@@ -274,6 +329,7 @@ ul.nav li a.active {
   display: flex;
   min-height: 124px;
   padding: 2%;
+  margin: 2% auto;
   background: #f3f5f7;
   border-radius: 15px;
   box-shadow: 3px 5px 11px rgba(0, 0, 0, 0.25);
