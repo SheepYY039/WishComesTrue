@@ -14,12 +14,25 @@ div {
   /* display: flex; */
 }
 
+@media screen and (max-width: 530px) {
+  .header_title {
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .header_title {
+    font-size: 1.8em;
+  }
+}
+
 header {
   width: 100%;
   background-color: #d0d9e2;
   min-height: 50px;
   height: 10vh;
   display: flex;
+  align-items: center;
 }
 
 img {
@@ -84,9 +97,17 @@ h1 {
   cursor: pointer;
 }
 
-.btn-container {
+.side-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
+}
+
+@media (max-width: 730px) {
+  .btn {
+    display: none;
+  }
 }
 
 .btn {
@@ -139,6 +160,7 @@ table {
 
 .profile {
   padding: 1%;
+  margin: 0px 1vw;
   display: flex;
 }
 
