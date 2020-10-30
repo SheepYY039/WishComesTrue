@@ -1,69 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wishes Come True | Volunteer</title>
-    <script type="text/javascript">
-      var slideIndex = 1;
-      showSlides(slideIndex);
+    <title>My Now Amazing Webpage</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <style type="text/css">
+      .fade {
+        /* width: 800px; */
+        width: 90%;
+        margin: 0 auto;
 
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
+        border: 1px solid black;
       }
 
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
+      .img-div {
+        width: 100%;
       }
 
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("slides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "flex";  
-        dots[slideIndex-1].className += " active";
+      .img-div img {
+        margin: 0 auto;
+        width: 100%;
+
+        object-fit: cover;
+        object-position: 50% 50%;
       }
-    </script>
+    </style>
   </head>
+
   <body>
-      <div id="slideshow">
-        <!-- slides -->
-        <div class="slides">
-          <img src=./images/arnav.jpg>
-          <button type="button" class="captions" id="caption1">HELP THE HOMELESS</button>
-        </div>
+    <div id="carousel" class="fade">
+      <div class="img-div">
+        <img src="http://placehold.it/1000x400&text=[ img 1 ]" />
+      </div>
+      <div class="img-div">
+        <img src="http://placehold.it/1000x400&text=[ img 2 ]" />
+      </div>
+      <div class="img-div">
+        <img src="http://placehold.it/1000x400&text=[ img 3 ]" />
+      </div>
+    </div>
 
-        <div class="slides">
-          <img src="./images/arnav.jpg">
-          <button  class="captions" id="caption2">HELP THE ELDERLY</button>
-        </div>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <!-- <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script> -->
 
-        <div class="slides">
-          <img src="./images/arnav.jpg">
-          <button  class="captions" id="caption3">HELP THE POOR</button>
-        </div>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    ></script>
 
-        <!-- left / right buttons -->
-        <div id="buttons">
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-
-        <!-- dots / circles -->
-        <div id="dots">
-          <span class="dot" onclick="currentSlide(1)"></span> 
-          <span class="dot" onclick="currentSlide(2)"></span> 
-          <span class="dot" onclick="currentSlide(3)"></span> 
-        </div>
-      </div><!-- slideshow -->
-    <div><button>Donate Now</button></div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".fade").slick({
+          dots: true,
+          infinite: true,
+          speed: 700,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          touchMove: true,
+          pauseOnHover: true,
+          swipe: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: "unslick",
+            },
+          ],
+        });
+      });
+    </script>
   </body>
 </html>

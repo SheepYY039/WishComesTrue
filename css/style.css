@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -28,6 +28,11 @@ img {
 
 h1 {
   margin: auto 5%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #fce7ac !important;
 }
 
 .leader {
@@ -142,7 +147,7 @@ table {
 }
 
 .profile ul {
-  background: gray ;
+  background: gray;
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -260,7 +265,7 @@ input {
   font-size: medium;
 }
 
-input[type='search'] {
+input[type="search"] {
   border: 2px solid #737373;
   border-width: 0 0 3px;
   background-color: transparent;
@@ -270,7 +275,7 @@ input[type='search'] {
   float: right;
 }
 
-input[type='search']:focus {
+input[type="search"]:focus {
   color: #e18828;
   border-color: #e18728;
   outline: none;
@@ -335,7 +340,7 @@ input[type='search']:focus {
 }
 
 .checkbox__custom:after {
-  content: '';
+  content: "";
   position: absolute;
   display: none;
 }
@@ -596,7 +601,7 @@ a:hover {
 }
 
 .captions {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 25px;
   position: relative;
   border: 2px solid white;
