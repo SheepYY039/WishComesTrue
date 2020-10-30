@@ -13,7 +13,7 @@
     </header>
 <body>
 	<h2>&nbsp Confirm Wish Details</h2>
-	
+
 	<tabel style="width:40%" left-margin=40px>
 	<tr><td><h3>&nbsp Organization</h3></td></tr>
 	<tr><td>&nbsp Organization Name:</td>
@@ -22,39 +22,43 @@
 	<td><?php echo $_GET["phone"];?></td></tr>
 	<tr><td>&nbsp Email Address:</td>
 	<td><?php echo $_GET["email"];?></td></tr>
-		
+
 	<td><tr><br><h3>The Wish</h3></tr></td>
-		
+
 	<td><tr><p2>&nbsp Minority Groups:</p2></tr>
-	<tr><ul>
-		<li><?php echo $_GET["group1"];?></li>
-		<li><?php echo $_GET["group2"];?></li>
-		<li><?php echo $_GET["group3"];?></li>
-		</ul>
-		<?php 
-		$group1 = $_GET["group1"];
-		$group2 = $_GET["group2"];
-		$group3 = $_GET["group3"];
-		$groups = "";
-		if ($group1 <> ""){
-			$groups =$group1 + ", ";
-		}
-		if ($group2 <> ""){
-			$groups = $groups + $group2 + ", ";
-		}
-		if ($group3 <> ""){
-			$groups = $groups + $group3;
-		}
-		echo $groups
-		?></tr></td>
-		
+	<tr><ul><?php
+        $group1 = $_GET["group1"];
+    		$group2 = $_GET["group2"];
+    		$group3 = $_GET["group3"];
+        if ($group1 = "Funding"){
+          echo "<li>" + $group1;
+        }
+        if ($group2 = "Second hand"){
+          echo "<li>" + $group2;
+        }if ($group3 = "Food"){
+          echo "<li>" + $group3;
+        }
+        ?></ul></tr></td>
+
 		<td><tr><p2>&nbsp Project Types:</p2></tr>
-		<tr><ul>
-		<li><?php echo $_GET["project1"];?></li>
-		<li><?php echo $_GET["project2"];?></li>
-		<li><?php echo $_GET["project3"];?></li>
-		</ul></tr></td>
-		
+      <tr><ul><?php
+            $project1 = $_GET["project1"];
+        		$project2 = $_GET["project2"];
+        		$project3 = $_GET["project3"];
+            if ($project1 = "Individual"){
+              echo "<li>" + $project1;
+            }
+            if ($project2 = "Group"){
+              echo "<li>" + $project2;
+            }
+            if ($project3 = "Short"){
+              echo "<li>" + $project3;
+            }
+            if ($project4 = "Long"){
+              echo "<li>" + $project4;
+            }
+            ?></ul></tr></td>
+
 		<td><tr>&nbsp Start Date:</tr>
 		<tr><?php echo $_GET["start"];?></tr></td>
 		<td><tr>&nbsp End Date:</tr>
@@ -62,6 +66,40 @@
 		<td><tr>&nbsp Additional Information:</tr>
 		<tr><?php echo $_GET["info"];?></tr></td>
 	</tabel>
-	
+
+    <button onclick="addstuff()" value="Confirm Wish">
+  <script>
+  function addstuff(){
+    document.innerHTML = "
+    <?php
+    $servername = "localhost";
+    $username = "id15251966_requested_wishes";
+    $password = "WCThk2020-WCThk2020";
+    $dbname = "id15251966_wishes";
+    $table = "tbl_wishes";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully";
+
+    //here we need to add to db
+    $sql = "INSERT INTO $table
+    	VALUES ($_GET['wish'], $_GET['name'],$_GET['email'],$_GET['phone'],$groups,$projects,$_GET['people'],$_GET['money'],$_GET['District'],$inputdate,$_GET['starttime'],$_GET['start'],$_GET['end'],$_GET['info'])";
+      if (mysqli_query($conn, $sql)) {
+          echo "New records created successfully<br>";
+      } else {
+          echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      }
+
+    ?>
+    ";
+  }
+  </script>
+
 	</body>
 </html>

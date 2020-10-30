@@ -11,6 +11,7 @@ body {
 
 div {
   padding: 2px;
+  display: flex;
 }
 
 header {
@@ -18,7 +19,7 @@ header {
   background-color: #d0d9e2;
   min-height: 50px;
   height: 10vh;
-  display: flex;
+  display:flex;
 }
 
 img {
@@ -51,11 +52,11 @@ h1 {
 
 .modal-background {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 
   width: 100%;
-  height: 115%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0px;
@@ -67,8 +68,8 @@ h1 {
   margin-top: 20px;
   background-color: #fff;
   width: 40%;
-  height: 870px;
-  flex-wrap: wrap;
+  height: 80%;
+  overflow: scroll;
 }
 
 .modal-cancel {
@@ -578,3 +579,90 @@ a:hover {
   background-color: transparent;
   padding: 0;
 }
+#slideshow{
+  width: 100%;
+  flex-basis: 500px;
+}
+
+.slides {
+  display: none;
+  justify-content: center;
+} 
+
+.slides img {
+  position: absolute;
+  width: 100%;
+  height: 65%;
+  opacity: 0.6;
+}
+
+.captions{
+  font-family: 'Montserrat', sans-serif;
+  font-size:25px;
+  position:relative;
+  border: 2px solid white;
+  padding: 15px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+	
+}
+.captions:hover{
+  background-color: #357a38;
+  
+}
+  
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover{
+  background-color: rgba(0,0,0,0.65);
+}
+
+.slides p{
+  color:white;
+  z-index:6;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* The dots/bullets/indicators */
+#dots {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  top: 93%;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
