@@ -229,113 +229,96 @@ $avatar = array_rand($random_images_array, 1);
 
   <div class="modal-background">
     <div class="modal">
-      <div class="modal-cancel" id="close">x</div>
+      <div class="modal-cancel" id="close"></div>
       <div class="modal-content">
-        <h2>&nbsp Request A Wish<br></h2>
+        <h2>&nbsp Request A Wish</h2>
         <form id="formal" name="formal" method="get" action="./processwishes.php" target="modal-content">
-          <table style="width:100%">
-            <tr>
-              <td>
-                <h3>&nbsp Organization</h3>
-              </td>
-            </tr>
-            <tr>
-              <td><label for="name">&nbsp Organization Name:</label></td>
-              <td><input type="text" id="name" name="name" value=""><br></td>
-            </tr>
-            <tr>
-              <td><label for="phone">&nbsp Phone Number:</label> </td>
-              <td><input type="tel" id="phone" name="phone" value=""><br></td>
-            </tr>
-            <tr>
-              <td><label for="email">&nbsp Email Address:</label></td>
-              <td><input type="email" id="email" name="email" value=""><br></td>
-            </tr>
+          <h3>&nbsp Organization</h3>
 
-            <tr>
-              <td>
-                <h3><br>&nbsp The Wish</h3>
-              </td>
-            </tr>
+          <div class="form-input-material">
+            <label for="name">&nbsp Organization Name:</label>
 
-            <tr>
-              <td>
-                <p2>&nbsp Minority Groups</p2>
-              </td>
-            </tr>
-            <tr>
-              <td><label for="group1">&nbsp Homeless</label></td>
-              <td><input type="checkbox" id="group1" name="group1" value="Homeless"></td>
-            </tr>
-            <tr>
-              <td><label for="group2">&nbsp Elderly</label></td>
-              <td><input type="checkbox" id="group2" name="group2" value="Elderly"></td>
-            </tr>
-            <tr>
-              <td><label for="group3">&nbsp Low Income</label></td>
-              <td><input type="checkbox" id="group3" name="group3" value="Low income"></td>
-            </tr>
+            <input class="form-control-material" required type="text" id="name" name="name" value="" />
+          </div>
 
-            <tr>
-              <td><br>
-                <p2>&nbsp Donating Type</p2>
-              </td>
-            </tr>
-            <tr>
-              <td><label for="donate1">&nbsp Funding</label></td>
-              <td><input type="checkbox" id="donate1" name="donate1" value="Funding"></td>
-            </tr>
-            <tr>
-              <td><label for="donate2">&nbsp Helping Hand</label></td>
-              <td><input type="checkbox" id="donate2" name="donate2" value="Second hand"></td>
-            </tr>
-            <tr>
-              <td><label for="donate3">&nbsp Food</label></td>
-              <td><input type="checkbox" id="donate3" name="donate3" value="Food"></td>
-            </tr>
+          <div class="form-input-material">
+            <label for="phone">&nbsp Phone Number:</label>
 
-            <tr>
-              <td>
-                <p2><br>&nbsp Project Type</p2>
-              </td>
-            </tr>
-            <tr>
-              <td><label for="project1">&nbsp Individual</label></td>
-              <td><input type="checkbox" id="project1" name="project1" value="Individual"></td>
-            </tr>
-            <tr>
-              <td><label for="project2">&nbsp Group</label></td>
-              <td><input type="checkbox" id="project2" name="project2" value="Group"></td>
-            </tr>
-            <tr>
-              <td><label for="project3">&nbsp Short</label></td>
-              <td><input type="checkbox" id="project3" name="project3" value="Short"></td>
-            </tr>
-            <tr>
-              <td><label for="project4">&nbsp Long</label></td>
-              <td><input type="checkbox" id="project4" name="project4" value="Long"></td>
-            </tr>
-            <tr>
-              <td><label for="start">&nbsp Start Date:<br>&nbsp(if applicable)</label></td>
-              <td><input type="date" id="start" name="start"><br><br></td>
-            </tr>
-            <tr>
-              <td><label for="end">&nbsp End Date:<br>&nbsp (if applicable)</label></td>
-              <td><input type="date" id="end" name="end"><br><br></td>
-            </tr>
-            <tr>
-              <td><br>&nbsp Additional Information:</td>
-              <td><textarea name="comment" rows="5" cols="40" value=""></textarea></td>
-            </tr>
-            <tr>
-              <td>&nbsp&nbsp<input type="submit" value="Enter Wish"></td>
-            </tr>
-          </table>
+            <input class="form-control-material" type="tel" id="phone" name="phone" value="" />
+          </div>
+
+          <div class="form-input-material">
+            <label for="email">&nbsp Email Address:</label>
+
+            <input class="form-control-material" type="email" id="email" name="email" value="" />
+          </div>
+
+          <h3>&nbsp The Wish</h3>
+
+          <h4>&nbsp Minority Groups</h4>
+
+          <div class="container check__group">
+            <label class="checkbox__label" for="group1">&nbsp Homeless
+              <input type="checkbox" id="group1" name="group1" value="Homeless" />
+              <span class="checkbox__custom"></span>
+            </label>
+
+            <label class="checkbox__label" for="group4">&nbsp Elderly<input type="checkbox" id="group4" name="group4" value="Elderly" /><span class="checkbox__custom"></span></label>
+
+            <label class="checkbox__label" for="group3">&nbsp Low Income<input type="checkbox" id="group3" name="group3" value="Low income" /><span class="checkbox__custom"></span></label>
+          </div>
+
+          <h4>&nbsp Donating Type</h4>
+
+          <div class="container check__group">
+            <label class="checkbox__label" for="donate1">&nbsp Funding<input type="checkbox" id="donate1" name="donate1" value="Funding" /><span class="checkbox__custom"></span></label>
+
+            <label class="checkbox__label" for="donate2">&nbsp Helping Hand<input type="checkbox" id="donate2" name="donate2" value="Second hand" /><span class="checkbox__custom"></span></label>
+
+            <label class="checkbox__label" for="donate3">&nbsp Food<input type="checkbox" id="donate3" name="donate3" value="Food" /><span class="checkbox__custom"></span></label>
+          </div>
+
+          <h4>&nbsp Project Type</h4>
+
+          <div class="container">
+            <label class="checkbox__label" for="project1">&nbsp Individual<input type="checkbox" id="project1" name="project1" value="Individual" /><span class="checkbox__custom"></span></label>
+
+            <label class="checkbox__label" for="project2">&nbsp Group<input type="checkbox" id="project2" name="project2" value="Group" /><span class="checkbox__custom"></span></label>
+
+            <label class="checkbox__label" for="project3">&nbsp Short<input type="checkbox" id="project3" name="project3" value="Short" /><span class="checkbox__custom"></span></label>
+
+            <label class="checkbox__label" for="project4">&nbsp Long
+              <input type="checkbox" id="project4" name="project4" value="Long" checked /><span class="checkbox__custom"></span></label>
+          </div>
+
+          <div class="container">
+            <label class="date__label" for="start">
+              <h4>&nbsp Start Date:&nbsp(if applicable)</h4>
+            </label>
+            <input type="date" id="start" name="start" />
+          </div>
+
+          <div class="container">
+            <label class="date__label" for="end">
+              <h4>&nbsp End Date: &nbsp (if applicable)</h4>
+            </label>
+            <input type="date" id="end" name="end" />
+          </div>
+
+          <div class="container__box">
+            <h4>&nbsp Additional Information:</h4>
+            <textarea name="comment" rows="5" cols="40" value=""></textarea>
+          </div>
+
+          <div class="button_cont" align="center">
+            <button class="btn btn__ani" type="submit" value="Enter Wish">
+              Enter Wish
+            </button>
+          </div>
         </form>
       </div>
     </div>
   </div>
-
 
   <script type="text/javascript">
     document.getElementById('button').addEventListener("click", function() {
