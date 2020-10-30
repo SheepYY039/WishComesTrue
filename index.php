@@ -3,14 +3,23 @@
 require_once('./settings.php');
 require_once('./login.php');
 $login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email') . '&redirect_uri=' . urlencode(CLIENT_REDIRECT_URL) . '&response_type=code&client_id=' . CLIENT_ID . '&access_type=online';
+$random_images_array = array(
+  'avatar2.png',
+  'avatar5.png',
+  'avatar6.png',
+  'img_avatar.png',
+  'img_avatar2.png'
+);
+$avatar = array_rand($random_images_array, 1);
 ?>
+
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/style.css" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Wish Comes True</title>
@@ -32,27 +41,8 @@ $login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('
       });
     });
   </script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      var random_images_array = [
-        'avatar2.png',
-        'avatar5.png',
-        'avatar6.png',
-        'img_avatar.png',
-        'img_avatar2.png',
-      ];
-
-      path = './avatar/'; // default path here
-      var num = Math.floor(Math.random() * random_images_array.length);
-      var img = random_images_array[num];
-      var image = document.getElementById('user');
-      console.log(image);
-      if (image.src.match('#')) {
-        image.src = path + img;
-      }
-    });
-  </script>
 </head>
+
 
 <body>
   <header>
@@ -78,7 +68,7 @@ $login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('
             </ul>
           </div>
         <?php } else { ?>
-          <img class="avatar" src="#" alt="User" />
+          <img class="avatar" src="<?php echo "./avatar/" . $random_images_array[$avatar]; ?>" alt="User" />
           <div class="dropdown-content _info">
             <ul>
               <li class="withA">
@@ -355,18 +345,6 @@ $login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('
     document.getElementById('close').addEventListener("click", function() {
       document.querySelector('.modal-background').style.display = "none";
     });
-  </script>
-  <script type="text/javascript">
-    var random_images_array = ["avatar2.png", "avatar5.png", "avatar6.png", "img_avatar.png", "img_avatar2.png"];
-
-    function getRandomImage(imgAr, path) {
-      path = path || './avatar/'; // default path here
-      var num = Math.floor(Math.random() * imgAr.length);
-      var img = imgAr[num];
-      var imgStr = '<img src="' + path + img + '" alt = "User">';
-      document.write(imgStr);
-      document.close();
-    }
   </script>
 </body>
 

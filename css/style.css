@@ -11,7 +11,7 @@ body {
 
 div {
   padding: 2px;
-  display: flex;
+  /* display: flex; */
 }
 
 header {
@@ -19,7 +19,7 @@ header {
   background-color: #d0d9e2;
   min-height: 50px;
   height: 10vh;
-  display:flex;
+  display: flex;
 }
 
 img {
@@ -142,14 +142,14 @@ table {
 }
 
 .profile ul {
-  background: darkorange;
+  background: gray ;
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 .profile li {
   color: #fff;
-  background: darkorange;
+  background: gray;
   display: block;
   float: left;
   padding: 1rem;
@@ -164,7 +164,7 @@ table {
 
 .profile li.withA:hover,
 .profile li.withA:focus-within {
-  background: red;
+  background: darkgray;
   cursor: pointer;
 }
 
@@ -173,14 +173,13 @@ table {
 }
 
 .profile ul {
-  background: orange;
+  background: #737373;
   visibility: hidden;
   opacity: 0;
   min-width: 5rem;
   width: 25vw;
   position: absolute;
   transition: all 0.5s ease;
-  margin-top: 1rem;
   display: none;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   right: 0;
@@ -272,7 +271,7 @@ input[type='search'] {
 }
 
 input[type='search']:focus {
-  color: #e18728;
+  color: #e18828;
   border-color: #e18728;
   outline: none;
 }
@@ -579,7 +578,7 @@ a:hover {
   background-color: transparent;
   padding: 0;
 }
-#slideshow{
+#slideshow {
   width: 100%;
   flex-basis: 500px;
 }
@@ -587,7 +586,7 @@ a:hover {
 .slides {
   display: none;
   justify-content: center;
-} 
+}
 
 .slides img {
   position: absolute;
@@ -596,27 +595,25 @@ a:hover {
   opacity: 0.6;
 }
 
-.captions{
+.captions {
   font-family: 'Montserrat', sans-serif;
-  font-size:25px;
-  position:relative;
+  font-size: 25px;
+  position: relative;
   border: 2px solid white;
   padding: 15px 20px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-	
 }
-.captions:hover{
+.captions:hover {
   background-color: #357a38;
-  
 }
-  
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: relative;
   top: 50%;
@@ -628,13 +625,14 @@ a:hover {
   border-radius: 0 3px 3px 0;
 }
 
-.prev:hover, .next:hover{
-  background-color: rgba(0,0,0,0.65);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
-.slides p{
-  color:white;
-  z-index:6;
+.slides p {
+  color: white;
+  z-index: 6;
 }
 
 /* Position the "next button" to the right */
@@ -662,7 +660,7 @@ a:hover {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
-
