@@ -288,48 +288,198 @@ $avatar = array_rand($random_images_array, 1);
 
             <input class="form-control-material" type="wish" id="wish" name="wish" value="" />
           </div>
+          
+          	<div class="form-input-material">
+			  <label for="district">&nbsp District of event: &nbsp (if applicable)</label>
+			  
+			  <input
+				class="form-input-material"
+				type="district"
+				id="district"
+				name="district"
+				value=""
+				/>
+			  </div>
+			  
+			  <div class="form-input-material">
+			  <label for="starttime">&nbsp Event time: &nbsp (if applicable)</label>
+			  
+			  <input
+				class="form-input-material"
+				type="starttime"
+				id="starttime"
+				name="starttime"
+				value=""
+				/>
+			  </div>
 
           <h4>&nbsp Minority Groups</h4>
 
           <div class="container check__group">
-            <label class="checkbox__label" for="group1">&nbsp Children<input type="checkbox" id="group1" name="group1" value="Children" /><span class="checkbox__custom"></span></label>
+              <label class="checkbox__label" for="minority-children"
+                >&nbsp Children<input
+                  type="checkbox"
+                  id="minority-children"
+                  name="minority-children"
+                  value="Children" /><span class="checkbox__custom"></span
+              ></label>
 
-            <label class="checkbox__label" for="group2">&nbsp Homeless
-              <input type="checkbox" id="group2" name="group2" value="Homeless" />
-              <span class="checkbox__custom"></span>
-            </label>
+              <label class="checkbox__label" for="minority-homeless"
+                >&nbsp Homeless
+                <input
+                  type="checkbox"
+                  id="minority-homeless"
+                  name="minority-homeless"
+                  value="Homeless"
+                />
+                <span class="checkbox__custom"></span>
+              </label>
 
-            <label class="checkbox__label" for="group3">&nbsp Elderly<input type="checkbox" id="group3" name="group3" value="Elderly" /><span class="checkbox__custom"></span></label>
+              <label class="checkbox__label" for="minority-elderly"
+                >&nbsp Elderly<input
+                  type="checkbox"
+                  id="minority-elderly"
+                  name="minority-elderly"
+                  value="Elderly" /><span class="checkbox__custom"></span
+              ></label>
 
-            <label class="checkbox__label" for="group4">&nbsp Low Income<input type="checkbox" id="group4" name="group4" value="Low income" /><span class="checkbox__custom"></span></label>
+              <label class="checkbox__label" for="minority-low-income"
+                >&nbsp Low Income<input
+                  type="checkbox"
+                  id="minority-low-income"
+                  name="minority-low-income"
+                  value="Low income" /><span class="checkbox__custom"></span
+              ></label>
 
-            <label class="checkbox__label" for="group5">&nbsp Others<input type="checkbox" id="group5" name="group5" value="Others" /><span class="checkbox__custom"></span></label>
-          </div>
+              <label class="checkbox__label" for="minority-others"
+                >&nbsp Others<input
+                  type="checkbox"
+                  id="minority-others"
+                  name="minority-others"
+                  value="Others" /><span class="checkbox__custom"></span
+              ></label>
+            </div>
 
           <h4>&nbsp Donating Type</h4>
 
-          <div class="container check__group">
-            <label class="checkbox__label" for="donate1">&nbsp Funding<input type="checkbox" id="donate1" name="donate1" value="Funding" /><span class="checkbox__custom"></span></label>
+         <div class="container check__group">
+              <label class="checkbox__label" for="donate-funding"
+                >&nbsp Funding<input
+                  type="checkbox"
+                  id="donate-funding"
+                  name="donate-funding"
+                  value="Funding" /><span class="checkbox__custom"></span
+              ></label>
 
-            <label class="checkbox__label" for="donate2">&nbsp Second Hand<input type="checkbox" id="donate2" name="donate2" value="Second hand" /><span class="checkbox__custom"></span></label>
+              <label class="checkbox__label" for="donate-second-hand"
+                >&nbsp Second Hand<input
+                  type="checkbox"
+                  id="donate-second-hand"
+                  name="donate-second-hand"
+                  value="Second hand" /><span class="checkbox__custom"></span
+              ></label>
 
-            <label class="checkbox__label" for="donate3">&nbsp Food<input type="checkbox" id="donate3" name="donate3" value="Food" /><span class="checkbox__custom"></span></label>
+              <label class="checkbox__label" for="donate-food"
+                >&nbsp Food<input
+                  type="checkbox"
+                  id="donate-food"
+                  name="donate-food"
+                  value="Food" /><span class="checkbox__custom"></span
+              ></label>
 
-            <label class="checkbox__label" for="donate4">&nbsp Others<input type="checkbox" id="donate4" name="donate4" value="Others" /><span class="checkbox__custom"></span></label>
-          </div>
+              <label class="checkbox__label" for="donate-others"
+                >&nbsp Others<input
+                  type="checkbox"
+                  id="donate-others"
+                  name="donate-others"
+                  value="Others" /><span class="checkbox__custom"></span
+              ></label>
+            </div>
+			  
+			<div class="form-input-material">
+			  <label for="money">&nbsp Donation required(HK$): &nbsp (if applicable)</label>
+			  
+			  <input
+				class="form-input-material"
+				type="money"
+				id="money"
+				name="money"
+				value=""
+				/>
+			  </div>
+			  
+			  <div class="form-input-material">
+			  <label for="people">&nbsp Amount of people required: &nbsp (if applicable)</label>
+			  
+			  <input
+				class="form-input-material"
+				type="people"
+				id="people"
+				name="people"
+				value=""
+				/>
+			  </div>
+          
+          <div class="form-input-material">
+			  <label for="money">&nbsp Donation required(HK$): &nbsp (if applicable)</label>
+			  
+			  <input
+				class="form-input-material"
+				type="money"
+				id="money"
+				name="money"
+				value=""
+				/>
+			  </div>
+			  
+			  <div class="form-input-material">
+			  <label for="people">&nbsp Amount of people required: &nbsp (if applicable)</label>
+			  
+			  <input
+				class="form-input-material"
+				type="people"
+				id="people"
+				name="people"
+				value=""
+				/>
+			  </div>
 
           <h4>&nbsp Project Type</h4>
 
-          <div class="container">
-            <label class="checkbox__label" for="project1">&nbsp Individual<input type="checkbox" id="project1" name="project1" value="Individual" /><span class="checkbox__custom"></span></label>
+           <div class="container">
+              <label class="checkbox__label" for="project-individual"
+                >&nbsp Individual<input
+                  type="checkbox"
+                  id="project-individual"
+                  name="project-individual"
+                  value="Individual" /><span class="checkbox__custom"></span
+              ></label>
 
-            <label class="checkbox__label" for="project2">&nbsp Group<input type="checkbox" id="project2" name="project2" value="Group" /><span class="checkbox__custom"></span></label>
+              <label class="checkbox__label" for="project-group"
+                >&nbsp Group<input
+                  type="checkbox"
+                  id="project-group"
+                  name="project-group"
+                  value="Group" /><span class="checkbox__custom"></span
+              ></label>
 
-            <label class="checkbox__label" for="project3">&nbsp Short<input type="checkbox" id="project3" name="project3" value="Short" /><span class="checkbox__custom"></span></label>
+              <label class="checkbox__label" for="project-short"
+                >&nbsp Short<input
+                  type="checkbox"
+                  id="project-short"
+                  name="project-short"
+                  value="Short" /><span class="checkbox__custom"></span
+              ></label>
 
-            <label class="checkbox__label" for="project4">&nbsp Long
-              <input type="checkbox" id="project4" name="project4" value="Long" /><span class="checkbox__custom"></span></label>
-          </div>
+              <label class="checkbox__label" for="project-long"
+                >&nbsp Long
+                <input
+                  type="checkbox"
+                  id="project-long"
+                  name="project-long"
+                  value="Long" /><span class="checkbox__custom"></span
+              ></label>
+            </div>
 
           <div class="container">
             <label class="date__label" for="start">
