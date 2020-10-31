@@ -97,6 +97,11 @@ h1 {
   cursor: pointer;
 }
 
+.modal-content {
+  margin: auto;
+  width: 98%;
+}
+
 .modal input {
   width: 100%;
 }
@@ -259,7 +264,7 @@ textarea {
   margin-left: auto;
 }
 
-@media (max-width: 730px) {
+@media (max-width: 785px) {
   .btn {
     display: none;
   }
