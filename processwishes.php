@@ -24,6 +24,12 @@
 	<td><?php echo $_GET["email"];?></td></tr>
 
 	<td><tr><br><h3>The Wish</h3></tr></td>
+	<tr><td>&nbsp Wish Name:</td>
+	<td><?php echo $_GET["wish"];?></td></tr>
+	<tr><td>&nbsp District of event:</td>
+	<td><?php echo $_GET["district"];?></td></tr>
+	<tr><td>&nbsp Event Time:</td>
+	<td><?php echo $_GET["starttime"];?></td></tr>
 
 	<td><tr><p2>&nbsp Minority Groups:</p2></tr>
 	<tr><ul><?php
@@ -93,12 +99,13 @@
 		<td><tr>&nbsp Additional Information:</tr>
 		<tr><?php echo $_GET["info"];?></tr></td>
   </table>
-
+	
     <button onclick="addstuff()" value="Confirm Wish">
   <script>
   function addstuff(){
     document.innerHTML = "
       <?php
+	  $today = date("d.m.y"); 
       $servername = "localhost";
       $username = "id15251966_requested_wishes";
       $password = "WCThk2020-WCThk2020";
@@ -116,7 +123,7 @@
 
       //here we need to add to db
       $sql = "INSERT INTO $table
-        VALUES ($_GET['wish'], $_GET['name'],$_GET['email'],$_GET['phone'],$groups,$projects,$_GET['people'],$_GET['money'],$_GET['District'],$inputdate,$_GET['starttime'],$_GET['start'],$_GET['end'],$_GET['info'])";
+        VALUES ($_GET['wish'],$_GET['name'],$_GET['email'],$_GET['phone'],$groups,$projects,$_GET['people'],$_GET['money'],$_GET['District'],$today,$_GET['starttime'],$_GET['start'],$_GET['end'],$_GET['info'])";
         if (mysqli_query($conn, $sql)) {
             echo "New records created successfully<br>";
         } else {
