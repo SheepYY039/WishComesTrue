@@ -28,7 +28,7 @@ div {
 
 header {
   width: 100%;
-  background-color: #d0d9e2;
+  background-color: #89C7E7;
   min-height: 50px;
   height: 10vh;
   display: flex;
@@ -89,7 +89,7 @@ h1 {
 
 .modal {
   margin-top: 20px;
-  background-color: #fff;
+  background-color: #FFFFC2;
   width: 40%;
   height: 80%;
   overflow: scroll;
@@ -276,7 +276,7 @@ textarea {
 }
 
 .btn {
-  background-color: #fff;
+  background-color: #FFFFC2;
   padding: 20px 50px;
   margin: 10px;
   border: none;
@@ -284,12 +284,12 @@ textarea {
 }
 
 .btn:hover {
-  background-color: rgb(189, 189, 189);
+  background-color: #FFF684;
 }
 
 .btn:active {
-  background-color: #9d9d9d;
-  color: #f3f5f7;
+  background-color: #FFD301;
+  color:#000000 ;
 }
 
 p {
@@ -340,8 +340,8 @@ table {
   padding-left: 0;
 }
 .profile li {
-  color: #fff;
-  background: gray;
+  color: #000;
+  background: #FFF684;
   display: block;
   float: left;
   padding: 1rem;
@@ -351,12 +351,12 @@ table {
 }
 
 .profile li a {
-  color: #fff;
+  color: #000;
 }
 
 .profile li.withA:hover,
 .profile li.withA:focus-within {
-  background: darkgray;
+  background: FFFFC2;
   cursor: pointer;
 }
 
@@ -365,7 +365,7 @@ table {
 }
 
 .profile ul {
-  background: #737373;
+  background: #FFF684;
   visibility: hidden;
   opacity: 0;
   min-width: 5rem;
@@ -463,8 +463,8 @@ input[type='search'] {
 }
 
 input[type='search']:focus {
-  color: #e18828;
-  border-color: #e18728;
+  color: #FFD301;
+  border-color: #FFD301;
   outline: none;
 }
 
@@ -540,11 +540,11 @@ input[type='search']:focus {
 }
 
 .checkbox__label:hover input ~ .checkbox__custom {
-  background-color: #ccc;
+  background-color: #FFF684;
 }
 
 .checkbox__label input:checked ~ .checkbox__custom {
-  background-color: #2196f3;
+  background-color: #FFD301;
 }
 
 .checkbox__custom:after {
