@@ -384,6 +384,18 @@
 
             <h3>&nbsp The Wish</h3>
 
+            <div class="form-input-material">
+              <label for="phone">&nbsp Name of Wish</label>
+
+              <input
+                class="form-control-material"
+                type="wish"
+                id="wish"
+                name="wish"
+                value=""
+              />
+            </div>
+
             <h4>&nbsp Minority Groups</h4>
 
             <div class="container check__group">
@@ -524,7 +536,12 @@
             </div>
 
             <div class="button_cont" align="center">
-              <button class="btn btn__ani" type="submit" value="Enter Wish">
+              <button
+                class="btn btn__ani"
+                onclick="getResult()"
+                type="submit"
+                value="Enter Wish"
+              >
                 Enter Wish
               </button>
             </div>
@@ -541,6 +558,11 @@
       document.getElementById('close').addEventListener('click', function () {
         document.querySelector('.modal-background').style.display = 'none';
       });
+
+      // $('form').serializeArray();
+      function getResult() {
+        console.log($('form').serializeArray());
+      }
     </script>
   </body>
 </html>
