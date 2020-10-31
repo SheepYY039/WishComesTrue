@@ -36,7 +36,12 @@ header {
 }
 
 img {
-  margin: auto 5%;
+  margin: 5%;
+}
+
+header img {
+  margin: auto 3%;
+  height: 100%;
 }
 
 h1 {
@@ -871,4 +876,20 @@ a:hover {
 .active,
 .dot:hover {
   background-color: #717171;
+}
+
+.field {
+  display: flex;
+  margin: auto;
+  padding: 3%;
+}
+
+.field h4 {
+  margin: 0 auto;
+  max-width: 40%;
+  height: 100%;
+}
+
+.field h5 {
+  margin: auto;
 }

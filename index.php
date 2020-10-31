@@ -28,15 +28,15 @@ $avatar = array_rand($random_images_array, 1);
   <title>Wish Comes True</title>
   <script type="text/javascript">
     $(document).ready(function() {
-      $('#body').load('about.html');
+      $('#body').load('./about.html');
       $('#about').click(function() {
-        $('#body').load('about.html');
+        $('#body').load('./about.html');
       });
       $('#donate').click(function() {
-        $('#body').load('donate.html');
+        $('#body').load('./donate.html');
       });
       $('#volunteer').click(function() {
-        $('#body').load('volunteer.html');
+        $('#body').load('./volunteer.php');
       });
       $('.nav-item a').on('click', function() {
         $('.nav-item a').removeClass('active');
@@ -49,7 +49,7 @@ $avatar = array_rand($random_images_array, 1);
 
 <body>
   <header>
-    <img src="./images/icon.png" alt="Logo" />
+    <img src="./images/logo.png" alt="Logo" />
     <h1>Wish Comes True HK</h1>
     <?php if (isset($_SESSION['id'])) { ?>
       <div class="side-container">
