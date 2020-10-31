@@ -49,7 +49,7 @@ $avatar = array_rand($random_images_array, 1);
 
 <body>
   <header>
-    <img src="./images/logo.png" alt="Logo" />
+    <img height="100%" src="./images/logo.png" alt="Logo" />
     <h1>Wish Comes True HK</h1>
     <?php if (isset($_SESSION['id'])) { ?>
       <div class="side-container">
