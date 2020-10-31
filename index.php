@@ -20,6 +20,9 @@ $avatar = array_rand($random_images_array, 1);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Wish Comes True</title>
@@ -48,10 +51,15 @@ $avatar = array_rand($random_images_array, 1);
   <header>
     <img src="./images/icon.png" alt="Logo" />
     <h1>Wish Comes True HK</h1>
-
-    <div class="btn-container">
-      <button class="btn" id="button">Modal</button>
-    </div>
+    <?php if (isset($_SESSION['id'])) { ?>
+      <div class="side-container">
+        <button class="btn" id="button">Submit a Wish</button>
+      </div>
+    <?php } else { ?>
+      <div class="side-container">
+        <button class="btn" id="button" disabled>Please login to Submit a Wish &rarr; </button>
+      </div>
+    <?php } ?>
     <div class="profile">
       <div class="dropdown _img">
         <?php if (isset($_SESSION['id'])) { ?>
@@ -100,22 +108,27 @@ $avatar = array_rand($random_images_array, 1);
         <form action="">
           <label class="checkbox__label">
             Children
-            <input type="checkbox" id="children" name="minority-groups" value="children" />
+            <input type="checkbox" id="children" name="minority-group-children" value="children" />
             <span class="checkbox__custom"></span>
           </label>
           <label class="checkbox__label">
             Homeless
-            <input type="checkbox" id="homeless" name="minority-groups" value="homeless" />
+            <input type="checkbox" id="homeless" name="minority-group-homeless" value="homeless" />
             <span class="checkbox__custom"></span>
           </label>
           <label class="checkbox__label">
             Elderly
-            <input type="checkbox" id="elderly" name="minority-groups" value="elderly" />
+            <input type="checkbox" id="elderly" name="minority-group-elderly" value="elderly" />
             <span class="checkbox__custom"></span>
           </label>
           <label class="checkbox__label">
             Low Income
-            <input type="checkbox" id="low-income" name="minority-groups" value="low-income" />
+            <input type="checkbox" id="low-income" name="minority-group-low-income" value="low-income" />
+            <span class="checkbox__custom"></span>
+          </label>
+          <label class="checkbox__label">
+            Others
+            <input type="checkbox" id="m-others" name="minority-group-others" value="others" />
             <span class="checkbox__custom"></span>
           </label>
         </form>
@@ -125,17 +138,23 @@ $avatar = array_rand($random_images_array, 1);
         <form action="">
           <label class="checkbox__label">
             Funding
-            <input type="checkbox" id="funding" name="donating-types" value="funding" />
+            <input type="checkbox" id="funding" name="donating-type-funding" value="funding" />
             <span class="checkbox__custom"></span>
           </label>
           <label class="checkbox__label">
             Second Hand
-            <input type="checkbox" id="second-hand" name="donating-types" value="second-hand" />
+            <input type="checkbox" id="second-hand" name="donating-type-second-hand" value="second-hand" />
             <span class="checkbox__custom"></span>
           </label>
           <label class="checkbox__label">
             Food
-            <input type="checkbox" id="food" name="donating-types" value="food" />
+            <input type="checkbox" id="food" name="donating-type-food" value="food" />
+            <span class="checkbox__custom"></span>
+          </label>
+
+          <label class="checkbox__label">
+            Others
+            <input type="checkbox" id="d-others" name="donating-type-others" value="others" />
             <span class="checkbox__custom"></span>
           </label>
         </form>
@@ -148,14 +167,14 @@ $avatar = array_rand($random_images_array, 1);
               <td>
                 <label class="checkbox__label">
                   Individual
-                  <input type="checkbox" id="individual" name="project-types" value="individual" />
+                  <input type="checkbox" id="individual" name="project-type-individual" value="individual" />
                   <span class="checkbox__custom"></span>
                 </label>
               </td>
               <td>
                 <label class="checkbox__label">
                   Group
-                  <input type="checkbox" id="group" name="project-types" value="group" />
+                  <input type="checkbox" id="group" name="project-type-group" value="group" />
                   <span class="checkbox__custom"></span>
                 </label>
               </td>
@@ -164,14 +183,14 @@ $avatar = array_rand($random_images_array, 1);
               <td>
                 <label class="checkbox__label">
                   Reachable
-                  <input type="checkbox" id="reachable" name="project-types" value="reachable" />
+                  <input type="checkbox" id="reachable" name="project-type-reachable" value="reachable" />
                   <span class="checkbox__custom"></span>
                 </label>
               </td>
               <td>
                 <label class="checkbox__label">
                   Reach
-                  <input type="checkbox" id="reach" name="project-types" value="reach" />
+                  <input type="checkbox" id="reach" name="project-type-reach" value="reach" />
                   <span class="checkbox__custom"></span>
                 </label>
               </td>
@@ -180,14 +199,14 @@ $avatar = array_rand($random_images_array, 1);
               <td>
                 <label class="checkbox__label">
                   Short
-                  <input type="checkbox" id="short" name="project-types" value="short" />
+                  <input type="checkbox" id="short" name="project-type-short" value="short" />
                   <span class="checkbox__custom"></span>
                 </label>
               </td>
               <td>
                 <label class="checkbox__label">
                   Long
-                  <input type="checkbox" id="long" name="project-types" value="long" />
+                  <input type="checkbox" id="long" name="project-type-long" value="long" />
                   <span class="checkbox__custom"></span>
                 </label>
               </td>
@@ -196,14 +215,14 @@ $avatar = array_rand($random_images_array, 1);
               <td>
                 <label class="checkbox__label">
                   New
-                  <input type="checkbox" id="new" name="project-types" value="new" />
+                  <input type="checkbox" id="new" name="project-type-new" value="new" />
                   <span class="checkbox__custom"></span>
                 </label>
               </td>
               <td>
                 <label class="checkbox__label">
                   Old
-                  <input type="checkbox" id="old" name="project-types" value="old" />
+                  <input type="checkbox" id="old" name="project-type-old" value="old" />
                   <span class="checkbox__custom"></span>
                 </label>
               </td>
@@ -237,8 +256,12 @@ $avatar = array_rand($random_images_array, 1);
 
           <div class="form-input-material">
             <label for="name">&nbsp Organization Name:</label>
+            <?php if (isset($_SESSION['id'])) { ?>
+              <input class="form-control-material" required type="text" id="name" name="name" value="<?php echo $_SESSION['name'] ?>" />
+            <?php } else { ?>
+              <input class="form-control-material" required type="text" id="name" name="name" value="" />
+            <?php } ?>
 
-            <input class="form-control-material" required type="text" id="name" name="name" value="" />
           </div>
 
           <div class="form-input-material">
@@ -250,7 +273,13 @@ $avatar = array_rand($random_images_array, 1);
           <div class="form-input-material">
             <label for="email">&nbsp Email Address:</label>
 
-            <input class="form-control-material" type="email" id="email" name="email" value="" />
+            <?php if (isset($_SESSION['id'])) { ?>
+              <input class="form-control-material" required type="email" id="email" name="email" value="<?php echo $_SESSION["email"] ?>" />
+            <?php } else { ?>
+              <input class="form-control-material" required type="email" id="email" name="email" value="" />
+            <?php } ?>
+
+
           </div>
 
           <h3>&nbsp The Wish</h3>
@@ -258,37 +287,43 @@ $avatar = array_rand($random_images_array, 1);
           <h4>&nbsp Minority Groups</h4>
 
           <div class="container check__group">
-            <label class="checkbox__label" for="group1">&nbsp Homeless
-              <input type="checkbox" id="group1" name="group1" value="Homeless" />
+            <label class="checkbox__label" for="minority-children">&nbsp Children<input type="checkbox" id="minority-children" name="minority-children" value="Children" /><span class="checkbox__custom"></span></label>
+
+            <label class="checkbox__label" for="minority-homeless">&nbsp Homeless
+              <input type="checkbox" id="minority-homeless" name="minority-homeless" value="Homeless" />
               <span class="checkbox__custom"></span>
             </label>
 
-            <label class="checkbox__label" for="group4">&nbsp Elderly<input type="checkbox" id="group4" name="group4" value="Elderly" /><span class="checkbox__custom"></span></label>
+            <label class="checkbox__label" for="minority-elderly">&nbsp Elderly<input type="checkbox" id="minority-elderly" name="minority-elderly" value="Elderly" /><span class="checkbox__custom"></span></label>
 
-            <label class="checkbox__label" for="group3">&nbsp Low Income<input type="checkbox" id="group3" name="group3" value="Low income" /><span class="checkbox__custom"></span></label>
+            <label class="checkbox__label" for="minority-low-income">&nbsp Low Income<input type="checkbox" id="minority-low-income" name="minority-low-income" value="Low income" /><span class="checkbox__custom"></span></label>
+
+            <label class="checkbox__label" for="minority-others">&nbsp Others<input type="checkbox" id="minority-others" name="minority-others" value="Others" /><span class="checkbox__custom"></span></label>
           </div>
 
           <h4>&nbsp Donating Type</h4>
 
           <div class="container check__group">
-            <label class="checkbox__label" for="donate1">&nbsp Funding<input type="checkbox" id="donate1" name="donate1" value="Funding" /><span class="checkbox__custom"></span></label>
+            <label class="checkbox__label" for="donate-funding">&nbsp Funding<input type="checkbox" id="donate-funding" name="donate-funding" value="Funding" /><span class="checkbox__custom"></span></label>
 
-            <label class="checkbox__label" for="donate2">&nbsp Helping Hand<input type="checkbox" id="donate2" name="donate2" value="Second hand" /><span class="checkbox__custom"></span></label>
+            <label class="checkbox__label" for="donate-second-hand">&nbsp Second Hand<input type="checkbox" id="donate-second-hand" name="donate-second-hand" value="Second hand" /><span class="checkbox__custom"></span></label>
 
-            <label class="checkbox__label" for="donate3">&nbsp Food<input type="checkbox" id="donate3" name="donate3" value="Food" /><span class="checkbox__custom"></span></label>
+            <label class="checkbox__label" for="donate-food">&nbsp Food<input type="checkbox" id="donate-food" name="donate-food" value="Food" /><span class="checkbox__custom"></span></label>
+
+            <label class="checkbox__label" for="donate-others">&nbsp Others<input type="checkbox" id="donate-others" name="donate-others" value="Others" /><span class="checkbox__custom"></span></label>
           </div>
 
           <h4>&nbsp Project Type</h4>
 
           <div class="container">
-            <label class="checkbox__label" for="project1">&nbsp Individual<input type="checkbox" id="project1" name="project1" value="Individual" /><span class="checkbox__custom"></span></label>
+            <label class="checkbox__label" for="project-individual">&nbsp Individual<input type="checkbox" id="project-individual" name="project-individual" value="Individual" /><span class="checkbox__custom"></span></label>
 
-            <label class="checkbox__label" for="project2">&nbsp Group<input type="checkbox" id="project2" name="project2" value="Group" /><span class="checkbox__custom"></span></label>
+            <label class="checkbox__label" for="project-group">&nbsp Group<input type="checkbox" id="project-group" name="project-group" value="Group" /><span class="checkbox__custom"></span></label>
 
-            <label class="checkbox__label" for="project3">&nbsp Short<input type="checkbox" id="project3" name="project3" value="Short" /><span class="checkbox__custom"></span></label>
+            <label class="checkbox__label" for="project-short">&nbsp Short<input type="checkbox" id="project-short" name="project-short" value="Short" /><span class="checkbox__custom"></span></label>
 
-            <label class="checkbox__label" for="project4">&nbsp Long
-              <input type="checkbox" id="project4" name="project4" value="Long" checked /><span class="checkbox__custom"></span></label>
+            <label class="checkbox__label" for="project-long">&nbsp Long
+              <input type="checkbox" id="project-long" name="project-long" value="Long" /><span class="checkbox__custom"></span></label>
           </div>
 
           <div class="container">
@@ -321,12 +356,12 @@ $avatar = array_rand($random_images_array, 1);
   </div>
 
   <script type="text/javascript">
-    document.getElementById('button').addEventListener("click", function() {
-      document.querySelector('.modal-background').style.display = "flex";
+    document.getElementById('button').addEventListener('click', function() {
+      document.querySelector('.modal-background').style.display = 'flex';
     });
 
-    document.getElementById('close').addEventListener("click", function() {
-      document.querySelector('.modal-background').style.display = "none";
+    document.getElementById('close').addEventListener('click', function() {
+      document.querySelector('.modal-background').style.display = 'none';
     });
   </script>
 </body>
