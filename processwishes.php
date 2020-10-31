@@ -59,25 +59,27 @@
       </tr>
       <tr>
         <ul><?php
-            $group1 = $_GET["group1"];
-            $group2 = $_GET["group2"];
-            $group3 = $_GET["group3"];
-            $group4 = $_GET["group4"];
-            $group5 = $_GET["group5"];
-            if ($group1 = "Children") {
+            $children = $_GET["minority-children"];
+            $homeless = $_GET["minority-homeless"];
+            $elderly = $_GET["minority-elderly"];
+            $low_income = $_GET["minority-low-income"];
+            $others = $_GET["minority-others"];
+			$groups = "";
+			$groups = $children + $homeless + $elderly + $low_income + $others;
+            if ($children = "Children") {
               echo "<li>" + $group1;
             }
-            if ($group2 = "Homeless") {
-              echo "<li>" + $group2;
+            if ($homeless = "Homeless") {
+              echo "<li>" + $homeless;
             }
-            if ($group3 = "Elderly") {
-              echo "<li>" + $group3;
+            if ($elderly = "Elderly") {
+              echo "<li>" + $elderly;
             }
-            if ($group4 = "Low Income") {
-              echo "<li>" + $group4;
+            if ($low_income = "Low Income") {
+              echo "<li>" + $low_income;
             }
-            if ($group5 = "Others") {
-              echo "<li>" + $group5;
+            if ($others = "Others") {
+              echo "<li>" + $others;
             }
             ?></ul>
       </tr>
@@ -88,21 +90,24 @@
       </tr>
       <tr>
         <ul><?php
-            $group1 = $_GET["group1"];
-            $group2 = $_GET["group2"];
-            $group3 = $_GET["group3"];
-            $group4 = $_GET["group4"];
-            if ($group1 = "Funding") {
-              echo "<li>" + $group1;
+            $funding = $_GET["donate-funding"];
+            $second_hand = $_GET["donate-second-hand"];
+            $food = $_GET["donate-food"];
+            $donate_others = $_GET["donate-others"];
+			$donating = "";
+			$donating = $funding + $second_hand + $food + $donate_others;
+			
+            if ($funding = "Funding") {
+              echo "<li>" + $funding;
             }
-            if ($group2 = "Second Hand") {
-              echo "<li>" + $group2;
+            if ($second_hand = "Second Hand") {
+              echo "<li>" + $second_hand;
             }
-            if ($group3 = "Food") {
-              echo "<li>" + $group3;
+            if ($food = "Food") {
+              echo "<li>" + $food;
             }
-            if ($group4 = "Others") {
-              echo "<li>" + $group4;
+            if ($donate_others = "Others") {
+              echo "<li>" + $donate_others;
             }
             ?></ul>
       </tr>
@@ -114,21 +119,24 @@
       </tr>
       <tr>
         <ul><?php
-            $project1 = $_GET["project1"];
-            $project2 = $_GET["project2"];
-            $project3 = $_GET["project3"];
-            $project4 = $_GET["project4"];
-            if ($project1 = "Individual") {
-              echo "<li>" + $project1;
+            $individual = $_GET["project-individual"];
+            $group = $_GET["project-group"];
+            $short = $_GET["project-short"];
+            $long = $_GET["project-long"];
+			$projects = "";
+			$projects = $individual + $group + $short + $long;
+			
+            if ($individual = "Individual") {
+              echo "<li>" + $individual;
             }
-            if ($project2 = "Group") {
-              echo "<li>" + $project2;
+            if ($group = "Group") {
+              echo "<li>" + $group;
             }
-            if ($project3 = "Short") {
-              echo "<li>" + $project3;
+            if ($short = "Short") {
+              echo "<li>" + $short;
             }
-            if ($project4 = "Long") {
-              echo "<li>" + $project4;
+            if ($long = "Long") {
+              echo "<li>" + $long;
             }
             ?></ul>
       </tr>
@@ -183,8 +191,8 @@
         echo "Connected successfully";
 
         //here we need to add to db
-        $sql = "INSERT INTO $table
-        VALUES ($wish,$name,$email,$phone,$groups,$projects,$people,$money,$district,$today,$starttime,$start,$end,$info)";
+        $sql = "INSERT INTO tbl_wishes (Wish_name, Email, Phone, Minority_groups, Donating_type, Project_type, People, Money, District, Initiation_time, Event_time, Start_time, End_time, Additional_information) 
+        VALUES ($wish,$name,$email,$phone,$groups,$donating,$projects,$people,$money,$district,$today,$starttime,$start,$end,$info)";
         if (mysqli_query($conn, $sql)) {
           echo "New records created successfully<br>";
         } else {
