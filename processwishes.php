@@ -105,12 +105,25 @@
   function addstuff(){
     document.innerHTML = "
       <?php
+	  $wish = $_GET['wish'];
+	  $name = $_GET['name'];
+	  $email = $_GET['email'];
+	  $phone = $_GET['phone'];
+	  $people = $_GET['people'];
+	  $money = $_GET['money'];
+	  $district = $_GET['District'];
 	  $today = date("d.m.y"); 
+	  $starttime = $_GET['starttime'];
+	  $start = $_GET['start'];
+	  $end = $_GET['end'];
+	  
+	  
       $servername = "localhost";
       $username = "id15251966_requested_wishes";
       $password = "WCThk2020-WCThk2020";
       $dbname = "id15251966_wishes";
       $table = "tbl_wishes";
+	  $info = $_GET['info'];
 
       // Create connection
       $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -123,7 +136,7 @@
 
       //here we need to add to db
       $sql = "INSERT INTO $table
-        VALUES ($_GET['wish'],$_GET['name'],$_GET['email'],$_GET['phone'],$groups,$projects,$_GET['people'],$_GET['money'],$_GET['District'],$today,$_GET['starttime'],$_GET['start'],$_GET['end'],$_GET['info'])";
+        VALUES ($wish,$name,$email,$phone,$groups,$projects,$people,$money,$district,$today,$starttime,$start,$end,$info)";
         if (mysqli_query($conn, $sql)) {
             echo "New records created successfully<br>";
         } else {
