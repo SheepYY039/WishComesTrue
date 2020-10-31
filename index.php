@@ -234,19 +234,36 @@ $avatar = array_rand($random_images_array, 1);
       </div>
     </div>
     <section class="content">
-      <ul class="nav">
-        <li class="nav-item">
-          <a href="#" class="active" id="about">ABOUT US</a>
-        </li>
-        <li class="nav-item"><a href="#" id="donate">DONATE</a></li>
-        <li class="nav-item"><a href="#" id="volunteer">VOLUNTEER</a></li>
-      </ul>
+      <nav>
+        <div class="nav-dropdown" id="nav-dropdown">
+          <div class="dropdown-btn">
+            <p>DROPDOWN</p>
+          </div>
 
-      <section id="body">
-
-      </section>
+          <ul id="dropdown-content">
+            <a href="#" id="about-dropdown">ABOUT US</a>
+            <a href="#" id="donate-dropdown">DONATE</a>
+            <a href="#" id="volunteer-dropdown">VOLUNTEER</a>
+          </ul>
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="active" id="about">ABOUT US</a>
+          </li>
+          <li class="nav-item"><a href="#" id="donate">DONATE</a></li>
+          <li class="nav-item"><a href="#" id="volunteer">VOLUNTEER</a></li>
+        </ul>
+      </nav>
+      <section id="body"></section>
     </section>
   </section>
+
+  <script type="text/javascript">
+  document.getElementById('nav-dropdown').addEventListener('click', function() {
+    var element = document.getElementById("dropdown-content");
+    element.classlist.toggle("open");
+  });
+  </script>
 
   <div class="new modal-background">
     <div class="modal">
