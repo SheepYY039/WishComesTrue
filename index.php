@@ -20,29 +20,31 @@ $avatar = array_rand($random_images_array, 1);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap"
+    rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Wish Comes True</title>
   <script type="text/javascript">
-    $(document).ready(function() {
+  $(document).ready(function() {
+    $('#body').load('./about.html');
+    $('#about').click(function() {
       $('#body').load('./about.html');
-      $('#about').click(function() {
-        $('#body').load('./about.html');
-      });
-      $('#donate').click(function() {
-        $('#body').load('./donate.html');
-      });
-      $('#volunteer').click(function() {
-        $('#body').load('./volunteer.php');
-      });
-      $('.nav-item a').on('click', function() {
-        $('.nav-item a').removeClass('active');
-        $(this).addClass('active');
-      });
     });
+    $('#donate').click(function() {
+      $('#body').load('./donate.html');
+    });
+    $('#volunteer').click(function() {
+      $('#body').load('./volunteer.php');
+    });
+    $('.nav-item a').on('click', function() {
+      $('.nav-item a').removeClass('active');
+      $(this).addClass('active');
+    });
+  });
   </script>
 </head>
 
@@ -52,38 +54,38 @@ $avatar = array_rand($random_images_array, 1);
     <img height="100%" src="./images/logo.png" alt="Logo" />
     <h1>Wish Comes True HK</h1>
     <?php if (isset($_SESSION['id'])) { ?>
-      <div class="side-container">
-        <button class="btn" id="button">Submit a Wish</button>
-      </div>
+    <div class="side-container">
+      <button class="btn" id="button">Submit a Wish</button>
+    </div>
     <?php } else { ?>
-      <div class="side-container">
-        <button class="btn" id="button" disabled>Please login to Submit a Wish &rarr; </button>
-      </div>
+    <div class="side-container">
+      <button class="btn" id="button" disabled>Please login to Submit a Wish &rarr; </button>
+    </div>
     <?php } ?>
     <div class="profile">
       <div class="dropdown _img">
         <?php if (isset($_SESSION['id'])) { ?>
-          <img class="avatar" src="<?php echo $_SESSION['picture']; ?>" alt="<?php echo $_SESSION['name']; ?>">
-          <div class="dropdown-content _info">
-            <ul>
-              <li><i class="fas fa-user fa-lg"></i><?php echo $_SESSION['name']; ?></li>
-              <li>
-                <i class="fas fa-envelope fa-lg"></i><?php echo $_SESSION['email']; ?>
-              </li>
-              <li class="withA">
-                <a href="./logout.php"><i class="fas fa-sign-out-alt fa-lg"></i> Logout</a>
-              </li>
-            </ul>
-          </div>
+        <img class="avatar" src="<?php echo $_SESSION['picture']; ?>" alt="<?php echo $_SESSION['name']; ?>">
+        <div class="dropdown-content _info">
+          <ul>
+            <li><i class="fas fa-user fa-lg"></i><?php echo $_SESSION['name']; ?></li>
+            <li>
+              <i class="fas fa-envelope fa-lg"></i><?php echo $_SESSION['email']; ?>
+            </li>
+            <li class="withA">
+              <a href="./logout.php"><i class="fas fa-sign-out-alt fa-lg"></i> Logout</a>
+            </li>
+          </ul>
+        </div>
         <?php } else { ?>
-          <img class="avatar" src="<?php echo "./avatar/" . $random_images_array[$avatar]; ?>" alt="User" />
-          <div class="dropdown-content _info">
-            <ul>
-              <li class="withA">
-                <a href="<?= $login_url ?>"><i class="fab fa-google fa-lg"></i> Login with Google</a>
-              </li>
-            </ul>
-          </div>
+        <img class="avatar" src="<?php echo "./avatar/" . $random_images_array[$avatar]; ?>" alt="User" />
+        <div class="dropdown-content _info">
+          <ul>
+            <li class="withA">
+              <a href="<?= $login_url ?>"><i class="fab fa-google fa-lg"></i> Login with Google</a>
+            </li>
+          </ul>
+        </div>
         <?php } ?>
       </div>
     </div>
@@ -246,7 +248,7 @@ $avatar = array_rand($random_images_array, 1);
     </section>
   </section>
 
-  <div class="modal-background">
+  <div class="new modal-background">
     <div class="modal">
       <div class="modal-cancel" id="close"></div>
       <div class="modal-content">
@@ -257,9 +259,10 @@ $avatar = array_rand($random_images_array, 1);
           <div class="form-input-material">
             <label for="name">&nbsp Organization Name:</label>
             <?php if (isset($_SESSION['id'])) { ?>
-              <input class="form-control-material" required type="text" id="name" name="name" value="<?php echo $_SESSION['name'] ?>" />
+            <input class="form-control-material" required type="text" id="name" name="name"
+              value="<?php echo $_SESSION['name'] ?>" />
             <?php } else { ?>
-              <input class="form-control-material" required type="text" id="name" name="name" value="" />
+            <input class="form-control-material" required type="text" id="name" name="name" value="" />
             <?php } ?>
 
           </div>
@@ -274,9 +277,10 @@ $avatar = array_rand($random_images_array, 1);
             <label for="email">&nbsp Email Address:</label>
 
             <?php if (isset($_SESSION['id'])) { ?>
-              <input class="form-control-material" required type="email" id="email" name="email" value="<?php echo $_SESSION["email"] ?>" />
+            <input class="form-control-material" required type="email" id="email" name="email"
+              value="<?php echo $_SESSION["email"] ?>" />
             <?php } else { ?>
-              <input class="form-control-material" required type="email" id="email" name="email" value="" />
+            <input class="form-control-material" required type="email" id="email" name="email" value="" />
             <?php } ?>
 
 
@@ -288,198 +292,88 @@ $avatar = array_rand($random_images_array, 1);
 
             <input class="form-control-material" type="wish" id="wish" name="wish" value="" />
           </div>
-          
-          	<div class="form-input-material">
-			  <label for="district">&nbsp District of event: &nbsp (if applicable)</label>
-			  
-			  <input
-				class="form-input-material"
-				type="district"
-				id="district"
-				name="district"
-				value=""
-				/>
-			  </div>
-			  
-			  <div class="form-input-material">
-			  <label for="starttime">&nbsp Event time: &nbsp (if applicable)</label>
-			  
-			  <input
-				class="form-input-material"
-				type="starttime"
-				id="starttime"
-				name="starttime"
-				value=""
-				/>
-			  </div>
+
+          <div class="form-input-material">
+            <label for="district">&nbsp District of event: &nbsp (if applicable)</label>
+
+            <input class="form-input-material" type="district" id="district" name="district" value="" />
+          </div>
+
+          <div class="form-input-material">
+            <label for="starttime">&nbsp Event time: &nbsp (if applicable)</label>
+
+            <input class="form-input-material" type="starttime" id="starttime" name="starttime" value="" />
+          </div>
 
           <h4>&nbsp Minority Groups</h4>
 
           <div class="container check__group">
-              <label class="checkbox__label" for="minority-children"
-                >&nbsp Children<input
-                  type="checkbox"
-                  id="minority-children"
-                  name="minority-children"
-                  value="Children" /><span class="checkbox__custom"></span
-              ></label>
+            <label class="checkbox__label" for="minority-children">&nbsp Children<input type="checkbox"
+                id="minority-children" name="minority[]" value="Children" /><span
+                class="checkbox__custom"></span></label>
 
-              <label class="checkbox__label" for="minority-homeless"
-                >&nbsp Homeless
-                <input
-                  type="checkbox"
-                  id="minority-homeless"
-                  name="minority-homeless"
-                  value="Homeless"
-                />
-                <span class="checkbox__custom"></span>
-              </label>
+            <label class="checkbox__label" for="minority-homeless">&nbsp Homeless
+              <input type="checkbox" id="minority-homeless" name="minority[]" value="Homeless" />
+              <span class="checkbox__custom"></span>
+            </label>
 
-              <label class="checkbox__label" for="minority-elderly"
-                >&nbsp Elderly<input
-                  type="checkbox"
-                  id="minority-elderly"
-                  name="minority-elderly"
-                  value="Elderly" /><span class="checkbox__custom"></span
-              ></label>
+            <label class="checkbox__label" for="minority-elderly">&nbsp Elderly<input type="checkbox"
+                id="minority-elderly" name="minority[]" value="Elderly" /><span class="checkbox__custom"></span></label>
 
-              <label class="checkbox__label" for="minority-low-income"
-                >&nbsp Low Income<input
-                  type="checkbox"
-                  id="minority-low-income"
-                  name="minority-low-income"
-                  value="Low income" /><span class="checkbox__custom"></span
-              ></label>
+            <label class="checkbox__label" for="minority-low-income">&nbsp Low Income<input type="checkbox"
+                id="minority-low-income" name="minority[]" value="Low income" /><span
+                class="checkbox__custom"></span></label>
 
-              <label class="checkbox__label" for="minority-others"
-                >&nbsp Others<input
-                  type="checkbox"
-                  id="minority-others"
-                  name="minority-others"
-                  value="Others" /><span class="checkbox__custom"></span
-              ></label>
-            </div>
+            <label class="checkbox__label" for="minority-others">&nbsp Others<input type="checkbox" id="minority-others"
+                name="minority[]" value="Others" /><span class="checkbox__custom"></span></label>
+          </div>
 
           <h4>&nbsp Donating Type</h4>
 
-         <div class="container check__group">
-              <label class="checkbox__label" for="donate-funding"
-                >&nbsp Funding<input
-                  type="checkbox"
-                  id="donate-funding"
-                  name="donate-funding"
-                  value="Funding" /><span class="checkbox__custom"></span
-              ></label>
+          <div class="container check__group">
+            <label class="checkbox__label" for="donate-funding">&nbsp Funding<input type="checkbox" id="donate-funding"
+                name="donation[]" value="Funding" /><span class="checkbox__custom"></span></label>
 
-              <label class="checkbox__label" for="donate-second-hand"
-                >&nbsp Second Hand<input
-                  type="checkbox"
-                  id="donate-second-hand"
-                  name="donate-second-hand"
-                  value="Second hand" /><span class="checkbox__custom"></span
-              ></label>
+            <label class="checkbox__label" for="donate-second-hand">&nbsp Second Hand<input type="checkbox"
+                id="donate-second-hand" name="donation[]" value="Second hand" /><span
+                class="checkbox__custom"></span></label>
 
-              <label class="checkbox__label" for="donate-food"
-                >&nbsp Food<input
-                  type="checkbox"
-                  id="donate-food"
-                  name="donate-food"
-                  value="Food" /><span class="checkbox__custom"></span
-              ></label>
+            <label class="checkbox__label" for="donate-food">&nbsp Food<input type="checkbox" id="donate-food"
+                name="donation[]" value="Food" /><span class="checkbox__custom"></span></label>
 
-              <label class="checkbox__label" for="donate-others"
-                >&nbsp Others<input
-                  type="checkbox"
-                  id="donate-others"
-                  name="donate-others"
-                  value="Others" /><span class="checkbox__custom"></span
-              ></label>
-            </div>
-			  
-			<div class="form-input-material">
-			  <label for="money">&nbsp Donation required(HK$): &nbsp (if applicable)</label>
-			  
-			  <input
-				class="form-input-material"
-				type="money"
-				id="money"
-				name="money"
-				value=""
-				/>
-			  </div>
-			  
-			  <div class="form-input-material">
-			  <label for="people">&nbsp Amount of people required: &nbsp (if applicable)</label>
-			  
-			  <input
-				class="form-input-material"
-				type="people"
-				id="people"
-				name="people"
-				value=""
-				/>
-			  </div>
-          
+            <label class="checkbox__label" for="donate-others">&nbsp Others<input type="checkbox" id="donate-others"
+                name="donation[]" value="Others" /><span class="checkbox__custom"></span></label>
+          </div>
+
           <div class="form-input-material">
-			  <label for="money">&nbsp Donation required(HK$): &nbsp (if applicable)</label>
-			  
-			  <input
-				class="form-input-material"
-				type="money"
-				id="money"
-				name="money"
-				value=""
-				/>
-			  </div>
-			  
-			  <div class="form-input-material">
-			  <label for="people">&nbsp Amount of people required: &nbsp (if applicable)</label>
-			  
-			  <input
-				class="form-input-material"
-				type="people"
-				id="people"
-				name="people"
-				value=""
-				/>
-			  </div>
+            <label for="money">&nbsp Donation required(HK$): &nbsp (if applicable)</label>
+
+            <input class="form-input-material" type="money" id="money" name="money" value="" />
+          </div>
+
+          <div class="form-input-material">
+            <label for="people">&nbsp Amount of people required: &nbsp (if applicable)</label>
+
+            <input class="form-input-material" type="people" id="people" name="people" value="" />
+          </div>
 
           <h4>&nbsp Project Type</h4>
 
-           <div class="container">
-              <label class="checkbox__label" for="project-individual"
-                >&nbsp Individual<input
-                  type="checkbox"
-                  id="project-individual"
-                  name="project-individual"
-                  value="Individual" /><span class="checkbox__custom"></span
-              ></label>
+          <div class="container">
+            <label class="checkbox__label" for="project-individual">&nbsp Individual<input type="checkbox"
+                id="project-individual" name="project[]" value="Individual" /><span
+                class="checkbox__custom"></span></label>
 
-              <label class="checkbox__label" for="project-group"
-                >&nbsp Group<input
-                  type="checkbox"
-                  id="project-group"
-                  name="project-group"
-                  value="Group" /><span class="checkbox__custom"></span
-              ></label>
+            <label class="checkbox__label" for="project-group">&nbsp Group<input type="checkbox" id="project-group"
+                name="project[]" value="Group" /><span class="checkbox__custom"></span></label>
 
-              <label class="checkbox__label" for="project-short"
-                >&nbsp Short<input
-                  type="checkbox"
-                  id="project-short"
-                  name="project-short"
-                  value="Short" /><span class="checkbox__custom"></span
-              ></label>
+            <label class="checkbox__label" for="project-short">&nbsp Short<input type="checkbox" id="project-short"
+                name="project[]" value="Short" /><span class="checkbox__custom"></span></label>
 
-              <label class="checkbox__label" for="project-long"
-                >&nbsp Long
-                <input
-                  type="checkbox"
-                  id="project-long"
-                  name="project-long"
-                  value="Long" /><span class="checkbox__custom"></span
-              ></label>
-            </div>
+            <label class="checkbox__label" for="project-long">&nbsp Long
+              <input type="checkbox" id="project-long" name="project[]" value="Long" /><span
+                class="checkbox__custom"></span></label>
+          </div>
 
           <div class="container">
             <label class="date__label" for="start">
@@ -511,13 +405,13 @@ $avatar = array_rand($random_images_array, 1);
   </div>
 
   <script type="text/javascript">
-    document.getElementById('button').addEventListener('click', function() {
-      document.querySelector('.modal-background').style.display = 'flex';
-    });
+  document.getElementById('button').addEventListener('click', function() {
+    document.querySelector('.modal-background.new').style.display = 'flex';
+  });
 
-    document.getElementById('close').addEventListener('click', function() {
-      document.querySelector('.modal-background').style.display = 'none';
-    });
+  document.getElementById('close').addEventListener('click', function() {
+    document.querySelector('.modal-background.new').style.display = 'none';
+  });
   </script>
 </body>
 
