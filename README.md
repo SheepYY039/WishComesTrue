@@ -26,45 +26,84 @@ Our vision for this project is to create a website, where the wishes of minority
 
 ### Team
 
-<table>
-  <thead>
-    <th>Communications and Logistics</th>
-    <th>Coding</th>
-    <th>Marketing</th>
-  </thead>
-  <tbody>
-  <tr>
-		<td>Akshay</td>
-		<td>Arthur</td>
-		<td>Charis</td>
-	</tr><tr>
-		<td>Jenny</td>
-		<td>Dennis</td>
-		<td>Diya</td>
-	</tr><tr>
-		<td>Kash</td>
-		<td>Kanav</td>
-		<td>Hiren</td>
-	</tr><tr>
-		<td>Vyapti</td>
-		<td>Kay</td>
-		<td>Jami</td>
-	</tr><tr>
-		<td>Winnie</td>
-		<td></td>
-		<td>Kiros</td>
-	</tr><tr>
-		<td>Pau</td>
-		<td></td>
-		<td>Roshita</td>
-	</tr><tr>
-		<td>Mir</td>
-		<td></td>
-		<td>Sofia</td>
-	</tr><tr>
-		<td>Kiki</td>
-		<td></td>
-		<td></td>
-	</tr>
-  </tbody>
-</table>
+<table class="tg">
+        <thead>
+          <tr>
+            <th class="tg-0lax">Communications and Logistics</th>
+            <th class="tg-0lax">Coding</th>
+            <th class="tg-0lax">Marketing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-8zwo">Noshin CHOWDHURY</td>
+            <td class="tg-8zwo">Jasmine YEUNG</td>
+            <td class="tg-8zwo">Sunwoo JOO</td>
+          </tr>
+          <tr>
+            <td class="tg-8zwo">Ritika VASWANI</td>
+            <td class="tg-0lax">Kanav MEHTA</td>
+            <td class="tg-8zwo">Harshita PARMAR</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Kashish NANIKRAM</td>
+            <td class="tg-0lax">Kay LAU</td>
+            <td class="tg-0lax">Hiren KHARE</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Akshay RAMCHANDANI</td>
+            <td class="tg-0lax">Dennis CHOW</td>
+            <td class="tg-0lax">Jami CHENG</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Jenny CHAN</td>
+            <td class="tg-0lax">Arthur CHEUNG</td>
+            <td class="tg-0lax">Kiros CHONG</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Vyapti WADHWANEY</td>
+            <td class="tg-0lax">Manun CHAUHAAN</td>
+            <td class="tg-0lax">Roshita SAJNANI</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Winnie PAU</td>
+            <td class="tg-0lax">Nikhil RAMCHANDANI</td>
+            <td class="tg-0lax">Sofia PAYMASTER</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Kiki LEUNG</td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax">Charis PAO</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Rika KASUYA</td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax">Diya SAMTANI</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Ian LAI</td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax">Mir KALYANI</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Haysen WONG</td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax">Anders LAM</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Krishna VAKATI</td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax">Jainam SANGHVI</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Jake O'HANLON</td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Tin Chi LO</td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+          </tr>
+        </tbody>
+      </table>
