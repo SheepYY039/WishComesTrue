@@ -12,7 +12,7 @@ if (mysqli_connect_errno()) {
   echo "Connection Failed" . mysqli_connect_error();
   exit;
 }
-$sql = "SELECT `Wish_id`,`Wish_name`,`Project_type`,`Minority_groups`,`Organization_name`,`District`, `Start_date`, `End_date` FROM `tbl_wishes` WHERE `isApproved` = 1";
+$sql = "SELECT `Wish_id`,`Wish_name`,`Project_type`,`Minority_groups`,`Donating_type`,`Organization_name`,`District`, `Start_date`, `End_date` FROM `tbl_wishes` WHERE `isApproved` = 1";
 $result = mysqli_query($conn, $sql);
 
 ?>
@@ -53,13 +53,13 @@ $result = mysqli_query($conn, $sql);
     <div class="wish">
       <div class="wish__contents">
         <h3 class="wish__name"><?php echo $row["Wish_name"] ?></h3>
-        <p class="wish__filters">Filter | Filter | Filter</p>
+        <p class="wish__filters"><?php echo $row["Minority_groups"].$row["Project_type"].$row["Donating_type"] ?></p>
       </div>
       <button id="<?php echo $row["Wish_id"] ?>" class="wish__more-info details_button">More Info</button>
       <div id="background-<?php echo $row["Wish_id"] ?>" class="modal-background">
         <div class="modal">
           <div class="modal-header">
-            <div class="modal-cancel" id="close"></div>
+            <div class="modal-cancel close-<?php echo $row["Wish_id"] ?>" id="close"></div>
             <h2>More info - <?php echo $row["Wish_name"] ?></h2>
           </div>
           <div class="modal-content">
@@ -93,23 +93,22 @@ $result = mysqli_query($conn, $sql);
   var addButtons = document.getElementsByClassName('details_button');
 
   function getDetails() {
-    console.log(event.srcElement.id);
     var id = event.srcElement.id;
     var select = "background-" + id;
-    console.log(select);
+    var cross = "close-" + id;
     var modalBackground = document.getElementById(select);
     modalBackground.style.display = 'flex';
     modalBackground.style.left = 0;
+    // TODO only works for the first modal
+    var crossTemp = document.getElementsByClassName(cross)[0];
+    crossTemp.addEventListener('click', function() {
+      modalBackground.style.display = 'none';
+    });
   };
 
   for (i = 0; i < addButtons.length; i++) {
     addButtons[i].addEventListener("click", getDetails);
   }
-
-  // TODO only works for the first modal
-  document.getElementById('close').addEventListener('click', function() {
-    document.querySelector('.modal-background').style.display = 'none';
-  });
   </script>
 
 </body>

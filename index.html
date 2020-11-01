@@ -14,7 +14,9 @@
       integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap"
@@ -30,6 +32,13 @@
         });
         $('#donate').click(function () {
           $('#body').load('./donate.html');
+        });
+        $('#volunteer').click(function () {
+          $('#body').load('./volunteer.php');
+        });
+        $('.nav-item a').on('click', function () {
+          $('.nav-item a').removeClass('active');
+          $(this).addClass('active');
         });
       });
     </script>
@@ -85,6 +94,11 @@
       </div>
     </header>
     <section class="body">
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
       <div class="filters">
         <div class="filter__title">
           <span>
@@ -320,16 +334,18 @@
 
       <section class="content">
         <nav>
-          <div class="nav-dropdown" id="nav-dropdown">
-            <div class="dropdown-btn">
-              <p>DROPDOWN</p>
-            </div>
+          <div class="nav-parent">
+            <div class="nav-dropdown" id="nav-dropdown">
+              <div class="dropdown-btn">
+                <p>DROPDOWN</p>
+              </div>
 
-            <ul id="dropdown-content">
-              <a href="#" id="about-dropdown">ABOUT US</a>
-              <a href="#" id="donate-dropdown">DONATE</a>
-              <a href="#" id="volunteer-dropdown">VOLUNTEER</a>
-            </ul>
+              <ul id="dropdown-content">
+                <a href="#" id="about-dropdown">ABOUT US</a>
+                <a href="#" id="donate-dropdown">DONATE</a>
+                <a href="#" id="volunteer-dropdown">VOLUNTEER</a>
+              </ul>
+            </div>
           </div>
           <ul class="nav">
             <li class="nav-item">
@@ -342,12 +358,14 @@
         <section id="body"></section>
       </section>
     </section>
-	  
- <script type="text/javascript">
-      document.getElementById('nav-dropdown').addEventListener('click', function () {
-        var element = document.getElementById("dropdown-content");
-        element.classlist.toggle("open");
-      });
+
+    <script type="text/javascript">
+      document
+        .getElementById('nav-dropdown')
+        .addEventListener('click', function () {
+          var element = document.getElementById('dropdown-content');
+          element.classlist.toggle('open');
+        });
     </script>
 
     <div class="modal-background">
@@ -640,6 +658,11 @@
       function getResult() {
         console.log($('form').serializeArray());
       }
+
+      $('div.burger').on('click', function () {
+        $('.filters').toggleClass('clicked');
+        $(this).toggleClass('clicked');
+      });
     </script>
   </body>
 </html>

@@ -22,7 +22,9 @@ $avatar = array_rand($random_images_array, 1);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
     integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <link rel="icon" type="image/png" href="./favicon.png" />
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap"
     rel="stylesheet" />
@@ -91,6 +93,11 @@ $avatar = array_rand($random_images_array, 1);
     </div>
   </header>
   <section class="body">
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
     <div class="filters">
       <div class="filter__title">
         <span>
@@ -235,16 +242,18 @@ $avatar = array_rand($random_images_array, 1);
     </div>
     <section class="content">
       <nav>
-        <div class="nav-dropdown" id="nav-dropdown">
-          <div class="dropdown-btn">
-            <p>DROPDOWN</p>
-          </div>
+        <div class="nav-parent">
+          <div class="nav-dropdown" id="nav-dropdown">
+            <div class="dropdown-btn">
+              <p>DROPDOWN</p>
+            </div>
 
-          <ul id="dropdown-content">
-            <a href="#" id="about-dropdown">ABOUT US</a>
-            <a href="#" id="donate-dropdown">DONATE</a>
-            <a href="#" id="volunteer-dropdown">VOLUNTEER</a>
-          </ul>
+            <ul id="dropdown-content">
+              <a href="#" id="about-dropdown">ABOUT US</a>
+              <a href="#" id="donate-dropdown">DONATE</a>
+              <a href="#" id="volunteer-dropdown">VOLUNTEER</a>
+            </ul>
+          </div>
         </div>
         <ul class="nav">
           <li class="nav-item">
@@ -307,7 +316,7 @@ $avatar = array_rand($random_images_array, 1);
           <div class="form-input-material">
             <label for="phone">&nbsp Name of Wish</label>
 
-            <input class="form-control-material" type="wish" id="wish" name="wish" value="" />
+            <input class="form-control-material" required type="wish" id="wish" name="wish" value="" />
           </div>
 
           <div class="form-input-material">
@@ -319,7 +328,7 @@ $avatar = array_rand($random_images_array, 1);
           <div class="form-input-material">
             <label for="starttime">&nbsp Event time: &nbsp (if applicable)</label>
 
-            <input class="form-input-material" type="starttime" id="starttime" name="starttime" value="" />
+            <input class="form-input-material" type="time" id="starttime" name="starttime" value="" />
           </div>
 
           <h4>&nbsp Minority Groups</h4>
@@ -428,6 +437,12 @@ $avatar = array_rand($random_images_array, 1);
 
   document.getElementById('close').addEventListener('click', function() {
     document.querySelector('.modal-background.new').style.display = 'none';
+  });
+
+
+  $('div.burger').on('click', function() {
+    $('.filters').toggleClass('clicked');
+    $(this).toggleClass('clicked');
   });
   </script>
 </body>
