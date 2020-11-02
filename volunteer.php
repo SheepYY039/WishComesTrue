@@ -42,52 +42,253 @@ $result = mysqli_query($conn, $sql);
   }
   </style>
   <title>Wishes Come True | Volunteer</title>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    // $('.body').load('./index.html');
+    // $('#body').load('./about.html');
+    $('#about').click(function() {
+      // $('.body').load('./about.html');
+      // $('.body').load('./index.html');
+      window.location = './index.html';
+    });
+    $('#donate').click(function() {
+      // window.location = './index.html';
+      // $('.body').load('./index.html');
+      $('.body').load('./donate.html');
+    });
+    $('#volunteer').click(function() {
+      // $('.body').load('./index.html');
+      $('.body').load('./volunteer.php');
+    });
+    $('.nav-item a').on('click', function() {
+      $('.nav-item a').removeClass('active');
+      $(this).addClass('active');
+    });
+  });
+  </script>
 </head>
 
 <body>
-  <div class="wishes">
-    <?php
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+  <div class="filters">
+    <div class="filter__title">
+      <span>
+        <h2>Filters</h2>
+      </span>
+    </div>
+    <div class="search">
+      <form action="">
+        <label for="search">
+          <span class="fa fa-search"></span>
+        </label>
+        <input type="search" placeholder="Search..." name="search" id="search" />
+      </form>
+    </div>
+    <div class="minority-groups">
+      <h3>Minority Groups</h3>
+      <form action="">
+        <label class="checkbox__label">
+          Children
+          <input type="checkbox" id="children" name="minority-group-children" value="children" />
+          <span class="checkbox__custom"></span>
+        </label>
+        <label class="checkbox__label">
+          Homeless
+          <input type="checkbox" id="homeless" name="minority-group-homeless" value="homeless" />
+          <span class="checkbox__custom"></span>
+        </label>
+        <label class="checkbox__label">
+          Elderly
+          <input type="checkbox" id="elderly" name="minority-group-elderly" value="elderly" />
+          <span class="checkbox__custom"></span>
+        </label>
+        <label class="checkbox__label">
+          Low Income
+          <input type="checkbox" id="low-income" name="minority-group-low-income" value="low-income" />
+          <span class="checkbox__custom"></span>
+        </label>
+        <label class="checkbox__label">
+          Others
+          <input type="checkbox" id="m-others" name="minority-group-others" value="others" />
+          <span class="checkbox__custom"></span>
+        </label>
+      </form>
+    </div>
+    <div class="donating-types">
+      <h3>Donating Types</h3>
+      <form action="">
+        <label class="checkbox__label">
+          Funding
+          <input type="checkbox" id="funding" name="donating-type-funding" value="funding" />
+          <span class="checkbox__custom"></span>
+        </label>
+        <label class="checkbox__label">
+          Second Hand
+          <input type="checkbox" id="second-hand" name="donating-type-second-hand" value="second-hand" />
+          <span class="checkbox__custom"></span>
+        </label>
+        <label class="checkbox__label">
+          Food
+          <input type="checkbox" id="food" name="donating-type-food" value="food" />
+          <span class="checkbox__custom"></span>
+        </label>
+
+        <label class="checkbox__label">
+          Others
+          <input type="checkbox" id="d-others" name="donating-type-others" value="others" />
+          <span class="checkbox__custom"></span>
+        </label>
+      </form>
+    </div>
+    <div class="project-types">
+      <h3>Project Types</h3>
+      <form action="">
+        <table>
+          <tr>
+            <td>
+              <label class="checkbox__label">
+                Individual
+                <input type="checkbox" id="individual" name="project-type-individual" value="individual" />
+                <span class="checkbox__custom"></span>
+              </label>
+            </td>
+            <td>
+              <label class="checkbox__label">
+                Group
+                <input type="checkbox" id="group" name="project-type-group" value="group" />
+                <span class="checkbox__custom"></span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="checkbox__label">
+                Reachable
+                <input type="checkbox" id="reachable" name="project-type-reachable" value="reachable" />
+                <span class="checkbox__custom"></span>
+              </label>
+            </td>
+            <td>
+              <label class="checkbox__label">
+                Reach
+                <input type="checkbox" id="reach" name="project-type-reach" value="reach" />
+                <span class="checkbox__custom"></span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="checkbox__label">
+                Short
+                <input type="checkbox" id="short" name="project-type-short" value="short" />
+                <span class="checkbox__custom"></span>
+              </label>
+            </td>
+            <td>
+              <label class="checkbox__label">
+                Long
+                <input type="checkbox" id="long" name="project-type-long" value="long" />
+                <span class="checkbox__custom"></span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="checkbox__label">
+                New
+                <input type="checkbox" id="new" name="project-type-new" value="new" />
+                <span class="checkbox__custom"></span>
+              </label>
+            </td>
+            <td>
+              <label class="checkbox__label">
+                Old
+                <input type="checkbox" id="old" name="project-type-old" value="old" />
+                <span class="checkbox__custom"></span>
+              </label>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+  <section class="content">
+    <nav>
+      <div class="nav-parent">
+        <div class="nav-dropdown" id="nav-dropdown">
+          <div class="dropdown-btn">
+            <p>DROPDOWN</p>
+          </div>
+
+          <ul id="dropdown-content">
+            <a href="#" id="about-dropdown">ABOUT US</a>
+            <a href="#" id="donate-dropdown">DONATE</a>
+            <a href="#" id="volunteer-dropdown">VOLUNTEER</a>
+          </ul>
+        </div>
+      </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#" id="about">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" id="donate">DONATE</a>
+        </li>
+        <li class="nav-item"><a href="#" class="active" id="volunteer">VOLUNTEER</a></li>
+      </ul>
+    </nav>
+    <div id="body">
+      <div class="wishes">
+        <?php
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) { ?>
-    <div class="wish">
-      <div class="wish__contents">
-        <h3 class="wish__name"><?php echo $row["Wish_name"] ?></h3>
-        <p class="wish__filters"><?php echo $row["Minority_groups"].$row["Project_type"].$row["Donating_type"] ?></p>
-      </div>
-      <button id="<?php echo $row["Wish_id"] ?>" class="wish__more-info details_button">More Info</button>
-      <div id="background-<?php echo $row["Wish_id"] ?>" class="modal-background">
-        <div class="modal">
-          <div class="modal-header">
-            <div class="modal-cancel close-<?php echo $row["Wish_id"] ?>" id="close"></div>
-            <h2>More info - <?php echo $row["Wish_name"] ?></h2>
+        <div class="wish">
+          <div class="wish__contents">
+            <h3 class="wish__name"><?php echo $row["Wish_name"] ?></h3>
+            <p class="wish__filters"><?php echo $row["Minority_groups"].$row["Project_type"].$row["Donating_type"] ?>
+            </p>
           </div>
-          <div class="modal-content">
-            <div class="field">
-              <h4>Organization Name</h4>
-              <h5><?php echo $row["Organization_name"] ?></h5>
-            </div>
-            <div class="field">
-              <h4>District</h4>
-              <h5><?php echo $row["District"] ?></h5>
-            </div>
-            <div class="field">
-              <h4>Start date</h4>
-              <h5><?php echo $row["Start_date"] ?></h5>
-            </div>
-            <div class="field">
-              <h4>End date</h4>
-              <h5><?php echo $row["End_date"] ?></h5>
+          <button id="<?php echo $row["Wish_id"] ?>" class="wish__more-info details_button">More Info</button>
+          <div id="background-<?php echo $row["Wish_id"] ?>" class="modal-background">
+            <div class="modal">
+              <div class="modal-header">
+                <div class="modal-cancel close-<?php echo $row["Wish_id"] ?>" id="close"></div>
+                <h2>More info - <?php echo $row["Wish_name"] ?></h2>
+              </div>
+              <div class="modal-content">
+                <div class="field">
+                  <h4>Organization Name</h4>
+                  <h5><?php echo $row["Organization_name"] ?></h5>
+                </div>
+                <div class="field">
+                  <h4>District</h4>
+                  <h5><?php echo $row["District"] ?></h5>
+                </div>
+                <div class="field">
+                  <h4>Start date</h4>
+                  <h5><?php echo $row["Start_date"] ?></h5>
+                </div>
+                <div class="field">
+                  <h4>End date</h4>
+                  <h5><?php echo $row["End_date"] ?></h5>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <?php 
+        <?php 
       }
     }
     ?>
-  </div>
+      </div>
+    </div>
+  </section>
+
 
   <script type="text/javascript">
   var addButtons = document.getElementsByClassName('details_button');
