@@ -101,6 +101,152 @@
           />
         </form>
       </div>
+      <script type="text/javascript">
+        var WhishesDB = {
+          w1: {
+            tags: ['children', 'elderly'],
+          },
+          w2: {
+            tags: ['children'],
+          },
+          w3: {
+            tags: [],
+          },
+          w4: {
+            tags: [],
+          },
+        };
+
+        function ex() {
+          var srchk = document.getElementById('search').value;
+          var Fli = [
+            'children',
+            'homeless',
+            'elderly',
+            'low-income',
+            'funding',
+            'second-hand',
+            'food',
+            'individual',
+            'group',
+            'reachable',
+            'reach',
+            'short',
+            'long',
+            'new',
+            'old',
+          ];
+
+          var filters = [];
+          var abb = 0;
+          for (var dbcd = 0; dbcd < 15; dbcd++) {
+            if (document.getElementById(Fli[dbcd]).checked == true) {
+              filters[abb] = Fli[dbcd];
+              abb++;
+            }
+          }
+          var filteredlist = [];
+          var b = 0;
+          for (var j in WhishesDB) {
+            var approv = 0;
+            for (var c = 0; c < WhishesDB[j].tags.length; c++) {
+              for (var x = 0; x < filters.length; x++) {
+                if (filters[x] == WhishesDB[j].tags[c]) {
+                  approv += 1;
+                }
+              }
+            }
+            if (approv == filters.length) {
+              filteredlist[b] = j;
+              b++;
+            }
+            var finalLi = [];
+            var flin = 0;
+            for (var g = 0; g < filteredlist.length; g++) {
+              if (check1(rearrange(filteredlist[g], srchk)) > 0) {
+                finalLi[flin] = filteredlist[g];
+                flin++;
+              }
+            }
+          }
+          alert(filteredlist + ' ' + finalLi);
+        }
+
+        function rearrange(movieName, inputName1) {
+          var newName = movieName.replace(/:/g, '').split(' '),
+            newInputName = inputName1.replace(/:/g, '').split(' '),
+            k = newName.length - 1;
+          for (var i = 0; i <= k; i++) {
+            newName[i] = newName[i].toLowerCase();
+            if (newName[i] === '') {
+              newName.splice(i, 1);
+              i--;
+              k--;
+            }
+          }
+          k = newInputName.length - 1;
+          for (i = 0; i <= k; i++) {
+            newInputName[i] = newInputName[i].toLowerCase();
+            if (newInputName[i] === '') {
+              newInputName.splice(i, 1);
+              i--;
+              k--;
+            }
+          }
+          newName.sort(), newInputName.sort();
+          return {
+            movieName: newName,
+            inputName: newInputName,
+          };
+        }
+
+        function check1(obj) {
+          var inputName = obj.inputName,
+            movieName = obj.movieName,
+            occurances = 0,
+            k = movieName.length,
+            movieNameLength = movieName.length;
+          for (var i = 0; i < k; i++) {
+            var currentValue = inputName[i];
+            console.log([inputName, movieName, i]);
+            if (currentValue === movieName[i]) {
+              inputName.splice(i, 1);
+              movieName.splice(i, 1);
+              k--;
+              i--;
+              occurances++;
+            } else {
+              for (var j = 0; j < movieName.length; j++) {
+                if (currentValue === movieName[j]) {
+                  inputName.splice(i, 1);
+                  movieName.splice(j, 1);
+                  k--;
+                  occurances++;
+                  break;
+                }
+              }
+            }
+          }
+          if (inputName == '') {
+            occurances = movieNameLength;
+          }
+          return occurances / movieNameLength;
+        }
+
+        //character-by-character check
+        function check2(inputName, movieName) {
+          var counter = 0,
+            newInputName = inputName.trim(d, s);
+          for (var i = 0; i <= inputName.length; i++) {
+            var inputChar = newInputName.charAt(i),
+              movieChar = movieName.charAt(i);
+            if (inputChar === movieChar) {
+              counter++;
+            }
+          }
+          return counter / movieName.length;
+        }
+      </script>
       <div class="minority-groups">
         <h3>Minority Groups</h3>
         <form action="">

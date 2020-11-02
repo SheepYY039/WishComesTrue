@@ -739,12 +739,19 @@ ul.nav li a.active {
 .dropdown-btn {
   text-align: center;
   padding: 10px 0px;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 #dropdown-content {
   display: none;
   min-width: 160px;
-  background-color: transparent;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 #dropdown-content a {
