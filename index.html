@@ -31,12 +31,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/parallax.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script
+      type="application/javascript"
+      src="https://unpkg.com/swiper/swiper-bundle.min.js"
+    ></script>
 
     <!-- <script src="js/parallax.min.js"></script> -->
     <title>Wish Comes True</title>
     <script type="text/javascript">
       $(document).ready(function () {
         $('#about').click(function () {
+          jQuery(window).trigger('resize').trigger('scroll');
           window.location = './index.html';
         });
         $('#donate').click(function () {
@@ -47,6 +57,7 @@
         });
 
         $('#about-dropdown').click(function () {
+          jQuery(window).trigger('resize').trigger('scroll');
           window.location = './index.html';
         });
         $('#donate-dropdown').click(function () {
@@ -79,6 +90,18 @@
         if (image.src.match('#')) {
           image.src = path + img;
         }
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $('.parallax-window.dark').each(function () {
+          var dataValue = $(this).attr('data-image-src');
+          console.log(dataValue);
+          $('.parallax-window').parallax({
+            naturalWidth: 1280,
+            naturalHeight: 718,
+          });
+        });
       });
     </script>
     <style type="text/css">
@@ -140,9 +163,28 @@
         font-size: 122px;
         font-family: 'Limelight', cursive;
       }
+
       .content {
         position: absolute;
         right: 0;
+      }
+      .content.about_content {
+        left: 0;
+        width: 100vw;
+      }
+
+      .parallax-mirror {
+        -webkit-transition: all ease;
+        -moz-transition: all ease;
+        -ms-transition: all ease;
+        -o-transition: all ease;
+        transition: all ease;
+      }
+
+      .parallax-mirror img,
+      .parallax-window img {
+        margin: 0;
+        padding: 0;
       }
 
       @media screen and (max-width: 767px) {
@@ -168,12 +210,23 @@
         padding: 0;
         /* display: block; */
       }
+
+      @media screen and (max-width: 768px) {
+        .first {
+          border-bottom: none;
+          font-size: 15vw;
+        }
+
+        .page .details {
+          left: auto;
+          transform: translateY(75px);
+        }
+      }
     </style>
   </head>
   <body>
     <header>
       <img src="./images/logo.jpeg" alt="Logo" />
-      <h1 class="header_title">Wish Comes True HK</h1>
 
       <div class="side-container">
         <button class="btn" id="button">Submit a Wish</button>
@@ -202,7 +255,7 @@
       </div>
     </header>
     <section class="body">
-      <section class="content">
+      <section class="content about_content">
         <nav>
           <div class="nav-parent">
             <div class="nav-dropdown" id="nav-dropdown">

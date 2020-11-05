@@ -16,18 +16,6 @@ div {
   /* display: flex; */
 }
 
-@media screen and (max-width: 530px) {
-  .header_title {
-    font-size: 1.8em;
-  }
-}
-
-@media screen and (max-width: 530px) {
-  .header_title {
-    font-size: 1.8em;
-  }
-}
-
 header {
   width: 100%;
   background-color: #89c7e7;
@@ -44,10 +32,6 @@ img {
 header img {
   margin: auto 3%;
   height: 100%;
-}
-
-h1 {
-  margin: auto 5%;
 }
 
 .slick-prev:before,
@@ -710,10 +694,6 @@ ul.nav li a.active {
 }
 
 @media screen and (max-width: 680px) {
-  h1 {
-    display: none;
-    opacity: 0;
-  }
 
   .nav-parent {
     display: flex;

@@ -4,42 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wish Comes True | Donate</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-    />
+      href="https://unpkg.com/swiper/swiper-bundle.css"
+    /> -->
+
     <style type="text/css">
-      .fade {
-        /* width: 800px; */
-        width: 90%;
-        margin: 0 auto;
-        /* border: 1px solid #ffd301; */
-      }
-
       .img-div {
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 98%;
+        overflow: hidden;
       }
-
       .img-div img {
-        margin: 0 auto;
-        width: 100%;
-
-        object-fit: cover;
-        object-position: 50% 50%;
+        height: 95%;
+        margin: auto;
       }
+
+      /* .img-div img { */
+      /* margin: 0 auto; */
+      /* width: 100%; */
+
+      /* object-fit: cover;
+        object-position: 50% 50%;
+      } */
       @media (max-width: 768px) {
-        .fade {
-          border: none;
-        }
         .img-div {
-          margin: 3%;
+          width: 98%;
+          height: auto;
+          overflow: hidden;
+        }
+        .img-div img {
+          width: 95%;
+          height: auto;
+        }
+        .swiper-container {
+          width: 90%;
+          height: auto;
+          margin: auto;
         }
       }
 
@@ -48,24 +50,39 @@
         font-weight: bold;
         font-size: 15px;
         padding: 5px;
+        height: 5%;
+      }
+
+      .swiper-container {
+        width: 90%;
+        height: 80%;
+        margin: 3% auto;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
       }
     </style>
     <script type="text/javascript">
       $(document).ready(function () {
-        // $('.body').load('./index.html');
-        // $('#body').load('./about.html');
         $('#about').click(function () {
-          // $('.body').load('./about.html');
-          // $('.body').load('./index.html');
           window.location = './index.html';
         });
         $('#donate').click(function () {
-          // window.location = './index.html';
-          // $('.body').load('./index.html');
           $('.body').load('./donate.html');
         });
         $('#volunteer').click(function () {
-          // $('.body').load('./index.html');
           $('.body').load('./volunteer.php');
         });
         $('.nav-item a').on('click', function () {
@@ -486,74 +503,88 @@
         </ul>
       </nav>
       <div id="body">
-        <div id="carousel" class="fade">
-          <div class="img-div">
-            <img src="./images/img1.jpeg" />
-            <div class="slide-text">Source: Coconuts Hong Kong</div>
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="img-div">
+                <img src="./images/img1.jpeg" />
+                <div class="slide-text">Source: Coconuts Hong Kong</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="img-div">
+                <img src="./images/img2.jpeg" />
+                <div class="slide-text">Source: SCMP</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="img-div">
+                <img src="./images/img3.jpeg" />
+                <div class="slide-text">Source: Hong Kong Free Press</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="img-div">
+                <img src="./images/img4.jpeg" />
+                <div class="slide-text">Source: Impact HK</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="img-div">
+                <img src="./images/img5.jpeg" />
+                <div class="slide-text">Source: The Guardian</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="img-div">
+                <img src="./images/img6.jpeg" />
+                <div class="slide-text">Source: Feeding HK</div>
+              </div>
+            </div>
           </div>
-          <div class="img-div">
-            <img src="./images/img2.jpeg" />
-            <div class="slide-text">Source: SCMP</div>
-          </div>
-          <div class="img-div">
-            <img src="./images/img3.jpeg" />
-            <div class="slide-text">Source: Hong Kong Free Press</div>
-          </div>
-          <div class="img-div">
-            <img src="./images/img4.jpeg" />
-            <div class="slide-text">Source: Impact HK</div>
-          </div>
-          <div class="img-div">
-            <img src="./images/img5.jpeg" />
-            <div class="slide-text">Source: The Guardian</div>
-          </div>
-          <div class="img-div">
-            <img src="./images/img6.jpeg" />
-            <div class="slide-text">Source: Feeding HK</div>
-          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
         </div>
       </div>
     </section>
-
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
     <!-- <script
       type="text/javascript"
-      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+      src="https://unpkg.com/swiper/swiper-bundle.js"
     ></script> -->
 
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-    ></script>
-
     <script type="text/javascript">
-      $(document).ready(function () {
-        $('.fade').slick({
-          dots: true,
-          infinite: true,
-          speed: 700,
-          autoplay: true,
-          autoplaySpeed: 2000,
-          touchMove: true,
-          pauseOnHover: true,
-          swipe: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          adaptiveHeight: true,
-          // centerMode: true,
-          centerPadding: '60px',
-          // variableWidth: true,
-          responsive: [
-            {
-              breakpoint: 768,
-              settings: 'unslick',
-            },
-          ],
-        });
+      var swiper;
+      // $(document).ready(function () {
+      swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        speed: 400,
+        spaceBetween: 100,
+        cssMode: true,
+        // navigation: {
+        //   nextEl: '.swiper-button-next',
+        //   prevEl: '.swiper-button-prev',
+        // },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        mousewheel: true,
+        keyboard: true,
+        autoplay: true,
+        loop: true,
+        // autoHeight: true,
+        dynamicBullets: true,
       });
+      // });
     </script>
   </body>
 </html>

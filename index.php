@@ -1,14 +1,14 @@
 <?php
 
-require_once('./settings.php');
-require_once('./login.php');
+require_once './settings.php';
+require_once './login.php';
 $login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email') . '&redirect_uri=' . urlencode(CLIENT_REDIRECT_URL) . '&response_type=code&client_id=' . CLIENT_ID . '&access_type=online';
 $random_images_array = array(
-  'avatar2.png',
-  'avatar5.png',
-  'avatar6.png',
-  'img_avatar.png',
-  'img_avatar2.png'
+    'avatar2.png',
+    'avatar5.png',
+    'avatar6.png',
+    'img_avatar.png',
+    'img_avatar2.png',
 );
 $avatar = array_rand($random_images_array, 1);
 ?>
@@ -34,6 +34,8 @@ $avatar = array_rand($random_images_array, 1);
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/parallax.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script type="application/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <title>Wish Comes True</title>
   <script type="text/javascript">
   $(document).ready(function() {
@@ -61,6 +63,18 @@ $avatar = array_rand($random_images_array, 1);
     $('.nav-item a').on('click', function() {
       $('.nav-item a').removeClass('active');
       $(this).addClass('active');
+    });
+  });
+  </script>
+  <script>
+  $(document).ready(function() {
+    $('.parallax-window.dark').each(function() {
+      var dataValue = $(this).attr('data-image-src');
+      console.log(dataValue);
+      $('.parallax-window').parallax({
+        naturalWidth: 1280,
+        naturalHeight: 718,
+      });
     });
   });
   </script>
@@ -129,6 +143,26 @@ $avatar = array_rand($random_images_array, 1);
     right: 0;
   }
 
+  .content.about_content {
+    left: 0;
+    width: 100vw;
+  }
+
+
+  .parallax-mirror {
+    -webkit-transition: all ease;
+    -moz-transition: all ease;
+    -ms-transition: all ease;
+    -o-transition: all ease;
+    transition: all ease;
+  }
+
+  .parallax-mirror img,
+  .parallax-window img {
+    margin: 0;
+    padding: 0;
+  }
+
   @media screen and (max-width: 767px) {
     .tg {
       width: auto !important;
@@ -145,12 +179,25 @@ $avatar = array_rand($random_images_array, 1);
     }
   }
 
+
   #body,
   .body {
     font-family: 'Limelight', cursive;
     margin: 0;
     padding: 0;
     /* display: block; */
+  }
+
+  @media screen and (max-width: 768px) {
+    .first {
+      border-bottom: none;
+      font-size: 15vw;
+    }
+
+    .page .details {
+      left: auto;
+      transform: translateY(75px);
+    }
   }
   </style>
 </head>
@@ -159,19 +206,18 @@ $avatar = array_rand($random_images_array, 1);
 <body>
   <header>
     <img height="100%" src="./images/logo.png" alt="Logo" />
-    <h1>Wish Comes True HK</h1>
-    <?php if (isset($_SESSION['id'])) { ?>
+    <?php if (isset($_SESSION['id'])) {?>
     <div class="side-container">
       <button class="btn" id="button">Submit a Wish</button>
     </div>
-    <?php } else { ?>
+    <?php } else {?>
     <div class="side-container">
       <button class="btn" id="button" disabled>Please login to Submit a Wish &rarr; </button>
     </div>
-    <?php } ?>
+    <?php }?>
     <div class="profile">
       <div class="dropdown _img">
-        <?php if (isset($_SESSION['id'])) { ?>
+        <?php if (isset($_SESSION['id'])) {?>
         <img class="avatar" src="<?php echo $_SESSION['picture']; ?>" alt="<?php echo $_SESSION['name']; ?>">
         <div class="dropdown-content _info">
           <ul>
@@ -184,16 +230,16 @@ $avatar = array_rand($random_images_array, 1);
             </li>
           </ul>
         </div>
-        <?php } else { ?>
+        <?php } else {?>
         <img class="avatar" src="<?php echo "./avatar/" . $random_images_array[$avatar]; ?>" alt="User" />
         <div class="dropdown-content _info">
           <ul>
             <li class="withA">
-              <a href="<?= $login_url ?>"><i class="fab fa-google fa-lg"></i> Login with Google</a>
+              <a href="<?php echo $login_url;?>"><i class="fab fa-google fa-lg"></i> Login with Google</a>
             </li>
           </ul>
         </div>
-        <?php } ?>
+        <?php }?>
       </div>
     </div>
   </header>
@@ -223,12 +269,13 @@ $avatar = array_rand($random_images_array, 1);
         </ul>
       </nav>
       <div>
-        <div class="parallax-window" data-parallax="scroll">
+        <div class="parallax-window" data-parallax="scroll" iosFix androidFix overScrollFix>
           <div class="center">
             <h1 class="first">Wish Comes True</h1>
           </div>
         </div>
-        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/parallax-bg.jpg">
+        <div class="parallax-window dark" data-parallax="scroll" iosFix androidFix overScrollFix
+          data-image-src="./images/parallax-bg.jpg">
           <div class="center">
             <h2>Our Vision</h2>
             <p>
@@ -240,12 +287,13 @@ $avatar = array_rand($random_images_array, 1);
             </p>
           </div>
         </div>
-        <div class="parallax-window" data-parallax="scroll">
+        <div class="parallax-window" data-parallax="scroll" iosFix androidFix overScrollFix>
           <div class="center">
             <h2>Meet the team!</h2>
           </div>
         </div>
-        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/parallax-bg.jpg">
+        <div class="parallax-window dark" data-parallax="scroll" iosFix androidFix overScrollFix
+          data-image-src="./images/parallax-bg.jpg">
           <div class="page">
             <div class="details">
               <h2>Arnav Kithania</h2>
@@ -256,7 +304,7 @@ $avatar = array_rand($random_images_array, 1);
             </div>
           </div>
         </div>
-        <div class="parallax-window" data-parallax="scroll">
+        <div class="parallax-window" data-parallax="scroll" iosFix androidFix overScrollFix>
           <div class="page">
             <div class="details">
               <h2>Aditi Jain</h2>
@@ -267,12 +315,13 @@ $avatar = array_rand($random_images_array, 1);
             </div>
           </div>
         </div>
-        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/parallax-bg.jpg">
+        <div class="parallax-window dark" data-parallax="scroll" iosFix androidFix overScrollFix
+          data-image-src="./images/parallax-bg.jpg">
           <div class="center">
             <h2>Heads of Departments</h2>
           </div>
         </div>
-        <div class="parallax-window" data-parallax="scroll">
+        <div class="parallax-window" data-parallax="scroll" iosFix androidFix overScrollFix>
           <div class="heads">
             <div class="head">
               <div class="head-img">
@@ -322,7 +371,8 @@ $avatar = array_rand($random_images_array, 1);
             </div>
           </div>
         </div>
-        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/parallax-bg.jpg">
+        <div class="parallax-window dark" data-parallax="scroll" iosFix androidFix overScrollFix
+          data-image-src="./images/parallax-bg.jpg">
           <div class="center">
             <h2>Our Team</h2>
             <div class="tg-wrap">
@@ -491,12 +541,12 @@ $avatar = array_rand($random_images_array, 1);
 
           <div class="form-input-material">
             <label for="name">&nbsp Organization Name:</label>
-            <?php if (isset($_SESSION['id'])) { ?>
+            <?php if (isset($_SESSION['id'])) {?>
             <input class="form-control-material" required type="text" id="name" name="name"
               value="<?php echo $_SESSION['name'] ?>" />
-            <?php } else { ?>
+            <?php } else {?>
             <input class="form-control-material" required type="text" id="name" name="name" value="" />
-            <?php } ?>
+            <?php }?>
 
           </div>
 
@@ -509,12 +559,12 @@ $avatar = array_rand($random_images_array, 1);
           <div class="form-input-material">
             <label for="email">&nbsp Email Address:</label>
 
-            <?php if (isset($_SESSION['id'])) { ?>
+            <?php if (isset($_SESSION['id'])) {?>
             <input class="form-control-material" required type="email" id="email" name="email"
               value="<?php echo $_SESSION["email"] ?>" />
-            <?php } else { ?>
+            <?php } else {?>
             <input class="form-control-material" required type="email" id="email" name="email" value="" />
-            <?php } ?>
+            <?php }?>
 
 
           </div>
