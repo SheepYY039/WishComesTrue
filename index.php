@@ -114,7 +114,7 @@ $avatar = array_rand($random_images_array, 1);
 
   .first {
     border-bottom: 3px solid red;
-    background-image: url(./images/triangles-1430105_1280.webp);
+    background-image: url(./images/parallax-bg.jpg);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -372,7 +372,7 @@ $avatar = array_rand($random_images_array, 1);
             <h1 class="first">Wish Comes True</h1>
           </div>
         </div>
-        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/triangles-1430105_1280.webp">
+        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/parallax-bg.jpg">
           <div class="center">
             <h2>Our Vision</h2>
             <p>
@@ -389,7 +389,7 @@ $avatar = array_rand($random_images_array, 1);
             <h2>Meet the team!</h2>
           </div>
         </div>
-        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/triangles-1430105_1280.webp">
+        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/parallax-bg.jpg">
           <div class="page">
             <div class="details">
               <h2>Arnav Kithania</h2>
@@ -411,7 +411,7 @@ $avatar = array_rand($random_images_array, 1);
             </div>
           </div>
         </div>
-        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/triangles-1430105_1280.webp">
+        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/parallax-bg.jpg">
           <div class="center">
             <h2>Heads of Departments</h2>
           </div>
@@ -466,7 +466,7 @@ $avatar = array_rand($random_images_array, 1);
             </div>
           </div>
         </div>
-        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/triangles-1430105_1280.webp">
+        <div class="parallax-window dark" data-parallax="scroll" data-image-src="./images/parallax-bg.jpg">
           <div class="center">
             <h2>Our Team</h2>
             <div class="tg-wrap">
