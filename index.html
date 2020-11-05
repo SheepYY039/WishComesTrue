@@ -36,25 +36,26 @@
     <title>Wish Comes True</title>
     <script type="text/javascript">
       $(document).ready(function () {
-        // $('.body').load('./index.html');
-        // $('#body').load('./about.html');
-        // window.location = './index.html';
-
         $('#about').click(function () {
-          // window.location = './about.html';
-          // $('.body').load('./about.html');
-          // $('#body').load('./about.html');
           window.location = './index.html';
         });
         $('#donate').click(function () {
-          // window.location = './index.html';
-          // $('.body').load('./index.html');
           $('.body').load('./donate.html');
         });
         $('#volunteer').click(function () {
-          // $('.body').load('./index.html');
           $('.body').load('./volunteer.php');
         });
+
+        $('#about-dropdown').click(function () {
+          window.location = './index.html';
+        });
+        $('#donate-dropdown').click(function () {
+          $('.body').load('./donate.html');
+        });
+        $('#volunteer-dropdown').click(function () {
+          $('.body').load('./volunteer.php');
+        });
+
         $('.nav-item a').on('click', function () {
           $('.nav-item a').removeClass('active');
           $(this).addClass('active');
