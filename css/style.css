@@ -1134,6 +1134,11 @@ left: -157px;
     cursive;
 }
 
+@media screen and (max-width: 800px) {
+  .page .details {
+    left: 0px;
+  }
+}
 
 .head .details {
   width: 75%;
