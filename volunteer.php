@@ -44,20 +44,13 @@ $result = mysqli_query($conn, $sql);
   <title>Wishes Come True | Volunteer</title>
   <script type="text/javascript">
   $(document).ready(function() {
-    // $('.body').load('./index.html');
-    // $('#body').load('./about.html');
     $('#about').click(function() {
-      // $('.body').load('./about.html');
-      // $('.body').load('./index.html');
-      window.location = './index.html';
+      window.location = './index.php';
     });
     $('#donate').click(function() {
-      // window.location = './index.html';
-      // $('.body').load('./index.html');
       $('.body').load('./donate.html');
     });
     $('#volunteer').click(function() {
-      // $('.body').load('./index.html');
       $('.body').load('./volunteer.php');
     });
     $('.nav-item a').on('click', function() {

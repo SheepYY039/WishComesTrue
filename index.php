@@ -41,7 +41,7 @@ $avatar = array_rand($random_images_array, 1);
   $(document).ready(function() {
 
     $('#about').click(function() {
-      window.location = './index.html';
+      window.location = './index.php';
     });
     $('#donate').click(function() {
       $('.body').load('./donate.html');
@@ -51,7 +51,7 @@ $avatar = array_rand($random_images_array, 1);
     });
 
     $('#about-dropdown').click(function() {
-      window.location = './index.html';
+      window.location = './index.php';
     });
     $('#donate-dropdown').click(function() {
       $('.body').load('./donate.html');
