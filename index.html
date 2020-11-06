@@ -28,8 +28,23 @@
       href="https://fonts.googleapis.com/css2?family=Limelight&display=swap"
       rel="stylesheet"
     />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/parallax.js"></script>
     <link
       rel="stylesheet"
@@ -105,24 +120,16 @@
       });
     </script>
     <style type="text/css">
-      * {
-        /* font-family: 'Limelight', cursive; */
-      }
-
       tg {
         border-collapse: collapse;
-        /* border-color: #ccc; */
         border-spacing: 0;
         margin: 0px auto;
       }
 
       .tg td {
-        /* background-color: #fff;
-        border-color: #ccc; */
         border-style: solid;
         border-width: 0px;
-        /* color: #333; */
-        font-family: Arial, sans-serif;
+        font-family: roboto, sans-serif;
         font-size: 14px;
         overflow: hidden;
         padding: 10px 5px;
@@ -221,6 +228,103 @@
           left: auto;
           transform: translateY(75px);
         }
+      }
+
+      .swiper-container {
+        width: 80%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 50%;
+        height: auto;
+        min-height: 50%;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .swiper-container-multirow-column > .swiper-wrapper {
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+
+      .swiper-slide .title {
+        font-size: 29px;
+        font-weight: 300;
+        align-self: center;
+      }
+
+      .swiper-slide .subtitle {
+        font-size: 15px;
+        align-self: center;
+      }
+
+      .swiper-slide .head-img img {
+        margin: auto;
+      }
+
+      .swiper-slide .head-img {
+        display: flex;
+      }
+
+      @media screen and (max-width: 1024px) {
+        .swiper-container {
+          width: 90%;
+        }
+        .swiper-slide .subtitle {
+          font-size: 1.4vw;
+        }
+        .swiper-slide .title {
+          font-size: 2.5vw;
+        }
+      }
+      @media screen and (max-width: 762px) {
+        .swiper-slide {
+          margin: 0 !important;
+          padding: 0;
+        }
+        .swiper-slide .subtitle {
+          padding: 0;
+          font-size: 2vw;
+        }
+        .swiper-slide .subtitle,
+        .swiper-slide .title {
+          transform: translateY(-12px);
+        }
+
+        .head-img {
+          transition: transform 0.3s ease-out;
+
+          transform: scale(0.8);
+        }
+      }
+      @media screen and (max-width: 498px) {
+        .swiper-container {
+          width: 80%;
+        }
+        .swiper-slide .subtitle {
+          font-size: 15px;
+        }
+        .swiper-slide .title {
+          font-size: 29px;
+        }
+        .swiper-slide .subtitle,
+        .swiper-slide .title {
+          transform: translateY(0px);
+        }
+
+        .head-img {
+          transition: transform 0.3s ease-out;
+
+          transform: scale(1);
+        }
+      }
+
+      .footer {
+        padding: 0;
       }
     </style>
   </head>
@@ -383,7 +487,47 @@
             androidFix
             overScrollFix
           >
-            <div class="heads">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="title">Noshin Chowdhury</div>
+                  <div class="subtitle">Head of Communications & Logistics</div>
+                  <div class="head-img">
+                    <img src="./images/noshin.jpeg" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="title">Ritika Vaswani</div>
+                  <div class="subtitle">Head of Communications & Logistics</div>
+                  <div class="head-img">
+                    <img src="./images/ritika.jpeg" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="title">Jasmine Yeung</div>
+                  <div class="subtitle">Head of Coding</div>
+                  <div class="head-img">
+                    <img src="./images/jasmine.jpg" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="title">Harshita Parmar</div>
+                  <div class="subtitle">Head of Maketing</div>
+                  <div class="head-img">
+                    <img src="./images/harshita.jpg" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="title">Sunwoo Joo</div>
+                  <div class="subtitle">Head of Maketing</div>
+                  <div class="head-img">
+                    <img src="./images/sunwoo.jpeg" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div style="display: none" class="heads">
               <div class="head">
                 <div class="head-img">
                   <img src="./images/noshin.jpeg" />
@@ -897,6 +1041,107 @@
         $('.filters').toggleClass('clicked');
         $(this).toggleClass('clicked');
       });
+    </script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        // Default parameters
+        slidesPerView: 3,
+        slidesPerColumn: 2,
+        spaceBetween: 40,
+        // Responsive breakpoints
+        breakpoints: {
+          // when window width is <= 320px
+          320: {
+            slidesPerView: 1,
+            slidesPerColumn: 1,
+            spaceBetween: 10,
+          },
+          // when window width is <= 480px
+          480: {
+            slidesPerView: 2,
+            slidesPerColumn: 3,
+            spaceBetween: 20,
+          },
+
+          // when window width is <= 768px
+          768: {
+            slidesPerView: 3,
+            slidesPerColumn: 2,
+            spaceBetween: 30,
+          },
+        },
+      });
+
+      const breakpoint = window.matchMedia('(min-width:31.25em)');
+      let mySwiper;
+      const breakpointChecker = function () {
+        // if larger viewport and multi-row layout needed
+        if (breakpoint.matches === true) {
+          // clean up old instances and inline styles when available
+          if (mySwiper !== undefined) mySwiper.destroy(true, true);
+          // or/and do nothing
+          return primarySwiper();
+          // else if a small viewport and single column layout needed
+        } else if (breakpoint.matches === false) {
+          // fire small viewport version of swiper
+          return enableSwiper();
+        }
+      };
+      const enableSwiper = function () {
+        mySwiper = new Swiper('.swiper-container', {
+          loop: true,
+          slidesPerView: 'auto',
+          centeredSlides: true,
+          a11y: true,
+          slidesPerColumn: 1,
+
+          keyboardControl: true,
+          grabCursor: true,
+          // pagination
+          pagination: '.swiper-pagination',
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          paginationClickable: true,
+          autoplay: true,
+        });
+      };
+
+      const primarySwiper = function () {
+        var swiper = new Swiper('.swiper-container', {
+          // Default parameters
+          slidesPerView: 3,
+          slidesPerColumn: 2,
+          spaceBetween: 40,
+          // Responsive breakpoints
+          breakpoints: {
+            // when window width is <= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+              slidesPerColumn: 1,
+            },
+            // when window width is <= 480px
+            480: {
+              slidesPerView: 2,
+              slidesPerColumn: 3,
+              spaceBetween: 20,
+            },
+
+            // when window width is <= 768px
+            768: {
+              slidesPerView: 3,
+              slidesPerColumn: 2,
+              spaceBetween: 30,
+            },
+          },
+        });
+      };
+      // keep an eye on viewport size changes
+      breakpoint.addListener(breakpointChecker);
+      // kickstart
+      breakpointChecker();
     </script>
   </body>
 </html>

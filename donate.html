@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wish Comes True | Donate</title>
-    <!-- <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://unpkg.com/swiper/swiper-bundle.css"
-    /> -->
 
     <style type="text/css">
       .img-div {
@@ -21,13 +16,6 @@
         margin: auto;
       }
 
-      /* .img-div img { */
-      /* margin: 0 auto; */
-      /* width: 100%; */
-
-      /* object-fit: cover;
-        object-position: 50% 50%;
-      } */
       @media (max-width: 768px) {
         .img-div {
           width: 98%;
@@ -63,6 +51,7 @@
         text-align: center;
         font-size: 18px;
         background: #fff;
+        width: auto;
 
         -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -585,6 +574,12 @@
         dynamicBullets: true,
       });
       // });
+    </script>
+    <script type="text/javascript">
+      $('div.burger').on('click', function () {
+        $('.filters').toggleClass('clicked');
+        $(this).toggleClass('clicked');
+      });
     </script>
   </body>
 </html>

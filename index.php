@@ -205,7 +205,7 @@ $avatar = array_rand($random_images_array, 1);
 
 <body>
   <header>
-    <img height="100%" src="./images/logo.png" alt="Logo" />
+    <img height="100%" style="transform: scale(2.5);" src="./images/logo.png" alt="Logo" />
     <?php if (isset($_SESSION['id'])) {?>
     <div class="side-container">
       <button class="btn" id="button">Submit a Wish</button>

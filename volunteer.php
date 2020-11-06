@@ -45,7 +45,7 @@ $result = mysqli_query($conn, $sql);
   <script type="text/javascript">
   $(document).ready(function() {
     $('#about').click(function() {
-      window.location = './index.php';
+      window.location = './index.html';
     });
     $('#donate').click(function() {
       $('.body').load('./donate.html');
@@ -437,6 +437,13 @@ $result = mysqli_query($conn, $sql);
   for (i = 0; i < addButtons.length; i++) {
     addButtons[i].addEventListener("click", getDetails);
   }
+  </script>
+
+  <script type="text/javascript">
+  $('div.burger').on('click', function() {
+    $('.filters').toggleClass('clicked');
+    $(this).toggleClass('clicked');
+  });
   </script>
 
 </body>
