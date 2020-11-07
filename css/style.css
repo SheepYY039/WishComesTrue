@@ -49,9 +49,9 @@ header img {
 }
 
 .heads {
-display: flex;
-flex-wrap: wrap;
-width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
 }
 
 .head {
@@ -330,7 +330,7 @@ table {
   padding: 1%;
   margin: 0px 1vw;
   display: flex;
-  z-index:3;
+  z-index: 3;
 }
 
 .profile a {
@@ -422,8 +422,7 @@ table {
     position: absolute;
     transition-timing-function: ease;
     transition-duration: 0.2s;
-  z-index: 4;
-
+    z-index: 4;
   }
 
   .filters.clicked {
@@ -598,11 +597,11 @@ input[type='search']:focus {
   box-sizing: border-box;
 }
 
-.checkbox__label:hover input~.checkbox__custom {
+.checkbox__label:hover input ~ .checkbox__custom {
   background-color: #c4ebf1;
 }
 
-.checkbox__label input:checked~.checkbox__custom {
+.checkbox__label input:checked ~ .checkbox__custom {
   background-color: #add8e5;
 }
 
@@ -612,7 +611,7 @@ input[type='search']:focus {
   display: none;
 }
 
-.checkbox__label input:checked~.checkbox__custom:after {
+.checkbox__label input:checked ~ .checkbox__custom:after {
   display: block;
 }
 
@@ -697,7 +696,6 @@ ul.nav li a.active {
 }
 
 @media screen and (max-width: 680px) {
-
   .nav-parent {
     display: flex;
   }
@@ -1032,7 +1030,7 @@ a:hover {
 }
 
 .parallax-window {
-/* color: white; */
+  /* color: white; */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -1050,8 +1048,7 @@ a:hover {
 }
 
 .parallax-window .center {
-  
-    /* padding: 50% 0;
+  /* padding: 50% 0;
     height: 50%;
     position: relative;
     padding-top: 50%;
@@ -1061,27 +1058,22 @@ a:hover {
   width: 500px;
   margin: auto;
   /* padding-top: 250px; */
-
 }
 
 .parallax-window h2 {
-      font-family: 'Limelight',
-      cursive;
+  font-family: 'Limelight', cursive;
   text-align: center;
   margin: 0;
   padding: 0;
   font-size: 64px;
-
 }
 .parallax-window p {
-      font-family: 'Limelight',
-      cursive;
+  font-family: 'Limelight', cursive;
   text-align: center;
   margin: 0;
   padding: 0;
-    /* min-height: 400px; */
-    background: transparent;
-
+  /* min-height: 400px; */
+  background: transparent;
 }
 
 .page {
@@ -1106,7 +1098,6 @@ a:hover {
   transition: transform 0.3s ease-out;
   width: 380px;
   object-fit: cover;
-      
 }
 
 .head-img {
@@ -1128,13 +1119,12 @@ a:hover {
 }
 
 .page .details {
-display: block;
-position: relative;
-transform: scaleY(1.5);
-top: 550px;
-left: -157px;
-    font-family: 'Limelight',
-    cursive;
+  display: block;
+  position: relative;
+  transform: scaleY(1.5);
+  top: 550px;
+  left: -157px;
+  font-family: 'Limelight', cursive;
 }
 
 @media screen and (max-width: 800px) {
@@ -1147,31 +1137,24 @@ left: -157px;
   width: 75%;
   margin: auto;
   padding: 3% 0;
-      font-family: 'Limelight',
-      cursive;
+  font-family: 'Limelight', cursive;
 }
 
 .details h4 {
-      font-family: 'Limelight',
-      cursive;
+  font-family: 'Limelight', cursive;
   margin: 2% auto;
-  
 }
 
 .details h2 {
   font-size: 42px;
-      font-family: 'Limelight',
-      cursive;
+  font-family: 'Limelight', cursive;
   padding: 20px 0px;
 }
 
 .details p {
   font-size: 24px;
-      font-family: 'Limelight',
-      cursive;
+  font-family: 'Limelight', cursive;
 }
-
-
 
 .lead {
   position: relative;
@@ -1193,8 +1176,8 @@ left: -157px;
   padding-bottom: 30px;
   position: relative;
   width: 100%;
-  border-bottom: 1px solid #CCCCCC;
-  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #cccccc;
+  border-top: 1px solid #dddddd;
 }
 
 .footer p {
@@ -1206,8 +1189,7 @@ left: -157px;
 }
 
 .footer h3 {
-      font-family: 'Limelight',
-      cursive;
+  font-family: 'Limelight', cursive;
   color: white;
   font-size: 18px;
   font-weight: 600;
@@ -1223,10 +1205,9 @@ left: -157px;
   font-weight: 600;
   line-height: 38px;
   padding: 40px 0 10px;
-      font-family: 'Limelight',
-      cursive;
+  font-family: 'Limelight', cursive;
   /* font-family: cursive; */
-  font-weight: lighter
+  font-weight: lighter;
 }
 
 .footer ul {
@@ -1272,11 +1253,13 @@ left: -157px;
 }
 
 .bg-gray {
-  background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
-  box-shadow: 0 1px 0 #B4B3B3;
+  background-image: -moz-linear-gradient(
+    center bottom,
+    #bbbbbb 0%,
+    #f0f0f0 100%
+  );
+  box-shadow: 0 1px 0 #b4b3b3;
 }
-
-
 
 .footer a {
   /* color: #78828D; */
@@ -1284,12 +1267,12 @@ left: -157px;
 
 .footer-bottom {
   margin-top: 2em;
-  border-top: 1px solid #DDDDDD;
+  border-top: 1px solid #dddddd;
   padding-top: 20px;
   padding-bottom: 10px;
 }
 
 .footer-bottom p.pull-left {
   padding-top: 6px;
-  font-size: 0.75em
+  font-size: 0.75em;
 }

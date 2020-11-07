@@ -4,11 +4,11 @@ require_once './settings.php';
 require_once './login.php';
 $login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email') . '&redirect_uri=' . urlencode(CLIENT_REDIRECT_URL) . '&response_type=code&client_id=' . CLIENT_ID . '&access_type=online';
 $random_images_array = array(
-    'avatar2.png',
-    'avatar5.png',
-    'avatar6.png',
-    'img_avatar.png',
-    'img_avatar2.png',
+  'avatar2.png',
+  'avatar5.png',
+  'avatar6.png',
+  'img_avatar.png',
+  'img_avatar2.png',
 );
 $avatar = array_rand($random_images_array, 1);
 ?>
@@ -18,28 +18,52 @@ $avatar = array_rand($random_images_array, 1);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Stylesheet -->
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
     integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="./favicon.png" />
   <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
 
+  <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap"
     rel="stylesheet" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+
+  <!-- Parallax -->
   <script src="js/parallax.js"></script>
+
+  <!-- Swiper -->
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script type="application/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+
   <title>Wish Comes True</title>
   <script type="text/javascript">
+  // Nav functions
   $(document).ready(function() {
 
+    jQuery(window).trigger('resize').trigger('scroll');
+    // Laptop Nav
     $('#about').click(function() {
       window.location = './index.php';
     });
@@ -50,6 +74,7 @@ $avatar = array_rand($random_images_array, 1);
       $('.body').load('./volunteer.php');
     });
 
+    // Dropdown mobile nav
     $('#about-dropdown').click(function() {
       window.location = './index.php';
     });
@@ -60,6 +85,7 @@ $avatar = array_rand($random_images_array, 1);
       $('.body').load('./volunteer.php');
     });
 
+    // Set Active tab
     $('.nav-item a').on('click', function() {
       $('.nav-item a').removeClass('active');
       $(this).addClass('active');
@@ -67,6 +93,7 @@ $avatar = array_rand($random_images_array, 1);
   });
   </script>
   <script>
+  // Parallax function
   $(document).ready(function() {
     $('.parallax-window.dark').each(function() {
       var dataValue = $(this).attr('data-image-src');
@@ -79,24 +106,16 @@ $avatar = array_rand($random_images_array, 1);
   });
   </script>
   <style type="text/css">
-  * {
-    /* font-family: 'Limelight', cursive; */
-  }
-
   tg {
     border-collapse: collapse;
-    /* border-color: #ccc; */
     border-spacing: 0;
     margin: 0px auto;
   }
 
   .tg td {
-    /* background-color: #fff;
-        border-color: #ccc; */
     border-style: solid;
     border-width: 0px;
-    /* color: #333; */
-    font-family: Arial, sans-serif;
+    font-family: roboto, sans-serif;
     font-size: 14px;
     overflow: hidden;
     padding: 10px 5px;
@@ -104,11 +123,8 @@ $avatar = array_rand($random_images_array, 1);
   }
 
   .tg th {
-    /* background-color: #f0f0f0; */
-    /* border-color: #ccc; */
     border-style: solid;
     border-width: 0px;
-    /* color: #333; */
     font-family: roboto, sans-serif;
     font-size: 14px;
     font-weight: normal;
@@ -199,6 +215,113 @@ $avatar = array_rand($random_images_array, 1);
       transform: translateY(75px);
     }
   }
+
+  .swiper-container {
+    width: 80%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+    height: auto;
+    min-height: 50%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .swiper-container-multirow-column>.swiper-wrapper {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .swiper-slide .title {
+    font-size: 29px;
+    font-weight: 300;
+    align-self: center;
+  }
+
+  .swiper-slide .subtitle {
+    font-size: 15px;
+    align-self: center;
+  }
+
+  .swiper-slide .head-img img {
+    margin: auto;
+  }
+
+  .swiper-slide .head-img {
+    display: flex;
+  }
+
+
+  @media screen and (max-width: 1024px) {
+    .swiper-container {
+      width: 90%;
+    }
+
+    .swiper-slide .subtitle {
+      font-size: 1.4vw;
+    }
+
+    .swiper-slide .title {
+      font-size: 2.5vw;
+    }
+  }
+
+
+  @media screen and (max-width: 762px) {
+    .swiper-slide {
+      margin: 0 !important;
+      padding: 0;
+    }
+
+    .swiper-slide .subtitle {
+      padding: 0;
+      font-size: 2vw;
+    }
+
+    .swiper-slide .subtitle,
+    .swiper-slide .title {
+      transform: translateY(-12px);
+    }
+
+    .head-img {
+      transition: transform 0.3s ease-out;
+      transform: scale(0.8);
+    }
+  }
+
+  @media screen and (max-width: 498px) {
+    .swiper-container {
+      width: 80%;
+    }
+
+    .swiper-slide .subtitle {
+      font-size: 15px;
+    }
+
+    .swiper-slide .title {
+      font-size: 29px;
+    }
+
+    .swiper-slide .subtitle,
+    .swiper-slide .title {
+      transform: translateY(0px);
+    }
+
+    .head-img {
+      transition: transform 0.3s ease-out;
+
+      transform: scale(1);
+    }
+  }
+
+  .footer {
+    padding: 0;
+  }
   </style>
 </head>
 
@@ -206,18 +329,18 @@ $avatar = array_rand($random_images_array, 1);
 <body>
   <header>
     <img height="100%" style="transform: scale(2.5);" src="./images/logo.png" alt="Logo" />
-    <?php if (isset($_SESSION['id'])) {?>
+    <?php if (isset($_SESSION['id'])) { ?>
     <div class="side-container">
       <button class="btn" id="button">Submit a Wish</button>
     </div>
-    <?php } else {?>
+    <?php } else { ?>
     <div class="side-container">
       <button class="btn" id="button" disabled>Please login to Submit a Wish &rarr; </button>
     </div>
-    <?php }?>
+    <?php } ?>
     <div class="profile">
       <div class="dropdown _img">
-        <?php if (isset($_SESSION['id'])) {?>
+        <?php if (isset($_SESSION['id'])) { ?>
         <img class="avatar" src="<?php echo $_SESSION['picture']; ?>" alt="<?php echo $_SESSION['name']; ?>">
         <div class="dropdown-content _info">
           <ul>
@@ -230,16 +353,16 @@ $avatar = array_rand($random_images_array, 1);
             </li>
           </ul>
         </div>
-        <?php } else {?>
+        <?php } else { ?>
         <img class="avatar" src="<?php echo "./avatar/" . $random_images_array[$avatar]; ?>" alt="User" />
         <div class="dropdown-content _info">
           <ul>
             <li class="withA">
-              <a href="<?php echo $login_url;?>"><i class="fab fa-google fa-lg"></i> Login with Google</a>
+              <a href="<?php echo $login_url; ?>"><i class="fab fa-google fa-lg"></i> Login with Google</a>
             </li>
           </ul>
         </div>
-        <?php }?>
+        <?php } ?>
       </div>
     </div>
   </header>
@@ -322,55 +445,48 @@ $avatar = array_rand($random_images_array, 1);
           </div>
         </div>
         <div class="parallax-window" data-parallax="scroll" iosFix androidFix overScrollFix>
-          <div class="heads">
-            <div class="head">
-              <div class="head-img">
-                <img src="./images/noshin.jpeg" />
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="title">Noshin Chowdhury</div>
+                <div class="subtitle">Head of Communications & Logistics</div>
+                <div class="head-img">
+                  <img src="./images/noshin.jpeg" />
+                </div>
               </div>
-              <div class="details">
-                <h4>Noshin Chowdhury</h4>
-                <h5>Head of Communications & Logistics</h5>
+              <div class="swiper-slide">
+                <div class="title">Ritika Vaswani</div>
+                <div class="subtitle">Head of Communications & Logistics</div>
+                <div class="head-img">
+                  <img src="./images/ritika.jpeg" />
+                </div>
               </div>
-            </div>
-            <div class="head">
-              <div class="head-img">
-                <img src="./images/ritika.jpeg" />
+              <div class="swiper-slide">
+                <div class="title">Jasmine Yeung</div>
+                <div class="subtitle">Head of Coding</div>
+                <div class="head-img">
+                  <img src="./images/jasmine.jpg" />
+                </div>
               </div>
-              <div class="details">
-                <h4>Ritika Vaswani</h4>
-                <h5>Head of Communications & Logistics</h5>
+              <div class="swiper-slide">
+                <div class="title">Harshita Parmar</div>
+                <div class="subtitle">Head of Maketing</div>
+                <div class="head-img">
+                  <img src="./images/harshita.jpg" />
+                </div>
               </div>
-            </div>
-            <div class="head">
-              <div class="head-img">
-                <img src="./images/jasmine.jpg" />
-              </div>
-              <div class="details">
-                <h4>Jasmine Yeung</h4>
-                <h5>Head of Coding</h5>
-              </div>
-            </div>
-            <div class="head">
-              <div class="head-img">
-                <img src="./images/harshita.jpg" />
-              </div>
-              <div class="details">
-                <h4>Harshita Parmar</h4>
-                <h5>Head of Maketing</h5>
-              </div>
-            </div>
-
-            <div class="head">
-              <div class="head-img">
-                <img src="./images/sunwoo.jpeg" />
-              </div>
-              <div class="details">
-                <h4>Sunwoo Joo</h4>
-                <h5>Head of Maketing</h5>
+              <div class="swiper-slide">
+                <div class="title">Sunwoo Joo</div>
+                <div class="subtitle">Head of Maketing</div>
+                <div class="head-img">
+                  <img src="./images/sunwoo.jpeg" />
+                </div>
               </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
+        <!-- All Members -->
         <div class="parallax-window dark" data-parallax="scroll" iosFix androidFix overScrollFix
           data-image-src="./images/parallax-bg.jpg">
           <div class="center">
@@ -460,6 +576,7 @@ $avatar = array_rand($random_images_array, 1);
             </div>
           </div>
         </div>
+        <!-- Footer -->
         <footer>
           <div class="footer" id="footer">
             <div class="container" style="display: block">
@@ -541,12 +658,12 @@ $avatar = array_rand($random_images_array, 1);
 
           <div class="form-input-material">
             <label for="name">&nbsp Organization Name:</label>
-            <?php if (isset($_SESSION['id'])) {?>
+            <?php if (isset($_SESSION['id'])) { ?>
             <input class="form-control-material" required type="text" id="name" name="name"
               value="<?php echo $_SESSION['name'] ?>" />
-            <?php } else {?>
+            <?php } else { ?>
             <input class="form-control-material" required type="text" id="name" name="name" value="" />
-            <?php }?>
+            <?php } ?>
 
           </div>
 
@@ -559,12 +676,12 @@ $avatar = array_rand($random_images_array, 1);
           <div class="form-input-material">
             <label for="email">&nbsp Email Address:</label>
 
-            <?php if (isset($_SESSION['id'])) {?>
+            <?php if (isset($_SESSION['id'])) { ?>
             <input class="form-control-material" required type="email" id="email" name="email"
               value="<?php echo $_SESSION["email"] ?>" />
-            <?php } else {?>
+            <?php } else { ?>
             <input class="form-control-material" required type="email" id="email" name="email" value="" />
-            <?php }?>
+            <?php } ?>
 
 
           </div>
@@ -701,6 +818,108 @@ $avatar = array_rand($random_images_array, 1);
     $('.filters').toggleClass('clicked');
     $(this).toggleClass('clicked');
   });
+  </script>
+  <!-- Heads swiper function -->
+  <script>
+  var swiper = new Swiper('.swiper-container', {
+    // Default parameters
+    slidesPerView: 3,
+    slidesPerColumn: 2,
+    spaceBetween: 40,
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is <= 320px
+      320: {
+        slidesPerView: 1,
+        slidesPerColumn: 1,
+        spaceBetween: 10,
+      },
+      // when window width is <= 480px
+      480: {
+        slidesPerView: 2,
+        slidesPerColumn: 3,
+        spaceBetween: 20,
+      },
+
+      // when window width is <= 768px
+      768: {
+        slidesPerView: 3,
+        slidesPerColumn: 2,
+        spaceBetween: 30,
+      },
+    },
+  });
+
+  const breakpoint = window.matchMedia('(min-width:31.25em)');
+  let mySwiper;
+  const breakpointChecker = function() {
+    // if larger viewport and multi-row layout needed
+    if (breakpoint.matches === true) {
+      // clean up old instances and inline styles when available
+      if (mySwiper !== undefined) mySwiper.destroy(true, true);
+      // or/and do nothing
+      return primarySwiper();
+      // else if a small viewport and single column layout needed
+    } else if (breakpoint.matches === false) {
+      // fire small viewport version of swiper
+      return enableSwiper();
+    }
+  };
+  const enableSwiper = function() {
+    mySwiper = new Swiper('.swiper-container', {
+      loop: true,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      a11y: true,
+      slidesPerColumn: 1,
+
+      keyboardControl: true,
+      grabCursor: true,
+      // pagination
+      pagination: '.swiper-pagination',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      paginationClickable: true,
+      autoplay: true,
+    });
+  };
+
+  const primarySwiper = function() {
+    var swiper = new Swiper('.swiper-container', {
+      // Default parameters
+      slidesPerView: 3,
+      slidesPerColumn: 2,
+      spaceBetween: 40,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is <= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          slidesPerColumn: 1,
+        },
+        // when window width is <= 480px
+        480: {
+          slidesPerView: 2,
+          slidesPerColumn: 3,
+          spaceBetween: 20,
+        },
+
+        // when window width is <= 768px
+        768: {
+          slidesPerView: 3,
+          slidesPerColumn: 2,
+          spaceBetween: 30,
+        },
+      },
+    });
+  };
+  // keep an eye on viewport size changes
+  breakpoint.addListener(breakpointChecker);
+  // kickstart
+  breakpointChecker();
   </script>
 </body>
 
