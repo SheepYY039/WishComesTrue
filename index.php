@@ -18,8 +18,7 @@ $avatar = array_rand($random_images_array, 1);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Stylesheet -->
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
@@ -48,7 +47,7 @@ $avatar = array_rand($random_images_array, 1);
 
 
   <!-- Parallax -->
-  <script src="js/parallax.js"></script>
+  <script src="./js/parallax.js"></script>
 
   <!-- Swiper -->
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -56,7 +55,9 @@ $avatar = array_rand($random_images_array, 1);
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
   </script>
-
+  <!-- Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
   <title>Wish Comes True</title>
   <script type="text/javascript">
   // Nav functions
@@ -205,6 +206,7 @@ $avatar = array_rand($random_images_array, 1);
   }
 
   @media screen and (max-width: 768px) {
+
     .first {
       border-bottom: none;
       font-size: 15vw;
@@ -217,6 +219,7 @@ $avatar = array_rand($random_images_array, 1);
   }
 
   .swiper-container {
+    height: fit-content;
     width: 80%;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -295,6 +298,11 @@ $avatar = array_rand($random_images_array, 1);
   }
 
   @media screen and (max-width: 498px) {
+
+    .page {
+      transform: scale(0.7);
+    }
+
     .swiper-container {
       width: 80%;
     }
@@ -314,7 +322,6 @@ $avatar = array_rand($random_images_array, 1);
 
     .head-img {
       transition: transform 0.3s ease-out;
-
       transform: scale(1);
     }
   }
@@ -807,10 +814,12 @@ $avatar = array_rand($random_images_array, 1);
   <script type="text/javascript">
   document.getElementById('button').addEventListener('click', function() {
     document.querySelector('.modal-background.new').style.display = 'flex';
+    document.querySelector('body').style.overflowY = 'hidden';
   });
 
   document.getElementById('close').addEventListener('click', function() {
     document.querySelector('.modal-background.new').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'scroll';
   });
 
 
@@ -821,35 +830,6 @@ $avatar = array_rand($random_images_array, 1);
   </script>
   <!-- Heads swiper function -->
   <script>
-  var swiper = new Swiper('.swiper-container', {
-    // Default parameters
-    slidesPerView: 3,
-    slidesPerColumn: 2,
-    spaceBetween: 40,
-    // Responsive breakpoints
-    breakpoints: {
-      // when window width is <= 320px
-      320: {
-        slidesPerView: 1,
-        slidesPerColumn: 1,
-        spaceBetween: 10,
-      },
-      // when window width is <= 480px
-      480: {
-        slidesPerView: 2,
-        slidesPerColumn: 3,
-        spaceBetween: 20,
-      },
-
-      // when window width is <= 768px
-      768: {
-        slidesPerView: 3,
-        slidesPerColumn: 2,
-        spaceBetween: 30,
-      },
-    },
-  });
-
   const breakpoint = window.matchMedia('(min-width:31.25em)');
   let mySwiper;
   const breakpointChecker = function() {
@@ -870,7 +850,7 @@ $avatar = array_rand($random_images_array, 1);
       loop: true,
       slidesPerView: 'auto',
       centeredSlides: true,
-      a11y: true,
+      // a11y: true,
       slidesPerColumn: 1,
 
       keyboardControl: true,
@@ -904,7 +884,7 @@ $avatar = array_rand($random_images_array, 1);
         480: {
           slidesPerView: 2,
           slidesPerColumn: 3,
-          spaceBetween: 20,
+          spaceBetween: 10,
         },
 
         // when window width is <= 768px

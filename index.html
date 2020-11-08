@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -55,6 +54,8 @@
       type="application/javascript"
       src="https://unpkg.com/swiper/swiper-bundle.min.js"
     ></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
 
     <!-- <script src="js/parallax.min.js"></script> -->
     <title>Wish Comes True</title>
@@ -66,6 +67,7 @@
         });
         $('#donate').click(function () {
           $('.body').load('./donate.html');
+          jQuery(window).trigger('resize').trigger('scroll');
         });
         $('#volunteer').click(function () {
           $('.body').load('./volunteer.php');
@@ -119,211 +121,6 @@
         });
       });
     </script>
-    <style type="text/css">
-      tg {
-        border-collapse: collapse;
-        border-spacing: 0;
-        margin: 0px auto;
-      }
-
-      .tg td {
-        border-style: solid;
-        border-width: 0px;
-        font-family: roboto, sans-serif;
-        font-size: 14px;
-        overflow: hidden;
-        padding: 10px 5px;
-        word-break: normal;
-      }
-
-      .tg th {
-        border-style: solid;
-        border-width: 0px;
-        font-family: roboto, sans-serif;
-        font-size: 14px;
-        font-weight: normal;
-        overflow: hidden;
-        padding: 10px 5px;
-        word-break: normal;
-      }
-
-      .tg .tg-0lax {
-        text-align: left;
-        vertical-align: top;
-      }
-
-      .tg .tg-8zwo {
-        font-style: italic;
-        text-align: left;
-        vertical-align: top;
-      }
-
-      .first {
-        border-bottom: 3px solid red;
-        background-image: url(./images/parallax-bg.jpg);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        font-size: 122px;
-        font-family: 'Limelight', cursive;
-      }
-
-      .content {
-        position: absolute;
-        right: 0;
-      }
-      .content.about_content {
-        left: 0;
-        width: 100vw;
-      }
-
-      .parallax-mirror {
-        -webkit-transition: all ease;
-        -moz-transition: all ease;
-        -ms-transition: all ease;
-        -o-transition: all ease;
-        transition: all ease;
-      }
-
-      .parallax-mirror img,
-      .parallax-window img {
-        margin: 0;
-        padding: 0;
-      }
-
-      @media screen and (max-width: 767px) {
-        .tg {
-          width: auto !important;
-        }
-
-        .tg col {
-          width: auto !important;
-        }
-
-        .tg-wrap {
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-          margin: auto 0px;
-        }
-      }
-
-      #body,
-      .body {
-        font-family: 'Limelight', cursive;
-        margin: 0;
-        padding: 0;
-        /* display: block; */
-      }
-
-      @media screen and (max-width: 768px) {
-        .first {
-          border-bottom: none;
-          font-size: 15vw;
-        }
-
-        .page .details {
-          left: auto;
-          transform: translateY(75px);
-        }
-      }
-
-      .swiper-container {
-        width: 80%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-      }
-
-      .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 50%;
-        height: auto;
-        min-height: 50%;
-        display: flex;
-        flex-direction: column-reverse;
-      }
-
-      .swiper-container-multirow-column > .swiper-wrapper {
-        flex-wrap: wrap;
-        flex-direction: row;
-      }
-
-      .swiper-slide .title {
-        font-size: 29px;
-        font-weight: 300;
-        align-self: center;
-      }
-
-      .swiper-slide .subtitle {
-        font-size: 15px;
-        align-self: center;
-      }
-
-      .swiper-slide .head-img img {
-        margin: auto;
-      }
-
-      .swiper-slide .head-img {
-        display: flex;
-      }
-
-      @media screen and (max-width: 1024px) {
-        .swiper-container {
-          width: 90%;
-        }
-        .swiper-slide .subtitle {
-          font-size: 1.4vw;
-        }
-        .swiper-slide .title {
-          font-size: 2.5vw;
-        }
-      }
-      @media screen and (max-width: 762px) {
-        .swiper-slide {
-          margin: 0 !important;
-          padding: 0;
-        }
-        .swiper-slide .subtitle {
-          padding: 0;
-          font-size: 2vw;
-        }
-        .swiper-slide .subtitle,
-        .swiper-slide .title {
-          transform: translateY(-12px);
-        }
-
-        .head-img {
-          transition: transform 0.3s ease-out;
-
-          transform: scale(0.8);
-        }
-      }
-      @media screen and (max-width: 498px) {
-        .swiper-container {
-          width: 80%;
-        }
-        .swiper-slide .subtitle {
-          font-size: 15px;
-        }
-        .swiper-slide .title {
-          font-size: 29px;
-        }
-        .swiper-slide .subtitle,
-        .swiper-slide .title {
-          transform: translateY(0px);
-        }
-
-        .head-img {
-          transition: transform 0.3s ease-out;
-
-          transform: scale(1);
-        }
-      }
-
-      .footer {
-        padding: 0;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -992,35 +789,6 @@
       });
     </script>
     <script>
-      var swiper = new Swiper('.swiper-container', {
-        // Default parameters
-        slidesPerView: 3,
-        slidesPerColumn: 2,
-        spaceBetween: 40,
-        // Responsive breakpoints
-        breakpoints: {
-          // when window width is <= 320px
-          320: {
-            slidesPerView: 1,
-            slidesPerColumn: 1,
-            spaceBetween: 10,
-          },
-          // when window width is <= 480px
-          480: {
-            slidesPerView: 2,
-            slidesPerColumn: 3,
-            spaceBetween: 20,
-          },
-
-          // when window width is <= 768px
-          768: {
-            slidesPerView: 3,
-            slidesPerColumn: 2,
-            spaceBetween: 30,
-          },
-        },
-      });
-
       const breakpoint = window.matchMedia('(min-width:31.25em)');
       let mySwiper;
       const breakpointChecker = function () {
@@ -1041,7 +809,7 @@
           loop: true,
           slidesPerView: 'auto',
           centeredSlides: true,
-          a11y: true,
+          // a11y: true,
           slidesPerColumn: 1,
 
           keyboardControl: true,
@@ -1075,7 +843,7 @@
             480: {
               slidesPerView: 2,
               slidesPerColumn: 3,
-              spaceBetween: 20,
+              spaceBetween: 10,
             },
 
             // when window width is <= 768px

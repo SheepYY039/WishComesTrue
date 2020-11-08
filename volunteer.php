@@ -46,9 +46,12 @@ $result = mysqli_query($conn, $sql);
   $(document).ready(function() {
     $('#about').click(function() {
       window.location = './index.html';
+      jQuery(window).trigger('resize').trigger('scroll');
+
     });
     $('#donate').click(function() {
       $('.body').load('./donate.html');
+      jQuery(window).trigger('resize').trigger('scroll');
     });
     $('#volunteer').click(function() {
       $('.body').load('./volunteer.php');
@@ -371,13 +374,14 @@ $result = mysqli_query($conn, $sql);
     <div id="body">
       <div class="wishes">
         <?php
-    if (mysqli_num_rows($result) > 0) {
-        // output data of each row
-        while ($row = mysqli_fetch_assoc($result)) { ?>
+        if (mysqli_num_rows($result) > 0) {
+          // output data of each row
+          while ($row = mysqli_fetch_assoc($result)) { ?>
         <div class="wish">
           <div class="wish__contents">
             <h3 class="wish__name"><?php echo $row["Wish_name"] ?></h3>
-            <p class="wish__filters"><?php echo $row["Minority_groups"].$row["Project_type"].$row["Donating_type"] ?>
+            <p class="wish__filters">
+              <?php echo $row["Minority_groups"] . $row["Project_type"] . $row["Donating_type"] ?>
             </p>
           </div>
           <button id="<?php echo $row["Wish_id"] ?>" class="wish__more-info details_button">More Info</button>
@@ -408,10 +412,10 @@ $result = mysqli_query($conn, $sql);
             </div>
           </div>
         </div>
-        <?php 
-      }
-    }
-    ?>
+        <?php
+          }
+        }
+        ?>
       </div>
     </div>
   </section>
