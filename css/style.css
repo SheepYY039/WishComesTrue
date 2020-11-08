@@ -520,21 +520,6 @@ input[type='search']:focus {
   outline: none;
 }
 
-.filters .minority-groups {
-  height: 30%;
-  min-height: 240px;
-}
-
-.filters .donating-types {
-  height: 25%;
-  min-height: 200px;
-}
-
-.filters .project-types {
-  height: 30%;
-  min-height: 220px;
-}
-
 .checkbox__label {
   display: block;
   position: relative;
@@ -754,7 +739,7 @@ ul.nav li a {
 .wish {
   display: flex;
   min-height: 124px;
-  width:95%;
+  width: 95%;
   padding: 2%;
   margin: 2% auto;
   background: #ffffc2;
