@@ -1,7 +1,11 @@
 .img-div {
   width: auto;
-  height: 98%;
+  height: 99.5%;
   overflow: hidden;
+  border-style: solid;
+  border-width: medium;
+  border-color: #89c7e7;
+  background-color: #ffffc2;
 }
 .img-div img {
   height: 95%;
