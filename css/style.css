@@ -414,6 +414,9 @@ table {
 }
 
 @media (max-width: 800px) {
+  header img {
+    margin: auto 6vh;
+  }
   .filters {
     background: #ffffc2;
     left: -225px;
