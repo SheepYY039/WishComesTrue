@@ -172,7 +172,18 @@ tg {
 .modal-left {
   transform: translate(0%, 0%);
 }
+.modal .modal-header{
+  font-size: 6.5vw;
+ 
+}
+.modal-content h4{
+  font-size: 5vw;
+}
 
+.modal-content h5{
+  font-size: 4vw;
+ 
+}
 .hero {
   overflow: hidden;
   height: 500px;
