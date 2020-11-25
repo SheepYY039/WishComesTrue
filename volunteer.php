@@ -45,7 +45,7 @@ $result = mysqli_query($conn, $sql);
   <script type="text/javascript">
   $(document).ready(function() {
     $('#about').click(function() {
-      window.location = './index.html';
+      window.location = './index.php';
       jQuery(window).trigger('resize').trigger('scroll');
 
     });
@@ -79,144 +79,227 @@ $result = mysqli_query($conn, $sql);
     <div class="search">
       <form action="">
         <label for="search">
-          <span class="fa fa-search"></span>
+          <span class="fa fa-search" id="srchbtn" onclick="ex()"></span>
         </label>
         <input type="search" placeholder="Search..." name="search" id="search" />
       </form>
     </div>
     <script type="text/javascript">
-    var WhishesDB = {
-      "w1": {
-        tags: ["children", "elderly"]
-      },
-      "w2": {
-        tags: ["children"]
-      },
-      "w3": {
-        tags: []
-      },
-      "w4": {
-        tags: []
-      },
-    };
-
-    function ex() {
-      var srchk = document.getElementById("search").value;
-      var Fli = ["children", "homeless", "elderly", "low-income", "funding", "second-hand", "food", "individual",
-        "group", "reachable", "reach", "short", "long", "new", "old"
-      ];
-
-      var filters = [];
-      var abb = 0;
-      for (var dbcd = 0; dbcd < 15; dbcd++) {
-        if (document.getElementById(Fli[dbcd]).checked == true) {
-          filters[abb] = Fli[dbcd];
-          abb++;
-        }
-      }
-      var filteredlist = [];
-      var b = 0;
-      for (var j in WhishesDB) {
-        var approv = 0;
-        for (var c = 0; c < WhishesDB[j].tags.length; c++) {
-          for (var x = 0; x < filters.length; x++) {
-            if (filters[x] == WhishesDB[j].tags[c]) {
-              approv += 1;
-            }
-          }
-        }
-        if (approv == filters.length) {
-          filteredlist[b] = j;
-          b++;
-        }
-        var finalLi = [];
-        var flin = 0;
-        for (var g = 0; g < filteredlist.length; g++) {
-          if (check1(rearrange(filteredlist[g], srchk)) > 0) {
-            finalLi[flin] = filteredlist[g];
-            flin++;
-          }
-        }
-      }
-      alert(filteredlist + " " + finalLi);
-    }
-
-    function rearrange(movieName, inputName1) {
-      var newName = movieName.replace(/:/g, "").split(" "),
-        newInputName = inputName1.replace(/:/g, "").split(" "),
-        k = newName.length - 1;
-      for (var i = 0; i <= k; i++) {
-        newName[i] = newName[i].toLowerCase();
-        if (newName[i] === "") {
-          newName.splice(i, 1);
-          i--;
-          k--;
-        }
-      }
-      k = newInputName.length - 1;
-      for (i = 0; i <= k; i++) {
-        newInputName[i] = newInputName[i].toLowerCase();
-        if (newInputName[i] === "") {
-          newInputName.splice(i, 1);
-          i--;
-          k--;
-        }
-      }
-      newName.sort(),
-        newInputName.sort();
-      return {
-        movieName: newName,
-        inputName: newInputName
-      };
-    };
-
-    function check1(obj) {
-      var inputName = obj.inputName,
-        movieName = obj.movieName,
-        occurances = 0,
-        k = movieName.length,
-        movieNameLength = movieName.length;
-      for (var i = 0; i < k; i++) {
-        var currentValue = inputName[i];
-        console.log([inputName, movieName, i])
-        if (currentValue === movieName[i]) {
-          inputName.splice(i, 1);
-          movieName.splice(i, 1);
-          k--;
-          i--;
-          occurances++;
-        } else {
-          for (var j = 0; j < movieName.length; j++) {
-            if (currentValue === movieName[j]) {
-              inputName.splice(i, 1);
-              movieName.splice(j, 1);
-              k--;
-              occurances++;
-              break;
-            }
-          }
-        }
-      }
-      if (inputName == "") {
-        occurances = movieNameLength
-      }
-      return occurances / movieNameLength;
-    }
-
-    //character-by-character check
-    function check2(inputName, movieName) {
-      var counter = 0,
-        newInputName = inputName.trim(d, s)
-      for (var i = 0; i <= inputName.length; i++) {
-        var inputChar = newInputName.charAt(i),
-          movieChar = movieName.charAt(i);
-        if (inputChar === movieChar) {
-          counter++;
-        }
-      }
-      return counter / movieName.length;
-    }
+    var huhuh = setInterval(function() {
+      localStorage.srchk = document.getElementById("search").value;
+    },100);
     </script>
+    <script>
+          var dbwish = <?php
+            $sth = mysqli_query($conn, "SELECT `Wish_id`,`Wish_name`,`Project_type`,`Minority_groups`,`Donating_type`,`Organization_name`,`District`, `Start_date`, `End_date` FROM `tbl_wishes` WHERE `isApproved` = 1");
+            $rowZ = array();
+            while($r = mysqli_fetch_assoc($sth)) {
+                 $rowZ[] = $r;
+            }
+            print json_encode($rowZ);
+            ?>;
+            console.log(dbwish);
+            function ex(){
+                alert("ello");
+                var Fli = ["children", "homeless", "elderly", "low-income", "funding", "second-hand", "food", "individual","group", "reachable", "reach", "short", "long", "new", "old"
+              ];
+        
+              var filters = [];
+              var abb = 0;
+              for (var dbcd = 0; dbcd < 15; dbcd++) {
+                if (document.getElementById(Fli[dbcd]).checked == true) {
+                  filters[abb] = Fli[dbcd];
+                  abb++;
+                }
+              }
+            var finalLi = [];
+            var approv =0;
+            var flin = 0;
+            var filteredlist=[];
+            for (var ew=0;ew<dbwish.length;ew++){
+             var c = dbwish[ew].Minority_groups.split("| ");
+             var d = dbwish[ew].Project_type.split("| ");
+             var lif = [];
+             for (var cd = 0; cd<c.length-1;cd++){lif[cd] =c[cd]}
+             for (var dc = 0; dc<d.length-1;dc++){lif[c.length-1+dc]=d[dc]}
+             alert(lif);
+             for (var gg = 0 ;gg<lif.length;gg++){
+                 for (var bb =0; bb<filters.length;bb++){
+                     if(filters[bb] == lif[gg]){
+                         approv++;
+                     }
+                 }
+             }
+             if(approv=lif.length){
+             filteredlist[flin] = dbwish[ew].Wish_name;
+             flin++;
+             }
+            }
+            flin=0;
+            var srchk = localStorage.srchk;
+            alert(typeof srchk);
+            alert("filtered List: "+filteredlist+"    typeof "+typeof filteredlist);
+            if(srchk!=""){
+            for (var g = 0; g < filteredlist.length; g++) {
+                  if (check1(rearrange(filteredlist[g], srchk)) > 0) {
+                    finalLi[flin] = filteredlist[g];
+                    flin++;
+                  }
+                }
+            }
+            else{
+                for(var ggg =0;ggg<filteredlist.length;ggg++){
+                    finalLi[ggg]=filteredlist[ggg];
+                }
+            }
+              alert("Final stuff: filtered List::: "+filteredlist + " ;;;;; And then the final list::::" + finalLi);
+              alert(typeof finalLi);
+              var lSbuffer=[];
+              var breaking=0;
+              var ji = 0;
+              for(y in finalLi){
+                  for(x in dbwish){
+                      alert(dbwish[x].Wish_name);
+                      alert("Y isssssss  :     "+finalLi[y]);
+                      if (finalLi[y]==dbwish[x].Wish_name){alert("MMMAAATTTCCCHHH:::::" + JSON.stringify(dbwish[x]));lSbuffer[ji]=dbwish[x];ji++;}
+                      }
+                  }
+              console.log(JSON.stringify(lSbuffer));
+              for(var x=0;x<lSbuffer.length;x++){
+                  for(var y = x+1;y<lSbuffer.length;y++){
+                      if(lSbuffer[x].Wish_id==lSbuffer[y].Wish_id){alert("OVERLAPP attt   "+x+ "   AND  "+y); lSbuffer[y]="";
+                        for(var z=y+1;z<lSbuffer.length;z++){
+                            lSbuffer[z-1]=lSbuffer[z];
+                            if(z=lSbuffer.length-1){lSbuffer[z]=""};
+                        }
+                          
+                      }
+                  }
+              }
+              localStorage.finalLil=JSON.stringify(lSbuffer);
+              console.log("Finalthing",'\n\n\n\n\n\n\n\n',localStorage.finalLil);
+
+            }
+            /*
+            function ex() {
+              var srchk = localStorage.srchk
+              var Fli = ["children", "homeless", "elderly", "low-income", "funding", "second-hand", "food", "individual","group", "reachable", "reach", "short", "long", "new", "old"
+              ];
+              alert(srchk);}
+        
+              var filters = [];
+              var abb = 0;
+              for (var dbcd = 0; dbcd < 15; dbcd++) {
+                if (localStorage[dbcd]) == true) {
+                  filters[abb] = Fli[dbcd];
+                  abb++;
+                }
+              }
+              var filteredlist = [];
+              var b = 0;
+              for (var j in WhishesDB) {
+                var approv = 0;
+                for (var c = 0; c < WhishesDB[j].tags.length; c++) {
+                  for (var x = 0; x < filters.length; x++) {
+                    if (filters[x] == WhishesDB[j].tags[c]) {
+                      approv += 1;
+                    }
+                  }
+                }
+                if (approv == filters.length) {
+                  filteredlist[b] = j;
+                  b++;
+                }
+                var finalLi = [];
+                var flin = 0;
+                for (var g = 0; g < filteredlist.length; g++) {
+                  if (check1(rearrange(filteredlist[g], srchk)) > 0) {
+                    finalLi[flin] = filteredlist[g];
+                    flin++;
+                  }
+                }
+              }
+              alert(filteredlist + " " + finalLi); 
+              
+            }
+            */
+            function rearrange(movieName, inputName1) {
+              var newName = movieName.replace(/:/g, "").split(" "),
+                newInputName = inputName1.replace(/:/g, "").split(" "),
+                k = newName.length - 1;
+              for (var i = 0; i <= k; i++) {
+                newName[i] = newName[i].toLowerCase();
+                if (newName[i] === "") {
+                  newName.splice(i, 1);
+                  i--;
+                  k--;
+                }
+              }
+              k = newInputName.length - 1;
+              for (i = 0; i <= k; i++) {
+                newInputName[i] = newInputName[i].toLowerCase();
+                if (newInputName[i] === "") {
+                  newInputName.splice(i, 1);
+                  i--;
+                  k--;
+                }
+              }
+              newName.sort(),
+                newInputName.sort();
+              return {
+                movieName: newName,
+                inputName: newInputName
+              };
+            };
+        
+            function check1(obj) {
+              var inputName = obj.inputName,
+                movieName = obj.movieName,
+                occurances = 0,
+                k = movieName.length,
+                movieNameLength = movieName.length;
+              for (var i = 0; i < k; i++) {
+                var currentValue = inputName[i];
+                console.log([inputName, movieName, i])
+                if (currentValue === movieName[i]) {
+                  inputName.splice(i, 1);
+                  movieName.splice(i, 1);
+                  k--;
+                  i--;
+                  occurances++;
+                } else {
+                  for (var j = 0; j < movieName.length; j++) {
+                    if (currentValue === movieName[j]) {
+                      inputName.splice(i, 1);
+                      movieName.splice(j, 1);
+                      k--;
+                      occurances++;
+                      break;
+                    }
+                  }
+                }
+              }
+              if (inputName == "") {
+                occurances = movieNameLength
+              }
+              return occurances / movieNameLength;
+            }
+        
+            //character-by-character check
+            function check2(inputName, movieName) {
+              var counter = 0,
+                newInputName = inputName.trim(d, s)
+              for (var i = 0; i <= inputName.length; i++) {
+                var inputChar = newInputName.charAt(i),
+                  movieChar = movieName.charAt(i);
+                if (inputChar === movieChar) {
+                  counter++;
+                }
+              }
+              return counter / movieName.length;
+            }
+          </script>
+    
     <div class="minority-groups">
       <h3>Minority Groups</h3>
       <form action="">
@@ -372,11 +455,19 @@ $result = mysqli_query($conn, $sql);
       </ul>
     </nav>
     <div id="body">
-      <div class="wishes">
+      <div id="wishescontainermain" class="wishes">
+          <script type="text/javascript">
+            var wishdb = JSON.parse(localStorage.finalLil);
+            for(x in wishdb){
+                alert(wishdb[x]);
+            }
+          </script>
         <?php
+        
         if (mysqli_num_rows($result) > 0) {
           // output data of each row
           while ($row = mysqli_fetch_assoc($result)) { ?>
+        <?php echo $row["Wish_name"] ?>
         <div class="wish">
           <div class="wish__contents">
             <h3 class="wish__name"><?php echo $row["Wish_name"] ?></h3>
