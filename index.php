@@ -110,6 +110,7 @@ $avatar = array_rand($random_images_array, 1);
   </script>
   <style type="text/css">
     tg {
+      width: 110%;
       border-collapse: collapse;
       border-spacing: 0;
       margin: 0px auto;
@@ -121,7 +122,7 @@ $avatar = array_rand($random_images_array, 1);
       font-family: roboto, sans-serif;
       font-size: 14px;
       overflow: hidden;
-      padding: 10px 5px;
+      /* padding: 10px 5px; */
       word-break: normal;
     }
 
@@ -132,23 +133,25 @@ $avatar = array_rand($random_images_array, 1);
       font-size: 14px;
       font-weight: normal;
       overflow: hidden;
-      padding: 10px 5px;
+      /* padding: 10px 5px; */
       word-break: normal;
     }
 
     .tg .tg-0lax {
-      text-align: left;
+      text-align: center;
       vertical-align: top;
+      color: #fff684;
     }
 
     .tg .tg-8zwo {
       font-style: italic;
-      text-align: left;
+      text-align: center;
       vertical-align: top;
+      color: #fff684;
     }
 
     .first {
-      border-bottom: 3px solid red;
+      border-bottom: 3px solid #ffd301;
       background-image: url(./images/parallax-bg.jpg);
       background-clip: text;
       -webkit-background-clip: text;

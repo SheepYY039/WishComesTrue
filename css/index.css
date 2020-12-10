@@ -37,7 +37,7 @@ tg {
 }
 
 .first {
-  border-bottom: 3px solid red;
+  border-bottom: 3px solid #ffd301;
   background-image: url(../images/parallax-bg.jpg);
   background-clip: text;
   -webkit-background-clip: text;
@@ -125,20 +125,20 @@ tg {
 }
 
 .parallax-window {
-  /* color: white; */
-  height: 100vh;
+  color: #ffd301;
+  /* height: 70vh; */
   width: 100vw;
   display: flex;
   margin: 0;
   padding: 0;
   justify-content: center;
   align-items: center;
-  min-height: 400px;
+  min-height: 65vh;
   background: transparent;
 }
 
 .dark {
-  /* color: white; */
+  color: #fff684;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -202,17 +202,17 @@ tg {
 .head-img {
   /* overflow: hidden; */
   padding: 0;
-  height: 250px;
+  height: 175px;
   align-self: center;
   justify-self: center;
   /* display: flex; */
 }
 
 .head-img img {
-  height: 250px;
+  height: 175px;
   margin: 0;
   /* height: 100%; */
-  width: 200px;
+  width: 150px;
   transition: transform 0.3s ease-out;
   object-fit: cover;
 }
@@ -224,7 +224,7 @@ tg {
   top: 550px;
   left: -157px;
   font-family: 'Limelight', cursive;
-  color: #89c7e7;
+  color: #ffd301;
 }
 
 .head .details {
@@ -265,7 +265,7 @@ tg {
 }
 
 .footer {
-  background: #002147;
+  background: #89c7e7;
   height: auto;
   padding-bottom: 30px;
   position: relative;
