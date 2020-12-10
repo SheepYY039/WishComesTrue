@@ -18,6 +18,14 @@ $avatar = array_rand($random_images_array, 1);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website for WishComesTrueHK" />
+  <meta name="title" property="og:title" content="WishComesTrueHK" />
+  <meta property="og:type" content="Website" />
+  <meta name="image" property="og:image" content="https://live.staticflickr.com/65535/50646172078_c56b58ecd9_h.jpg" />
+  <meta name="description" property="og:description"
+    content="Our vision for this project is to create a website, where the wishes of minority groups are published to the public allowing volunteers to choose which ones they want to contribute to. Examples of these wishes include volunteers helping children who wish for better grades by tutoring." />
+  <meta name="author" content="WishComesTrueHK Team" />
+
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />

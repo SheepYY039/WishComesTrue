@@ -6,6 +6,7 @@
     <title>Wish Comes True | Donate</title>
 
     <link rel="stylesheet" type="text/css" href="./css/donate.css" />
+    <link rel="stylesheet" type="text/css" href="./css/loader.css" />
     <script type="text/javascript">
       $(document).ready(function () {
         $('#about').click(function () {
@@ -436,7 +437,14 @@
         </ul>
       </nav>
       <div id="body">
-        <div class="swiper-container">
+        <div id="uc">
+          <span>404: Under Construction</span>
+          <br>
+          <div id="loading">
+            <div id="wiggle"></div>
+          </div>
+        </div>
+        <div class="swiper-container" style="display: none;" >
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->

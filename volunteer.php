@@ -15,6 +15,7 @@ if (mysqli_connect_errno()) {
 $sql = "SELECT `Wish_id`,`Wish_name`,`Project_type`,`Minority_groups`,`Donating_type`,`Organization_name`,`District`, `Start_date`, `End_date` FROM `tbl_wishes` WHERE `isApproved` = 1";
 $result = mysqli_query($conn, $sql);
 
+
 ?>
 
 <html lang="en">
@@ -33,12 +34,13 @@ $result = mysqli_query($conn, $sql);
 
   .field h4 {
     margin: 0 auto;
-    max-width: 40%;
+    width: 40%;
     height: 100%;
   }
 
   .field h5 {
     margin: auto;
+    width: 60%;
   }
   </style>
   <title>Wishes Come True | Volunteer</title>
@@ -386,7 +388,7 @@ $result = mysqli_query($conn, $sql);
           </div>
           <button id="<?php echo $row["Wish_id"] ?>" class="wish__more-info details_button">More Info</button>
           <div id="background-<?php echo $row["Wish_id"] ?>" class="modal-background">
-            <div class="modal">
+            <div class="modal" style="width: 80%;">
               <div class="modal-header">
                 <div class="modal-cancel close-<?php echo $row["Wish_id"] ?>" id="close"></div>
                 <h2>More info - <?php echo $row["Wish_name"] ?></h2>

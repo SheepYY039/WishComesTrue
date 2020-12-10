@@ -1,0 +1,57 @@
+
+
+#uc {
+  color: #89c7e7;
+  font-family: Verdana, Geneva, sans-serif;
+  height: 100%;
+  text-align: center;
+  font-size: 4rem;
+  height: 100px;
+  top: 50%;
+  position: relative;
+  margin-top: -50px;
+}
+
+#uc span {
+  text-shadow: 10px 10px 3px #c4ebf180;
+}
+
+#loading {
+  width: 400px;
+  height: 20px;
+  background: #ffffc2b3;
+  border: 2px solid #ffffc2;
+  border-radius: 50px;
+  margin: 40px auto;
+  box-shadow: inset 2px 2px 5px 0px #ffd301cc;
+}
+
+#loading #wiggle {
+  width: 80px;
+  height: 18px;
+  border: 1px solid #ffd301;
+  background: #ffffc280;
+  border-radius: 50px;
+  margin-left: 0px;
+  background: #ffffc2;
+  background: -moz-linear-gradient(top, #ffffc2 0%, #fff684 50%, #ffd301 100%);
+  background: -webkit-linear-gradient(top, #ffffc2 0%, #fff684 50%,  #ffd301 100%);
+  background: linear-gradient(to bottom, #ffffc2 0%, #fff684 50%, #ffd301 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffc2', endColorstr='#ffd301', GradientType=0);
+  transition: margin-left 2s;
+  animation: wiggle 5s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0% {
+    margin-left: 0px;
+  }
+
+  50% {
+    margin-left: 318px;
+  }
+
+  100% {
+    margin-left: 0px;
+  }
+}
